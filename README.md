@@ -44,6 +44,9 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 - FD9C65
 - F39C77 
 
+## Isologotipo
+[Isologitipo](https://github.com/luciaen/The-Healthy-Store/blob/master/logo.PNG)
+
 ## Referentes:
 1. [DietéticasTomy](https://www.dieteticastomy.com.ar/nosotros/?nc=1608484175) 
 * diseño de la página, colores.
