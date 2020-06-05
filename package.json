@@ -1,0 +1,25 @@
+{
+  "name": "the-healthy-store",
+  "version": "1.0.0",
+  "description": "Trabajo integrador The Healthy Store",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luciaen/The-Healthy-Store.git"
+  },
+  "author": "Lucia Enriquez-Ronaldo Quinn- Federico Cuello",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luciaen/The-Healthy-Store/issues"
+  },
+  "homepage": "https://github.com/luciaen/The-Healthy-Store#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
