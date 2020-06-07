@@ -40,7 +40,7 @@ body{
 .nav__login-ini{
     position:absolute;
     top: 7px;
-    left:420px;
+    left:440px;
     font-size: 20px;
     color:black
 }
@@ -53,15 +53,19 @@ body{
 }
 .nav__redes-f{
     position:absolute;
-    right:40px;
-    top:5;
+    right:80px;
+    top:20px;
+    color:black;
 
 }
 .nav__redes-i{
     position:absolute;
-    right:20px;
-    top:5;
-}    
+    right:30px;
+    top:20px;
+    color: black;
+    padding-left: 5px;
+    display: inline;
+    }    
 .nav__bottom{
     margin-top:160px;
     margin-left:70px;
@@ -100,8 +104,9 @@ body{
 
 .productos__principal, .mas__principal{
     width: 90%;
+    height:70vh;
     margin-left: 30px;
-    background-color: grey;
+    background-color: white;
     padding-top: 5px;
 }
 .productos__titulo, .mas__titulo{
@@ -120,66 +125,91 @@ body{
     border-bottom: 4px double white;
     position: relative;
 }
+.productos__sombra, .mas__sombra{
+    height: 25vh;
+    background: rgb(122, 121, 121);
+    
+}
 .productos__imagen, .mas__imagen{
     width:90%;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 .productos__texto, .mas__texto{
     font-size: 20px;
     color:rgb(228, 178, 178);
-    text-align: center;
+    text-align: left;
 }
 .productos__precio, .mas__precio{
-    font-size: 25px;
+    font-size: 20px;
+    transition: 0,5s;
     color:rgb(228, 178, 178);
     text-align: right;
-    
-}
+    position:absolute;
+    bottom:80px;
+    right:1px;
+} 
 .productos__boton, .mas__boton{
-    font-size: 20px;
-    color:white;
-    text-align: left;
-    border-radius: 10%;
-    position: relative;
-    background-color: rgb(228, 178, 178);
+    background: rgb(228, 178, 178);
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 0 20px;
+    margin-left:5px;
+    margin-bottom: 5px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    font-size: 14px;
+    text-transform: uppercase;
+    border:1px solid transparent;
+    position:absolute;
+    bottom: 6px;
+    left:1px;
 }
 .productos__carrito, .mas__carrito{
-    font-size: 20px;
+    font-size: 25px;
     width:35px;
     height:35px;
     color:rgb(228, 178, 178);
     border-radius: 50%;
     border: 1px solid rgb(228, 178, 178);
     position: absolute;
-    bottom:5px;
+    bottom:40px;
     right:5px;
+    transition-duration: 500ms;
+    transition-property: all;
+    transition-timing-function: ease-in;
+    position:absolute;
+    bottom: 6px;
+    right:1px;
+}
+.productos__carrito:hover, .mas__carrito:hover{
+    transform: rotate(360deg);
 }
 .productos__text, .mas__text{
     font-size: 20px;
     color:rgb(228, 178, 178);
     position: absolute;
-    bottom:15px;
-    right:55px;
+    bottom:10px;
+    right:42px;
 }
 /*seccion footer----*/
 .footer__container{
     width: 90%;
     height: 30vh;
-    margin-left: 30px;
+    margin-left:30px;
     background-color: white;
-   
 }   
 .footer__nav{
    width:100%;
    height: 10vh;
    background-color: orange;
-   
-  
 }
 .footer__nav ul{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-   
+    justify-content: center;
 }
 .footer__nav ul a{
     margin-top: 10px;
@@ -199,17 +229,14 @@ body{
     justify-content: flex-start;
 }
 .fotter__bottom__titulo{
-    text:center;
     font-size: 30px;
     color:red;
 }
-.fotter__mediosDePago{
-   display: flex;
-   flex-direction: row;
-   justify-content: justify;
-   padding:5px;
-}
-.footer__mediosDePago i{
-    
-    margin-top: 20px;
+.footer__mediosDePago {
+   position:absolute;
+   display: inline-block;
+   left:350px;
+   bottom:-690px;
+   
+   
 }
