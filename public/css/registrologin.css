@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+/*----------header css----------*/
+header {
+    background-color: #F5803E;
+}
+
+#logo-index img {
+    width: 100%;
+}
+
+.index-social {
+    margin: 2% 0%;
+}
+
+.index-login a {
+    color: white;
+}
+
+.index-social a ion-icon {
+    font-size: 30px;
+    color: black;
+
+}
+
+.index-cart a {
+    color: white;
+    margin-left: 5%;
+}
+
+.index-cart ion-icon {
+    font-size: 30px;
+    color: black;
+}
+
+
+/*---------main css--------------*/
+
+
+
+.main-titulo {
+    color: #FD9C65;
+    margin: 20px 0px;
+    text-align: center;
+    border-bottom: solid;
+}
+
+.main-segundo-titulo {
+    background-color: gray;
+    text-align: center;
+    color: white;
+    margin: 20px 0px;
+    border-radius: 12rem;
+}
+
+.main-tercer-titulo {
+    color: #FD9C65;
+    text-align: center;
+    border-bottom: #FD9C65;
+}
+
+main article {
+    text-align: center;
+    /*border:solid;*/
+    color: #F99D9D;
+}
+
+main article p {
+    font-weight: bold;
+}
+
+main article a {
+    color: #F99D9D;
+    font-size: 20px;
+    margin: 0 25px;
+}
+
+/*---------css footer---------*/
+
+.footer-nav {
+    background-color: #FD9C65;
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.footer-nav a {
+    color: white;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.footer-pagos {
+    color: #FD9C65;
+    text-align: center;
+}
+
+.footer-tarjetas ul {
+    text-align: center;
+}
+
+.footer-tarjetas ion-icon {
+    font-size: 30px;
+    margin: 0px 10px;
+}
+
+/*nav-bar de boostrap*/
+.navbar {
+    background-color: #FD9C65;
+}
+
+
+
+
+
+@media(min-width: 576px) {
+    body {
+        background-color: white;
+    }
+
+    /*----------css header--------------*/
+    #logo-index {
+        width: 100%;
+    }
+
+    .index-login {
+        padding: 0;
+    }
+
+    .index-cart {
+        text-align: end;
+    }
+
+    /*------------css main----------*/
+    article img {
+        width: 60%;
+    }
+
+    article ul a {
+        margin: 0 35px;
+    }
+
+    /*-----------css footer---------*/
+
+    .footer-nav {
+        height: 5vh;
+        text-align: center;
+    }
+
+    .footer-nav a {
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .footer-tarjetas ul {
+        text-align: center;
+    }
+
+    .footer-tarjetas ion-icon {
+        font-size: 30px;
+    }
+
+}
+
+@media(min-width: 992px) {
+
+    /*----------css header------------*/
+    .logo-index img {
+        width: 50%;
+    }
+
+    .index-social {
+        text-align: end;
+        margin: 0;
+    }
+
+    /*------------css main----------*/
+
+    main article img {
+        width: 100%;
+    }
+
+    main article ul a {
+        margin: 0;
+    }
+}
+
+
+/*
+
+1.preguntar como arreglar la nav. los margenes.
+2.mostar el index pero en boostrap.
+3.preguntar si mañana hay clases.
+/*------------login----------*/
+
+.form-login {
+    margin-top: 65px;
+}
+
+.h3login {
+
+    color: #F5803E;
+}
+
+.botonlogin {
+    margin-top: 80px;
+    margin-bottom: 65px;
+}
