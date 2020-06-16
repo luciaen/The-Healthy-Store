@@ -113,13 +113,14 @@ header{
       }
 /*CSS FOOTER--------------*/
 .contacto{
-    text-align: justify;
+    text-align: center;
     }
     .envios{
-    text-align: justify;
+    text-align: center;
     }
     .suscribite{
     padding: 0;
+    text-align: center;
     }
     .footer-tarjetas i{
     margin: 0 20px;
