@@ -1,201 +1,166 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
     text-decoration: none;
 }
-
 /*----------header css----------*/
-header {
+header{
     background-color: #F5803E;
 }
-
-#logo-index img {
-    width: 100%;
+.index-logo figure img{
+    width: 100% ;
+    margin-top: 10px;
 }
-
-.index-social {
-    margin: 2% 0%;
+.index-login a{
+    color: #F5803E;
+    font-size: 15px;
 }
-
-.index-login a {
+.index-social-cart{
+    margin-top: 20px;
+}
+.social a{
+    color: white;
+    font-size: 30px;
+}
+.shopping{
+    margin-top: 20px;
+}
+.shopping i{
+    font-size: 25px;
     color: white;
 }
-
-.index-social a ion-icon {
-    font-size: 30px;
-    color: black;
-
-}
-
-.index-cart a {
+.shopping a{
     color: white;
-    margin-left: 5%;
+    font-size: 20px;
+    margin-left: 15px;
 }
 
-.index-cart ion-icon {
-    font-size: 30px;
-    color: black;
-}
+/*----------nav-bar de boostrap-------------*/
 
-
+.navbar{
+    background-color:#FD9C65;
+ }
+ .navbar-toggler{
+     background-color: white;
+ }
+ .lupa{
+     color: white;
+ }
+ 
 /*---------main css--------------*/
 
 
+/*---------css footer---------*/
 
-.main-titulo {
-    color: #FD9C65;
-    margin: 20px 0px;
+.index-footer{
+    margin-top: 20px;
+}
+.contacto{
+    background-color: #FD9C65;
+}
+.contacto a{
+    color: white;
+    font-size: 20px;
+}
+.envios{
+    background-color: #FD9C65;
+}
+.envios a{
+    color: white;
+    font-size: 20px;
+}
+.suscribite{
+    background-color: #FD9C65;
+}
+.suscribite a{
+    color: white;
+    font-size: 20px;
+}
+.footer-pagos{
+    color:#FD9C65;
     text-align: center;
     border-bottom: solid;
 }
-
-.main-segundo-titulo {
-    background-color: gray;
+.footer-tarjetas ul{
     text-align: center;
-    color: white;
-    margin: 20px 0px;
-    border-radius: 12rem;
+    margin-top: 10px;
+}
+.footer-tarjetas i{
+    font-size: 35px;
 }
 
-.main-tercer-titulo {
-    color: #FD9C65;
+/*----------CSS 768PX---------------*/
+
+@media(min-width: 768px){
+    /*css header------------*/  
+      .index-social-cart{
+          margin-top: 0;
+      }
+      .social{
+          text-align: end;
+      }
+      .shopping{
+  
+          margin-top: 110px;
+      }
+      .shopping i{
+          font-size: 20px;
+      }
+      .shopping a{
+          font-size: 18px;
+          margin-left: 15px;
+      }
+/*CSS FOOTER--------------*/
+.contacto{
     text-align: center;
-    border-bottom: #FD9C65;
-}
-
-main article {
+    }
+    .envios{
     text-align: center;
-    /*border:solid;*/
-    color: #F99D9D;
-}
-
-main article p {
-    font-weight: bold;
-}
-
-main article a {
-    color: #F99D9D;
-    font-size: 20px;
-    margin: 0 25px;
-}
-
-/*---------css footer---------*/
-
-.footer-nav {
-    background-color: #FD9C65;
-    margin: 20px 0px;
+    }
+    .suscribite{
+    padding: 0;
     text-align: center;
-}
-
-.footer-nav a {
-    color: white;
-    margin: 0px 10px;
-    text-decoration: none;
-}
-
-.footer-pagos {
-    color: #FD9C65;
-    text-align: center;
-}
-
-.footer-tarjetas ul {
-    text-align: center;
-}
-
-.footer-tarjetas ion-icon {
-    font-size: 30px;
-    margin: 0px 10px;
-}
-
-/*nav-bar de boostrap*/
-.navbar {
-    background-color: #FD9C65;
+    }
+    .footer-tarjetas i{
+    margin: 0 20px;
+    }
 }
 
 
 
-
-
-@media(min-width: 576px) {
-    body {
-        background-color: white;
-    }
-
-    /*----------css header--------------*/
-    #logo-index {
-        width: 100%;
-    }
-
-    .index-login {
-        padding: 0;
-    }
-
-    .index-cart {
-        text-align: end;
-    }
-
-    /*------------css main----------*/
-    article img {
-        width: 60%;
-    }
-
-    article ul a {
-        margin: 0 35px;
-    }
-
-    /*-----------css footer---------*/
-
-    .footer-nav {
-        height: 5vh;
-        text-align: center;
-    }
-
-    .footer-nav a {
-        font-size: 20px;
-        text-decoration: none;
-    }
-
-    .footer-tarjetas ul {
-        text-align: center;
-    }
-
-    .footer-tarjetas ion-icon {
-        font-size: 30px;
-    }
-
-}
 
 @media(min-width: 992px) {
-
-    /*----------css header------------*/
-    .logo-index img {
-        width: 50%;
+ /*css header------------*/
+ .shopping{
+    margin-top: 180px;
     }
-
-    .index-social {
-        text-align: end;
-        margin: 0;
+    .shopping a{
+    margin-left: 20px;
     }
-
-    /*------------css main----------*/
-
-    main article img {
-        width: 100%;
+ /*CSS-FOOTER--------------------*/
+     .footer-tarjetas i{
+        margin: 0 40px;
     }
-
-    main article ul a {
-        margin: 0;
-    }
+   
 }
 
+/*--------------css 1200px-----------*/
 
-/*
+@media(min-width:1200px){
+    /*css header------------*/   
+       .shopping{
+           margin-top: 230px;
+       }
+       .shopping i{
+           font-size: 30px;
+       }
+       .shopping a{
+           font-size: 22px;
+           margin-left: 25px;
+       }
+   }
 
-1.preguntar como arreglar la nav. los margenes.
-2.mostar el index pero en boostrap.
-3.preguntar si mañana hay clases.
 /*------------login----------*/
 
 .form-login {
