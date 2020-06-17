@@ -11,7 +11,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!--Mi css-->
     <link rel="stylesheet" href="/public/css/registrologin.css">
-    <title>Formulario Producto</title>
+    <title>Promos</title>
 </head>
 
 <body>
@@ -114,96 +114,66 @@
             </div>
         </div>
         <!---------Comienza el main------------------------>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3 class='contactovinculo promomargintop'>SUSCRIBITE AL NEWSLETTER</h3>
 
-
-            <h1 class="h3login">Agregar Producto</h1>
-        
-
-<section class="bg-home pt-4">
-    <div class="container">
-        <div class="row">
-            <div >
-                <div class="signup-form">
-                    <form action="/admin/create" method="POST">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Nombre del producto</label>
-                            <input type="text" class="form-control" name="nombre" 
-                                required="required">
+            <h5 class="promomargin">¡Dejanos tu mail para enterarte de las mejores promociones!</h5>
+            <form method="post">
+                <div class="row">
+                    <div class="form-container col-xs-10 col-sm-10 col-md-10 col-lg-10 m-bottom-half">
+                        <input type="text" class="form-control form-control-big" placeholder="Ingrese su email"
+                            name="email">
+                        
+                    </div>
+                    <div
+                        class="submit-container col-xs-2 col-sm-2 col-md-2 col-lg-2 p-relative p-none m-half-top-xs m-top">
+                        <div class="btn-primary btn-circle">
+                          
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Categoría</label><br>
-                            <select name="Categoría" class="form-control" id="" >
-                                 <option value="0">-</option>
-                                <option value="1">Leches Vegetales</option>
-                                <option value="2">Aceites</option>
-                                <option value="3">Endulzantes</option>
-                                <option value="4">Harinas</option>
-                                <option value="5">Pastas</option>
-                                <option value="6">Snacks</option>
-                                <option value="7">Frutos Secos</option>
-                                <option value="8">Granolas</option>
-                                <option value="9">Otros</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                             <label for="exampleInputEmail1">Cantidad de unidades</label>
-                            <input type="number" class="form-control" name="Cantidad" 
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                             <label for="exampleInputEmail1">Precio</label>
-                            <input type="text" class="form-control" name="precio" 
-                                required="required">
-                        </div>
-                        <div class="form-group">
-                             <label for="exampleInputEmail1">Descripción</label>
-                            <input type="text" class="form-control" name="descripcion"
-                                 required="required">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-secondary">Guardar</button>
-                        </div>
-                    </form>
+                       <button type="button" class="btn btn-secondary promomarginB">Enviar</button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
-    </div>
-</section>
-   <!-------------Comienza el footer---------------------->
- <!-------------Comienza el footer---------------------->
- <footer class="row index-footer">
-     <section class="col-sm-4 col-md-4 col-lg-4 contacto"><a href="">Contacto <i class="fas fa-address-card"></i></a>
-     </section>
-     <section class="col-sm-4 col-md-4 col-lg-4 envios"><a href="">Envios <i class="fas fa-shipping-fast"></i></a>
-     </section>
-     <section class="col-sm-4 suscribite col-lg-4"><a href="">Suscribite a las promos <i class="fas fa-tag"></i></a>
-     </section>
+        
+        <!-------------Comienza el footer---------------------->
+                <footer class="row index-footer">
+                    <section class="col-sm-4 col-md-4 col-lg-4 contacto"><a href="">Contacto <i
+                                class="fas fa-address-card"></i></a>
+                    </section>
+                    <section class="col-sm-4 col-md-4 col-lg-4 envios"><a href="">Envios <i
+                                class="fas fa-shipping-fast"></i></a>
+                    </section>
+                    <section class="col-sm-4 suscribite col-lg-4"><a href="">Suscribite a las promos <i
+                                class="fas fa-tag"></i></a>
+                    </section>
 
-     <section class="col-sm-12 footer-pagos">
-         <h2>Medios de pagos</h2>
-     </section>
-     <section class="col-sm-12 footer-tarjetas">
-         <ul>
-             <i class="fab fa-cc-visa"></i>
-             <i class="far fa-credit-card"></i>
-             <i class="fab fa-cc-amazon-pay"></i>
-             <i class="fab fa-cc-amex"></i>
-             <i class="fab fa-cc-mastercard"></i>
-             <i class="fab fa-cc-jcb"></i>
-         </ul>
-     </section>
- </footer>
- </div>
+                    <section class="col-sm-12 footer-pagos">
+                        <h2>Medios de pagos</h2>
+                    </section>
+                    <section class="col-sm-12 footer-tarjetas">
+                        <ul>
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="far fa-credit-card"></i>
+                            <i class="fab fa-cc-amazon-pay"></i>
+                            <i class="fab fa-cc-amex"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-jcb"></i>
+                        </ul>
+                    </section>
+                </footer>
+            </div>
 
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
- </script>
- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
- </script>
- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
- </script>
- </body>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                crossorigin="anonymous">
+            </script>
+</body>
 
- </html>
+</html>
