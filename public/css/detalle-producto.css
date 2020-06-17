@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/*----------header css----------*/
+header{
+    background-color: #F5803E;
+}
+.index-logo figure img{
+    width: 100% ;
+    margin-top: 10px;
+}
+.index-login a{
+    color: #F5803E;
+    font-size: 15px;
+}
+.index-social-cart{
+    margin-top: 20px;
+}
+.social a{
+    color: white;
+    font-size: 30px;
+}
+.shopping{
+    margin-top: 20px;
+}
+.shopping i{
+    font-size: 25px;
+    color: white;
+}
+.shopping a{
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+}
+/*----------nav-bar de boostrap-------------*/
+
+.navbar{
+    background-color:#FD9C65;
+ }
+ .navbar-toggler{
+     background-color: white;
+ }
+ .lupa{
+     color: white;
+ }
+
+ /*---------css footer---------*/
+.index-footer{
+    margin-top: 20px;
+}
+.contacto{
+    background-color: #FD9C65;
+}
+.contacto a{
+    color: white;
+    font-size: 20px;
+}
+.envios{
+    background-color: #FD9C65;
+}
+.envios a{
+    color: white;
+    font-size: 20px;
+}
+.suscribite{
+    background-color: #FD9C65;
+}
+.suscribite a{
+    color: white;
+    font-size: 20px;
+}
+.footer-pagos{
+    color:#FD9C65;
+    text-align: center;
+    border-bottom: solid;
+}
+.footer-tarjetas ul{
+    text-align: center;
+    margin-top: 10px;
+}
+.footer-tarjetas i{
+    font-size: 35px;
+}
+
+
+
+/*----------CSS 768PX---------------*/
+
+@media(min-width: 768px){
+    /*css header------------*/  
+      .index-social-cart{
+          margin-top: 0;
+      }
+      .social{
+          text-align: end;
+      }
+      .shopping{
+  
+          margin-top: 110px;
+      }
+      .shopping i{
+          font-size: 20px;
+      }
+      .shopping a{
+          font-size: 18px;
+          margin-left: 15px;
+      }
+      /*CSS FOOTER--------------*/
+    .contacto{
+        text-align: center;
+        }
+        .envios{
+        text-align: center;
+        }
+        .suscribite{
+        padding: 0;
+        text-align: center;
+        }
+        .footer-tarjetas i{
+        margin: 0 20px;
+        }
+}
+
+/*---------------css 992px--------------*/    
+@media(min-width: 992px){
+
+    /*css header------------*/
+    .shopping{
+    margin-top: 180px;
+    }
+    .shopping a{
+    margin-left: 20px;
+    }
+        /*CSS-FOOTER--------------------*/
+        .footer-tarjetas i{
+            margin: 0 40px;
+        }
+    
+}  
+
+/*--------------css 1200px-----------*/
+
+@media(min-width:1200px){
+    /*css header------------*/   
+       .shopping{
+           margin-top: 230px;
+       }
+       .shopping i{
+           font-size: 30px;
+       }
+       .shopping a{
+           font-size: 22px;
+           margin-left: 25px;
+       }
+   }
+
+   /*******CSS DEL MAIN*********/
