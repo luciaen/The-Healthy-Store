@@ -11,7 +11,7 @@
          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
      <!--Mi css-->
      <link rel="stylesheet" href="../../public/css/registrologin.css">
-     <title>About</title>
+     <title>Admin productos</title>
  </head>
 
  <body>
@@ -114,55 +114,93 @@
              </div>
          </div>
          <!---------Comienza el main------------------------>
- <div class="container mt-4">
-     <div class="row">
-         <div class="col-md-8">
-             <article class="article maincontent">
-                 <h1 class="h3login">¿Quiénes somos?</h1>
-                 <p>Somos Ronnie, Fede y Lu, tres estudiantes de programación que decidieron empezar un proyecto propio a partir de sus nuevos conocimientos.</p>
-                 <p>Decidimos reunir en un solo lugar todos los alimentos o ingredientes necesarios para llevar una vida más saludable y asi contrubuir a una cambio positivo en la sociedad.</p>
-             </article>
-             
-         </div>
-     
-          <!-------------Comienza el footer---------------------->
-          <footer class="row index-footer">
-              <section class="col-sm-4 col-md-4 col-lg-4 contacto"><a href="">Contacto <i
-                          class="fas fa-address-card"></i></a>
-              </section>
-              <section class="col-sm-4 col-md-4 col-lg-4 envios"><a href="">Envios <i
-                          class="fas fa-shipping-fast"></i></a>
-              </section>
-              <section class="col-sm-4 suscribite col-lg-4"><a href="">Suscribite a las promos <i
-                          class="fas fa-tag"></i></a>
-              </section>
+         <br>
+            <h3 class="contactovinculo">Administrar Productos</h3>
+         <br>
 
-              <section class="col-sm-12 footer-pagos">
-                  <h2>Medios de pagos</h2>
-              </section>
-              <section class="col-sm-12 footer-tarjetas">
-                  <ul>
-                      <i class="fab fa-cc-visa"></i>
-                      <i class="far fa-credit-card"></i>
-                      <i class="fab fa-cc-amazon-pay"></i>
-                      <i class="fab fa-cc-amex"></i>
-                      <i class="fab fa-cc-mastercard"></i>
-                      <i class="fab fa-cc-jcb"></i>
-                  </ul>
-              </section>
-          </footer>
-          </div>
+         <button type="button" class="btn btn-secondary justify-content-end">Agregar Producto <i
+                 class="fas fa-plus-circle"></i></button><br><br>
+         
+         <table class="table table-striped">
+             <thead>
+                 <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Producto</th>
+                     <th scope="col">Categoría</th>
+                     <th scope="col">Stock</th>
+                     <th scope="col">Precio</th>
+                     <th scope="col">Editar</th>
+                     <th scope="col">Borrar</th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                     <th scope="row">1</th>
+                     <td>Miel de abejas 125ml</td>
+                     <td>Otros</td>
+                     <td>32</td>
+                     <td>250</td>
+                     <td><i class="fas fa-pencil-alt"></i></td>
+                     <td><i class="fas fa-trash"></i></td>
+                 </tr>
+                 <tr>
+                     <th scope="row">2</th>
+                     <td>Granola Fruit 500gr</td>
+                     <td>Granolas</td>
+                     <td>15</td>
+                     <td>150</td>
+                     <td><i class="fas fa-pencil-alt"></i></td>
+                     <td><i class="fas fa-trash"></i></td>
+                 </tr>
+                 <tr>
+                     <th scope="row">3</th>
+                     <td>Pastas Troncoso 500gr</td>
+                     <td>Pastas</td>
+                     <td>10</td>
+                     <td>180</td>
+                     <td><i class="fas fa-pencil-alt"></i></td>
+                     <td><i class="fas fa-trash"></i></td>
+                 </tr>
+             </tbody>
+         </table>
+                 <!-------------Comienza el footer---------------------->
+                 <footer class="row index-footer">
+                     <section class="col-sm-4 col-md-4 col-lg-4 contacto"><a href="">Contacto <i
+                                 class="fas fa-address-card"></i></a>
+                     </section>
+                     <section class="col-sm-4 col-md-4 col-lg-4 envios"><a href="">Envios <i
+                                 class="fas fa-shipping-fast"></i></a>
+                     </section>
+                     <section class="col-sm-4 suscribite col-lg-4"><a href="">Suscribite a las promos <i
+                                 class="fas fa-tag"></i></a>
+                     </section>
 
-          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-              integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-              crossorigin="anonymous"></script>
-          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-              integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-              crossorigin="anonymous"></script>
-          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-              integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-              crossorigin="anonymous">
-          </script>
-          </body>
+                     <section class="col-sm-12 footer-pagos">
+                         <h2>Medios de pagos</h2>
+                     </section>
+                     <section class="col-sm-12 footer-tarjetas">
+                         <ul>
+                             <i class="fab fa-cc-visa"></i>
+                             <i class="far fa-credit-card"></i>
+                             <i class="fab fa-cc-amazon-pay"></i>
+                             <i class="fab fa-cc-amex"></i>
+                             <i class="fab fa-cc-mastercard"></i>
+                             <i class="fab fa-cc-jcb"></i>
+                         </ul>
+                     </section>
+                 </footer>
+             </div>
 
-          </html>
+             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                 crossorigin="anonymous"></script>
+             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                 integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                 crossorigin="anonymous"></script>
+             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                 integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                 crossorigin="anonymous">
+             </script>
+ </body>
+
+ </html>
