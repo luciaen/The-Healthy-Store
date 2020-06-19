@@ -1,206 +1,198 @@
- <!DOCTYPE html>
- <html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!--fontawesome-->
-     <link rel="stylesheet" href="../../public/fontawesome/css/all.min.css">
-     <!--Boostrap-->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-     <!--Mi css-->
-     <link rel="stylesheet" href="../../public/css/registrologin.css">
-     <title>Admin productos</title>
- </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="/public/fontawesome/css/all.min.css">
+    <!--Boostrap-->
+    <link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+    <!--Mi css-->
+    <link rel="stylesheet" href="/public/css/main.css">
+    <title>Admin productos</title>
+</head>
 
- <body>
-     <div class="container">
-         <!-----------------COMIENZA HEADER------------------------------------------->
+<body>
+    <div class="container">
+        <!-----------------COMIENZA HEADER------------------------------------------->
 
-         <header class="row">
-             <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
-                 <figure>
-                     <img src="../../public/img/Logo/LOGO-CORTADO.png" alt="logo">
-                 </figure>
-             </section>
-             <section class="col-sm-12 col-md-5 col-lg-5 index-login p-">
-                 <button type="button" class="btn btn-light"><a href=""><i class="fas fa-user-plus"></i> Crear
-                         cuenta</a></button>
-                 <button type="button" class="btn btn-light"><a href=""><i class="fas fa-sign-in-alt"></i> Iniciar
-                         Sesion</a></button>
-             </section>
-             <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
-                 <section class="social">
-                     <a href="">
-                         <i class="fab fa-facebook-square"></i>
-                     </a>
-                     <a href="">
-                         <i class="fab fa-instagram"></i>
-                     </a>
-                     <a href="">
-                         <i class="fab fa-twitter"></i>
-                     </a>
-                     <a href="">
-                         <i class="fab fa-google-plus-g"></i>
-                     </a>
-                     <a href="">
-                         <i class="fas fa-share-alt-square"></i>
-                     </a>
-                 </section>
-                 <section class="shopping">
-                     <i class="fas fa-cart-arrow-down"></i>
-                     <a href="">Productos:</a>
-                     <a href="">Total: $</a>
-                 </section>
-             </section>
-         </header>
+        <header class="row">
+            <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
+                <figure>
+                   <a href="index.html"><img src="/public/img/Logo/LOGO-CORTADO.png" alt="logo"></a> 
+                </figure>
+            </section>
+            <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">
+                <button type="button" class="btn btn-light"><a href="registro.html"><i class="fas fa-user-plus"></i> Crear
+                        cuenta</a></button>
+                <button type="button" class="btn btn-light"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Iniciar
+                        Sesion</a></button>
+            </section>
+            <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
+                <section class="social">
+                    <a href="https://www.facebook.com/">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/login">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.google.com.co/">
+                        <i class="fab fa-google-plus-g"></i>
+                    </a>
+                    <a href="https://www.youtube.com/">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </section>
+                <section class="shopping">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    <a href="ACA-PAGINA-CARRITO">Productos:</a>
+                    <a href="">Total: $</a>
+                </section>
+            </section>
+        </header>
 
+        <!---------Comienza el nav--------------------->
+        <div class="row">
+            <div class="col p-0">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Productos
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="categoria-productos.html">Aceites</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Bebidas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Endulzantes</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Frutos Secos</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Granolas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Harinas</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Leches</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Pastas y arroz</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Postres y Snacks</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="categoria-productos.html">Viandas</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="preguntasfrec.html">Preguntas frecuentes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">Nosotros</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn my-2 my-sm-0" type="submit">
+                                <i class="fas fa-search lupa"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!---------Comienza el main------------------------>
+        <br>
+        <h3 class="contactovinculo">Administrar Productos</h3>
+        <br>
 
+        <button type="button" class="btn btn-secondary justify-content-end">Agregar Producto <i
+                class="fas fa-plus-circle"></i></button><br><br>
 
-         <!---------Comienza el nav--------------------->
-         <div class="row">
-             <div class="col p-0">
-                 <nav class="navbar navbar-expand-lg navbar-light">
-                     <button class="navbar-toggler" type="button" data-toggle="collapse"
-                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                         aria-expanded="false" aria-label="Toggle navigation">
-                         <span class="navbar-toggler-icon"></span>
-                     </button>
-                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                         <ul class="navbar-nav mr-auto">
-                             <li class="nav-item dropdown">
-                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Productos
-                                 </a>
-                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                     <a class="dropdown-item" href="#">Aceites</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Bebidas</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Endulzantes</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Frutos Secos</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Granolas</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Harinas</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Leches</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Pastas y arroz</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Postres y Snacks</a>
-                                     <div class="dropdown-divider"></div>
-                                     <a class="dropdown-item" href="#">Viandas</a>
-                                 </div>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="#">Preguntas frecuentes</a>
-                             </li>
-                             <li class="nav-item">
-                                 <a class="nav-link" href="#">Nosotros</a>
-                             </li>
-                         </ul>
-                         <form class="form-inline my-2 my-lg-0">
-                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                             <button class="btn my-2 my-sm-0" type="submit">
-                                 <i class="fas fa-search lupa"></i>
-                             </button>
-                         </form>
-                     </div>
-                 </nav>
-             </div>
-         </div>
-         <!---------Comienza el main------------------------>
-         <br>
-            <h3 class="contactovinculo">Administrar Productos</h3>
-         <br>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Miel de abejas 125ml</td>
+                    <td>Otros</td>
+                    <td>32</td>
+                    <td>250</td>
+                    <td><i class="fas fa-pencil-alt"></i></td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Granola Fruit 500gr</td>
+                    <td>Granolas</td>
+                    <td>15</td>
+                    <td>150</td>
+                    <td><i class="fas fa-pencil-alt"></i></td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Pastas Troncoso 500gr</td>
+                    <td>Pastas</td>
+                    <td>10</td>
+                    <td>180</td>
+                    <td><i class="fas fa-pencil-alt"></i></td>
+                    <td><i class="fas fa-trash"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-------------Comienza el footer---------------------->
+        <footer class="row index-footer">
+            <section class="col-sm-4 col-md-4 contacto"><a href="contacto.html">Contacto <i
+                        class="fas fa-address-card"></i></a>
+            </section>
+            <section class="col-sm-4 col-md-4 envios"><a href="envios.html">Envios <i
+                        class="fas fa-shipping-fast"></i></a>
+            </section>
+            <section class="col-sm-4 suscribite"><a href="promos.html">Suscribite a las promos <i
+                        class="fas fa-tag"></i></a>
+            </section>
 
-         <button type="button" class="btn btn-secondary justify-content-end">Agregar Producto <i
-                 class="fas fa-plus-circle"></i></button><br><br>
-         
-         <table class="table table-striped">
-             <thead>
-                 <tr>
-                     <th scope="col">#</th>
-                     <th scope="col">Producto</th>
-                     <th scope="col">Categoría</th>
-                     <th scope="col">Stock</th>
-                     <th scope="col">Precio</th>
-                     <th scope="col">Editar</th>
-                     <th scope="col">Borrar</th>
-                 </tr>
-             </thead>
-             <tbody>
-                 <tr>
-                     <th scope="row">1</th>
-                     <td>Miel de abejas 125ml</td>
-                     <td>Otros</td>
-                     <td>32</td>
-                     <td>250</td>
-                     <td><i class="fas fa-pencil-alt"></i></td>
-                     <td><i class="fas fa-trash"></i></td>
-                 </tr>
-                 <tr>
-                     <th scope="row">2</th>
-                     <td>Granola Fruit 500gr</td>
-                     <td>Granolas</td>
-                     <td>15</td>
-                     <td>150</td>
-                     <td><i class="fas fa-pencil-alt"></i></td>
-                     <td><i class="fas fa-trash"></i></td>
-                 </tr>
-                 <tr>
-                     <th scope="row">3</th>
-                     <td>Pastas Troncoso 500gr</td>
-                     <td>Pastas</td>
-                     <td>10</td>
-                     <td>180</td>
-                     <td><i class="fas fa-pencil-alt"></i></td>
-                     <td><i class="fas fa-trash"></i></td>
-                 </tr>
-             </tbody>
-         </table>
-                 <!-------------Comienza el footer---------------------->
-                 <footer class="row index-footer">
-                     <section class="col-sm-4 col-md-4 col-lg-4 contacto"><a href="">Contacto <i
-                                 class="fas fa-address-card"></i></a>
-                     </section>
-                     <section class="col-sm-4 col-md-4 col-lg-4 envios"><a href="">Envios <i
-                                 class="fas fa-shipping-fast"></i></a>
-                     </section>
-                     <section class="col-sm-4 suscribite col-lg-4"><a href="">Suscribite a las promos <i
-                                 class="fas fa-tag"></i></a>
-                     </section>
+            <section class="col-sm-12 footer-pagos">
+                <h2>Medios de pagos</h2>
+            </section>
+            <section class="col-sm-12 footer-tarjetas">
+                <ul class="fun">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="far fa-credit-card"></i>
+                    <i class="fab fa-cc-amazon-pay"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-jcb"></i>
+                </ul>
+            </section>
+        </footer>
+    </div>
 
-                     <section class="col-sm-12 footer-pagos">
-                         <h2>Medios de pagos</h2>
-                     </section>
-                     <section class="col-sm-12 footer-tarjetas">
-                         <ul>
-                             <i class="fab fa-cc-visa"></i>
-                             <i class="far fa-credit-card"></i>
-                             <i class="fab fa-cc-amazon-pay"></i>
-                             <i class="fab fa-cc-amex"></i>
-                             <i class="fab fa-cc-mastercard"></i>
-                             <i class="fab fa-cc-jcb"></i>
-                         </ul>
-                     </section>
-                 </footer>
-             </div>
+    <!--LIBRERIAS-->
+    <script src="/public/bootstrap/js/jquery-3.5.1.js"></script>
+    <script src="/public/bootstrap/js/popper.min.js"></script>
+    <script src="/public/bootstrap/js/bootstrap.min.js">
+    </script>
+</body>
 
-             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-                 crossorigin="anonymous"></script>
-             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-                 integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-                 crossorigin="anonymous"></script>
-             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-                 integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-                 crossorigin="anonymous">
-             </script>
- </body>
-
- </html>
+</html>

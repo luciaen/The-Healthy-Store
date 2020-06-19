@@ -1,246 +1,265 @@
-/*Globales*/
 *{
-  padding:0;
-  font-family: sans-serif;
-  box-sizing: border-box;
-  text-decoration: none;
-  list-style: none;
-  margin: 0 auto;
-}
-body{
- background-color: palegreen;
- margin:20px auto;
-}
-.continer{
-    text-align: center;
-    margin-left:40px;   
-}
-/*Encabezado*/
-.encabezado{
-    width: 100%;
-    height: 35vh;
-    background-color: orange;
-    margin-left: 30px;
-    position: relative;
-  
-}
-.nav__top-logo img{
-    width:20%;
-    position: absolute;
-    top:-20px;
-    left: 5px;
-    
-}
-.nav__login-reg{
-    position:absolute;
-    top: 7px;
-    left:300px;
-    font-size: 20px;
-    color:black;
-}
-.nav__login-ini{
-    position:absolute;
-    top: 7px;
-    left:440px;
-    font-size: 20px;
-    color:black
-}
-.nav__redes {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    padding: 10px;
-    position: relative;
-}
-.nav__redes-f{
-    position:absolute;
-    right:80px;
-    top:20px;
-    color:black;
-
-}
-.nav__redes-i{
-    position:absolute;
-    right:30px;
-    top:20px;
-    color: black;
-    padding-left: 5px;
-    display: inline;
-    }    
-.nav__bottom{
-    margin-top:160px;
-    margin-left:70px;
-    width: 90%;
-    font-size: 20px;
-    border-top: 1px solid white;
-    padding-top: 6px;
-    padding-left:8px;
-    
-}    
-.nav__bottom-paginas{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    color:white;
-}
-.nav__bottom-right ul li{
-    position: relative;
-}
-.nav__bottom-right-prod{
-    position: absolute;
-    top:150px;
-    right:250px;
-    color: black;
-    font-size: 20px;
-    
-}
-.nav__bottom-right-tot{
-    position: absolute;
-    top:150px;
-    right:140px;
-    color: black;
-    font-size: 20px;
-}
-/* Sección Productos */
-
-.productos__principal, .mas__principal{
-    width: 90%;
-    height:70vh;
-    margin-left: 30px;
-    background-color: white;
-    padding-top: 5px;
-}
-.productos__titulo, .mas__titulo{
-    margin-top: 5px;
-    margin-left: 40px;
-    padding:5px;
-}
-.productos, .mas{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-.productos__card, .mas__card{
-    width:20%;
-    height: 60vh;
-    border-bottom: 4px double white;
-    position: relative;
-}
-.productos__sombra, .mas__sombra{
-    height: 25vh;
-    background: rgb(122, 121, 121);
-    
-}
-.productos__imagen, .mas__imagen{
-    width:90%;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-.productos__texto, .mas__texto{
-    font-size: 20px;
-    color:rgb(228, 178, 178);
-    text-align: left;
-}
-.productos__precio, .mas__precio{
-    font-size: 20px;
-    transition: 0,5s;
-    color:rgb(228, 178, 178);
-    text-align: right;
-    position:absolute;
-    bottom:80px;
-    right:1px;
-} 
-.productos__boton, .mas__boton{
-    background: rgb(228, 178, 178);
-    color: #fff;
-    border-radius: 25px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-decoration: none;
-    padding: 0 20px;
-    margin-left:5px;
-    margin-bottom: 5px;
-    height: 30px;
-    line-height: 30px;
-    display: inline-block;
-    font-size: 14px;
-    text-transform: uppercase;
-    border:1px solid transparent;
-    position:absolute;
-    bottom: 6px;
-    left:1px;
 }
-.productos__carrito, .mas__carrito{
-    font-size: 25px;
-    width:35px;
-    height:35px;
-    color:rgb(228, 178, 178);
-    border-radius: 50%;
-    border: 1px solid rgb(228, 178, 178);
-    position: absolute;
-    bottom:40px;
-    right:5px;
-    transition-duration: 500ms;
-    transition-property: all;
-    transition-timing-function: ease-in;
-    position:absolute;
-    bottom: 6px;
-    right:1px;
+/*----------header css----------*/
+header{
+    background-color: #F5803E;
 }
-.productos__carrito:hover, .mas__carrito:hover{
-    transform: rotate(360deg);
-}
-.productos__text, .mas__text{
-    font-size: 20px;
-    color:rgb(228, 178, 178);
-    position: absolute;
-    bottom:10px;
-    right:42px;
-}
-/*seccion footer----*/
-.footer__container{
-    width: 90%;
-    height: 30vh;
-    margin-left:30px;
-    background-color: white;
-}   
-.footer__nav{
-   width:100%;
-   height: 10vh;
-   background-color: orange;
-}
-.footer__nav ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-.footer__nav ul a{
+.index-logo figure img{
+    width: 100% ;
     margin-top: 10px;
+}
+.index-login a{
+    color: #F5803E;
+    font-size: 15px;
+}
+.index-social-cart{
+    margin-top: 20px;
+}
+.social a{
     color: white;
-    font-size: 22px;
+    font-size: 30px;
 }
-.footer__bottom__titulo{
+.shopping{
+    margin-top: 20px;
+}
+.shopping i{
+    font-size: 25px;
+    color: white;
+}
+.shopping a{
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+}
+/*-----------Tarjetas y Redes Sociales ------*/
+.fun{
+    width: 100%;
+    margin: .5rem;
+}
+  .gif{
+    max-width: 500px;
+}
+  .fa-facebook, .fa-twitter, .fa-google-plus-g , .fa-instagram, .fa-youtube{
+    font-size: 2rem;
+    padding:.5rem;
+  }
+  .fa-cc-visa, .fa-cc-mastercard, .fa-cc-amex, .fa-cc-amazon-pay, .fa-cc-diners-club{
+    font-size: 4.5rem;
+    padding: .5rem;
+  }
+  .fa-facebook, .fa-cc-visa , .fa-cc-diners-club{
+    color:#3b5998;
+  }
+  .fa-twitter, .fa-cc-mastercard{
+    color:#00aced;
+  }
+  .fa-google-plus-g, .fa-cc-amazon-pay{
+    color:#dd4b39;
+  }
+  .fa-instagram{
+    color: #517fa4;
+  }
+  .fa-youtube{
+    color:#bb0000;
+  }
+  .fa-facebook:hover,.fa-twitter:hover,.fa-google-plus-g:hover,.fa-instagram:hover,.fa-youtube:hover{
+    color:lightgrey;
+  }
+
+/*----------nav-bar de boostrap-------------*/
+
+.navbar{
+    background-color:#FD9C65;
+ }
+ .navbar-toggler{
+     background-color: white;
+ }
+ .lupa{
+     color: white;
+ }
+ 
+/*---------main css--------------*/
+
+.main-titulo{
+    color:#FD9C65;
+    margin: 20px 0px;
     text-align: center;
-    color:red;
-    font-size: 30px;
+    border-bottom: solid;
+}
+.main-segundo-titulo{
+    background-color: gray;
+    text-align: center;
+    color: white;
+    margin: 20px 0px;
+    border-radius: 12rem;
+    font-size: 20px;
+}
+.main-tercer-titulo{
+    color:#FD9C65; 
+    text-align: center;
+    border-bottom:#FD9C65;
+}
+main article{
+    text-align: center;
+    border:solid;
+    border-width: 1px;
+    color: #F99D9D;
+}
+main article p{
+ font-weight: bold;
+}
+main article a{
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+}
+.btn-primary{
+    background-color: #F99D9D;
+    border-color: white;
+}
+/*---------css footer---------*/
+.index-footer{
+    margin-top: 20px;
+}
+.contacto{
+    background-color: #FD9C65;
+}
+.contacto a{
+    color: white;
+    font-size: 20px;
+}
+.envios{
+    background-color: #FD9C65;
+}
+.envios a{
+    color: white;
+    font-size: 20px;
+}
+.suscribite{
+    background-color: #FD9C65;
+}
+.suscribite a{
+    color: white;
+    font-size: 20px;
+}
+.footer-pagos{
+    color:#FD9C65;
+    text-align: center;
+    border-bottom: solid;
+}
+.footer-tarjetas ul{
+    text-align: center;
     margin-top: 10px;
 }
-.footer__mediosDePago{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-.fotter__bottom__titulo{
-    font-size: 30px;
-    color:red;
-}
-.footer__mediosDePago {
-   position:absolute;
-   display: inline-block;
-   left:350px;
-  bottom:-690px;
+.footer-tarjetas i{
+    font-size: 35px;
 }
 
 
+
+
+
+/*----------CSS 768PX---------------*/
+
+@media(min-width: 768px){
+  /*css header------------*/  
+    .index-social-cart{
+        margin-top: 0;
+    }
+    .social{
+        text-align: end;
+    }
+    .shopping{
+
+        margin-top: 110px;
+    }
+    .shopping i{
+        font-size: 20px;
+    }
+    .shopping a{
+        font-size: 18px;
+        margin-left: 15px;
+    }
+  /*CSS MAIN----------------*/
+  .main-titulo{
+      text-align: left;
+    }
+    main article a{
+    color: white;
+    font-size: 20px;
+    margin: 0 15px;
+    }
+    .main-tercer-titulo{
+        text-align: left;
+        border-bottom: solid;
+        margin-bottom: 20px;
+    }
+    /*CSS FOOTER--------------*/
+    .contacto{
+    text-align: center;
+    }
+    .envios{
+    text-align: center;
+    }
+    .suscribite{
+    padding: 0;
+    text-align: center;
+    }
+    .footer-tarjetas i{
+    margin: 0 20px;
+    }
+}
+
+/*---------------css 992px--------------*/    
+@media(min-width: 992px){
+
+    /*css header------------*/
+    .shopping{
+    margin-top: 180px;
+    }
+    .shopping a{
+    margin-left: 20px;
+    }
+    /*-css main----------*/
+     main article img{
+        width: 100%;
+    }
+    main article ul a{
+        font-size: 17px;
+        margin: 0;
+    }
+    /*CSS-FOOTER--------------------*/
+    .footer-tarjetas i{
+        margin: 0 40px;
+    }
+
+}    
+/*--------------css 1200px-----------*/
+
+@media(min-width:1200px){
+ /*css header------------*/   
+    .shopping{
+        margin-top: 230px;
+    }
+    .shopping i{
+        font-size: 30px;
+    }
+    .shopping a{
+        font-size: 22px;
+        margin-left: 25px;
+    }
+ /*CSS FOOTER-------------*/   
+    .index-footer{
+        height: 20vh;
+    }
+    .index-footer section a{
+        font-size: 25px;
+    }
+}
 
 /*------------login----------*/
 
@@ -256,4 +275,36 @@ body{
 .botonlogin {
     margin-top: 80px;
     margin-bottom: 65px;
+}
+
+/*------------Contacto--------*/
+
+.contacto2{
+    list-style: none;
+    color: #F5803E;
+    background-color: white;
+    
+}
+
+.contactovinculo{
+     color: #F5803E;
+
+}
+
+.contactovinculonegro{
+color: black;
+margin-left: 10px;
+}
+
+.promomargin{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.promomarginB {
+    margin-bottom:80px ;
+}
+
+.promomargintop{
+    margin-top: 30px;
 }
