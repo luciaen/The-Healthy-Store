@@ -7,21 +7,22 @@ const app = express();
 
 app.use(express.static('public'));
 
+//Considerar que al enviar los datos desde el formulario los mismos lleguen al Servidor
+app.use(express.urlencoded({ extended: false }));
 
-//Aca instalamos EJ proximamente
+//Aca instalamos EJS
+app.set('view engine', 'ejs');
 
 //Por aca vamos a requerir las rutas/
-const pruebaRoutes = require('./routes/pruebaRoutes')
-
-
-
-
+const productoRoutes = require('./routes/productoRoutes');
+const userRoutes = require('./routes/userRoutes');
+const adminRoutes = require('./routes/adminRoutes');
 
 
 //aca empieza el recorrido :)
-app.use(pruebaRoutes)
-
-
+app.use(productoRoutes);
+app.use(userRoutes);
+app.use(adminRoutes);
 
 
 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/header') %>
+<body>
+    <div class="container">
+
+
+<!---------Comienza el nav--------------------->
+<%- include('./partials/navbar') %>
+        <!---------Comienza el main------------------------>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3 class='contactovinculo promomargintop'>SUSCRIBITE AL NEWSLETTER</h3>
+
+            <h5 class="promomargin">¡Dejanos tu mail para enterarte de las mejores promociones!</h5>
+            <form method="post">
+                <div class="row">
+                    <div class="form-container col-xs-10 col-sm-10 col-md-10 col-lg-10 m-bottom-half">
+                        <input type="text" class="form-control form-control-big" placeholder="Ingrese su email"
+                            name="email">
+
+                    </div>
+                    <div
+                        class="submit-container col-xs-2 col-sm-2 col-md-2 col-lg-2 p-relative p-none m-half-top-xs m-top">
+                        <div class="btn-primary btn-circle">
+
+                        </div>
+                        <button type="button" class="btn btn-secondary promomarginB">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-------------Comienza el footer---------------------->
+       <%- include('./partials/footer') %>
+       <!--LIBRERIAS-->
+       <script src="bootstrap/js/jquery-3.5.1.js"></script>
+       <script src="bootstrap/js/popper.min.js"></script>
+       <script src="bootstrap/js/bootstrap.min.js">
+       </script>
+       </body>
+
+       </html>
