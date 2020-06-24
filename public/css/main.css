@@ -5,10 +5,10 @@
     text-decoration: none;
 }
 body{
-    background-image: url(/img/background\ recortado.png);
+    background-image: url(/img/Background/food.png);
 }
 .container{
-    background-color: white;
+    background-color:white
 }
 /*----------header css----------*/
 header{
