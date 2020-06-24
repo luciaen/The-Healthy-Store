@@ -62,5 +62,10 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 ## Tablero de trabajo:
 1. [Tablero de tabajo Trello](https://trello.com/b/MFo7gS4r/trabajo-integrador-dh)
 
-## RetroMD:
+## Retrospectiva:
+-Comenzar a hacer: Organizar las prioridades y asignar las tareas desde un comienzo.
+-Hacer más: Definir los pasos a seguir y asignarlos de forma más coordinada.
+-Continuar haciendo: cumplir con todos los puntos en tiempo y forma.
+-Hacer menos: trabajo individual sin comunicación.
+-Dejar de hacer: Duplicar tareas.
 
