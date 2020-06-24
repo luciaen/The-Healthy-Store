@@ -1,6 +1,6 @@
 # Proyecto final - The-Healthy-Store
 
-## Integantes:
+## Integrantes:
 - Federico Cuello
 - Ronaldo Quinn
 - Lucía Enríquez
