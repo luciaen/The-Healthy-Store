@@ -59,3 +59,8 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 5. [Tiendasaludable](https://www.tiendasaludable.com.ar/)
 * colores de la página, incluye el contacto en redes sociales además de videos para hacer tus comidas
 
+## Tablero de trabajo:
+1. [Tablero de tabajo Trello](https://trello.com/b/MFo7gS4r/trabajo-integrador-dh)
+
+## RetroMD:
+
