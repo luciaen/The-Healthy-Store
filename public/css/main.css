@@ -4,6 +4,12 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body{
+    background-image: url(/img/background\ recortado.png);
+}
+.container{
+    background-color: white;
+}
 /*----------header css----------*/
 header{
     background-color: #F5803E;
@@ -107,7 +113,7 @@ main article{
     text-align: center;
     border:solid;
     border-width: 1px;
-    color: #F99D9D;
+    color:grey;
 }
 main article p{
  font-weight: bold;
@@ -118,8 +124,11 @@ main article a{
     margin: 0 10px;
 }
 .btn-primary{
-    background-color: #F99D9D;
+    background-color: grey;
     border-color: white;
+}
+.btn-primary a{
+    color: white;
 }
 /*---------css footer---------*/
 .index-footer{
@@ -273,8 +282,9 @@ main article a{
 }
 
 .botonlogin {
-    margin-top: 80px;
-    margin-bottom: 65px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 18em;
 }
 
 /*------------Contacto--------*/
@@ -303,6 +313,7 @@ margin-left: 10px;
 
 .promomarginB {
     margin-bottom:80px ;
+    border-radius: 18em;
 }
 
 .promomargintop{
@@ -315,4 +326,7 @@ margin-left: 10px;
 }
 .max__width{
     max-width: 35%;
+}
+.agregar-prod{
+    color: white;
 }

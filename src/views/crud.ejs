@@ -2,19 +2,20 @@
 <html lang="es">
 
 <%- include('./partials/header') %>
+
 <body>
     <div class="container">
 
 
-<!---------Comienza el nav--------------------->
-<%- include('./partials/navbar') %>
+        <!---------Comienza el nav--------------------->
+        <%- include('./partials/navbar') %>
         <!---------Comienza el main------------------------>
         <br>
         <h3 class="contactovinculo">Administrar Productos</h3>
         <br>
 
-        <button type="button" class="btn btn-secondary justify-content-end"> <a href="/formproducto"></a> Agregar Producto <i
-                class="fas fa-plus-circle"></i></button><br><br>
+        <button type="button" class="btn btn-secondary justify-content-end botonlogin "><a class="agregar-prod" href="/formproducto">Agregar
+            Producto <i class="fas fa-plus-circle"></i></a></button><br><br>
 
         <table class="table table-striped">
             <thead>
@@ -60,11 +61,11 @@
         </table>
         <!-------------Comienza el footer---------------------->
         <%- include('./partials/footer') %>
-    <!--LIBRERIAS-->
-    <script src="bootstrap/js/jquery-3.5.1.js"></script>
-    <script src="bootstrap/js/popper.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js">
-    </script>
+        <!--LIBRERIAS-->
+        <script src="bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js">
+        </script>
 </body>
 
 </html>
