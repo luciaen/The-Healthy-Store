@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 body{
     background-image: url(/img/Background/food.png);
@@ -95,19 +96,13 @@ header{
     margin: 20px 0px;
     text-align: center;
     border-bottom: solid;
-}
-.main-segundo-titulo{
-    background-color: gray;
-    text-align: center;
-    color: white;
-    margin: 20px 0px;
-    border-radius: 12rem;
-    font-size: 20px;
+    font-weight: 700;
 }
 .main-tercer-titulo{
     color:#FD9C65; 
     text-align: center;
     border-bottom:#FD9C65;
+    font-weight: 700;
 }
 main article{
     text-align: center;
