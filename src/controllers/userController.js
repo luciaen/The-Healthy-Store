@@ -1,15 +1,12 @@
 const path = require('path');
+const fs = require('fs');
+const { response } = require('express');
 
-
-
-const userController = {
+module.exports = {
     login: function (req, res) {
-
-        res.render(path.resolve(__dirname, '..', 'views', 'login'));
+     res.render(path.resolve(__dirname, '..', 'views', 'users','login'));
     },
     registro: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'registro'));
+        res.render(path.resolve(__dirname, '..', 'views','users','registro'));
     }
 }
-
-module.exports = userController;

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('../partials/header') %>
+<body >
+    <%- include('../partials/navbar') %>
+    <h1 class="text-center text-success display-5 mt-2 pt-2">Administrador de Productos</h1>
+    <section class="row">
+        <article class="col-12" >
+            <a class="nav-link" href="/admin/create"><i class="fas fa-plus-circle"></i>Agregar</a>
+        </article>
+    </section>
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Ver</th>
+                <th>Editar</th>
+                <th>Borrar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% productos.forEach(product => { %>
+                <tr>
+                    <td><%= product.ID %> </td>
+                    <td><%= product.nombre%> </td>
+                    <td><a href="/admin/detail/<%= product.ID%>"><i class="fas fa-eye"></i></a></td>
+                    <td><a href="/admin/edit/<%= product.ID%>"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="/admin/delete/<%= product.ID%>"><i class="far fa-trash-alt"></i></ion-icon></a></td>
+                </tr>
+            <% }) ; %>
+            
+
+        </tbody>
+    </table>    
+    <%-include('../partials/footer.ejs')%>
+    <script src="bootstrap/js/jquery-3.5.1.js"></script>
+      <script src="bootstrap/js/popper.min.js"></script>
+      <script src="bootstrap/js/bootstrap.min.js">
+      </script>
+    
+</body>
+</html>

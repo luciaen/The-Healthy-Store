@@ -1,8 +1,10 @@
 const path = require('path');
+const fs = require('fs');
+const { response } = require('express');
 
 
 
-const productoController = {
+module.exports = {
     index: function (req, res) {
    
         res.render(path.resolve(__dirname, '..', 'views','index'));
@@ -19,21 +21,10 @@ const productoController = {
     preguntasfrec: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'preguntasfrec'));
     },
-    envios: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'envios'));
-    },
-    carrito: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'carrito'));
-        
-    },
     categoria: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'categoria-productos'));
     },
      detalle: function (req, res) {
          res.render(path.resolve(__dirname, '..', 'views', 'detalle-producto'));
      }
-
-    
-
-}
-module.exports = productoController;
+    }
