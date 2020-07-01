@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "categoria": "aceites",
+    "nombre": "aceite 1",
+    "descripcion": "aceite para cocinar prueba de id",
+    "stock": 10,
+    "precio": 210,
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "aceite-4.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "aceite 2",
+    "categoria": "aceites",
+    "descripcion": "aceite para saborisar",
+    "stock": 20,
+    "precio": 500,
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "aceite-3.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "aceite 3",
+    "categoria": "aceites",
+    "descripcion": "aceite re loco",
+    "stock": 30,
+    "precio": 266,
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "aceite-10.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "aceite 5",
+    "categoria": "aceites",
+    "descripcion": "aceite gg",
+    "stock": 40,
+    "precio": 88,
+    "descuento": 0,
+    "recomendado": 0,
+    "imagen": "aceite-5.png"
+  },
+  {
+    "id": 5,
+    "nombre": "aceite 6",
+    "categoria": "aceites",
+    "descripcion": "aceite para nada",
+    "stock": 50,
+    "precio": 155,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "aceite-6.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "aceite 7",
+    "categoria": "aceites",
+    "descripcion": "aceite para cocinar",
+    "stock": 60,
+    "precio": 789,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "aceite-7.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "aceite 8",
+    "categoria": "aceites",
+    "descripcion": "aceite para cocinar",
+    "stock": 70,
+    "precio": 122,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "aceite-8.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "aceite 9",
+    "categoria": "aceites",
+    "descripcion": "aceite para cocinar",
+    "stock": 80,
+    "precio": 719,
+    "descuento": 0,
+    "recomendado": 1,
+    "imagen": "aceite-9.jpg"
+  },
+  {
+    "id": 9,
+    "nombre": "Vianda uno",
+    "descripcion": "Vianda para vender",
+    "precio": "200",
+    "descuento": "0",
+    "imagen": "producto-1593581360250.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "bebida 1",
+    "descripcion": "Bebida de prueba",
+    "precio": "50",
+    "descuento": "15",
+    "imagen": "producto-1593581507782.png"
+  },
+  {
+    "id": 11,
+    "categoria": "6",
+    "nombre": "Postre 1",
+    "descripcion": "Postre prueba",
+    "stock": "5",
+    "precio": "100",
+    "descuento": "0",
+    "imagen": "producto-1593581782440.jpg"
+  },
+  {
+    "id": 12,
+    "categoria": "bebidas",
+    "nombre": "Bebida 2",
+    "descripcion": "Segunda prueba",
+    "stock": 80,
+    "precio": 60,
+    "descuento": 30,
+    "imagen": "producto-1593582115424.jpg"
+  },
+  {
+    "id": 13,
+    "categoria": "aceites",
+    "nombre": "cualquiera",
+    "descripcion": "bla",
+    "stock": 1,
+    "precio": 50,
+    "descuento": 0,
+    "imagen": "producto-1593634571116.jpg"
+  },
+  {
+    "id": 14,
+    "categoria": "leche",
+    "nombre": "leche prueba",
+    "descripcion": "bla ",
+    "stock": 1,
+    "precio": 50,
+    "descuento": 0,
+    "imagen": "producto-1593640448637.png"
+  }
+]

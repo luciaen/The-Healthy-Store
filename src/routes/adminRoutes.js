@@ -3,31 +3,25 @@ const router = express.Router();
 const path = require('path');
 const multer = require('multer');
 
-const adminController = require(path.resolve(__dirname , '..','controllers','adminController'));
+const adminController = require(path.resolve(__dirname, '..', 'controllers', 'adminController'));
 
 //Aquí dispongo la información del storage para tratamiento de guardado imagenes
 //https://www.npmjs.com/package/multer
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.resolve(__dirname, '../../public/images/platos'));    //Aquí deben indicar donde van a guardar la imagen
+      cb(null, path.resolve(__dirname, '../../public/images/productos'));    //Aquí deben indicar donde van a guardar la imagen
     },
     filename: function (req, file, cb) {
-      cb(null, 'plato' + '-' + Date.now()+ path.extname(file.originalname));      //UNIQID() --- PHP
+      cb(null, 'producto' + '-' + Date.now()+ path.extname(file.originalname));      //UNIQID() --- PHP
     }
   })
    
 const upload= multer({ storage })
 
-
 router.get('/administrar', adminController.index);
-router.get('/admin/create',  adminController.create);
+router.get('/admin/create', adminController.create);
+router.get('/admin/detail/:id',adminController.show);
 router.post('/admin/create', upload.single('imagen'), adminController.save);
-router.get('/admin/detail/:id', adminController.show);
-router.get('/admin/delete/:id', adminController.destroy);
-router.get('/admin/edit/:id', adminController.edit);
-router.put('/admin/edit/:id', adminController.update);
-
-
 
 
 module.exports = router;

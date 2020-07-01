@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 
+const carritoController= require(path.resolve(__dirname, '..', 'controllers', 'carritoController'));
 
-const comprasController = require(path.resolve(__dirname , '../controllers/comprasController'));
+router.get('/carrito',carritoController.carrito);
+router.get('/envios',carritoController.envios);
 
-router.get('compras/envios', comprasController.envios);
-router.get('compras/carrito', comprasController.carrito);
+
 
 module.exports = router;

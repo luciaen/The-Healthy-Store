@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/header') %>
+<body>
+    <div class="container">
+
+
+<!---------Comienza el nav--------------------->
+<%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+        <h1 class="h3login main-titulo">Crear Cuenta</h1>
+        <form class="form-login">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="name" class="form-control" id="nameimput" aria-describedby="namehelp">
+                <small id="nameHelp" class="form-text text-muted"></small>
+            </div>
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputtelefono">Telefono</label>
+                    <input type="tel" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <small id="emailHelp" class="form-text text-muted"></small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Confirmar Contraseña</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <title>reCAPTCHA demo: Simple page</title>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                </head>
+
+                <body>
+                    <form action="?" method="POST">
+                        <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                        <br />
+                        <input type="submit" value="Submit">
+                    </form>
+
+                    <button type="submit" class="btn btn-secondary botonlogin">Crear cuenta</button>
+                </body>
+            </form>
+        </form>
+
+        <!-------------Comienza el footer---------------------->
+       <%- include('../partials/footer') %>
+       <!--LIBRERIAS-->
+       <script src="bootstrap/js/jquery-3.5.1.js"></script>
+       <script src="bootstrap/js/popper.min.js"></script>
+       <script src="bootstrap/js/bootstrap.min.js">
+       </script>
+       </body>

@@ -1,51 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/header') %>
-  <body>
-    <div class="container-fluid">
-      <%- include('../partials/navBar') %>  
 
-        <!-- Cuerpo principal -->
-        <section class="row">
-          <article class="col-12  card pt-5" >
-                  <div class="card-body">
-                    <h1 class="card-title text-center">Detalle del producto</h1>
-                  </div>
-          </article>
-      </section>
+<%- include('../partials/header') %>
 
-        <section class="bg-home pt-4">
-            <div class="container">
-                <div class="row" >
-                    <div class="col-6 mx-auto bg-light ">
-                        <div class="card">
-                            <ul class="list-group">
-                                <li class="list-group-item">ID: <%= productoCategoria.ID%></li>
-                                <li class="list-group-item">Nombre: <%= productoCategoria.nombre%></li>
-                                <li class="list-group-item">Descripción: <%= productoCategoria.descripcion%></li>
-                                <li class="list-group-item">Categoria: <%= productoCategoria.categoria%></li>
-                                <li class="list-group-item">Stock: <%= productoCategoria.stock%></li>
-                                <li class="list-group-item">Precio: <%= productoCategoria.precio%></li>
-                                <li class="list-group-item">Descuento: <%= productoCategoria.descuento%></li>
-                            </ul>
-                        </div>
-                      </div>
-                      <div class="col-6 mx-auto bg-light ">
-                        <div class="card">
-                            <figure class="form-group">
-                              <img class="w-50 " src="/img/productos/<%=  productoCategoria.imagen%>" alt="Imagen del producto">
-                          </figure>
-                        </div> 
-                        <a class="btn btn-danger" href="/administrar">Volver</a>
-                    </div>                        
-                </div>
-            </div>
-        </section>
-        <!-- Footer -->
-        <%- include('../partials/footer') %>        <!-- Scripts para Bootstrap -->
-        <script src="bootstrap/js/jquery-3.5.1.js"></script>
-        <script src="bootstrap/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js">
-        </script>
+<body>
+    <div class="container">
+
+
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+    </div>
+
+
+    <!-------------Comienza el footer---------------------->
+    <%- include('../partials/footer') %>
+    <!--LIBRERIAS-->
+    <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+    <script src="/bootstrap/js/popper.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js">
+    </script>
 </body>
-</html>
