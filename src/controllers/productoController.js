@@ -1,37 +1,20 @@
 const path = require('path');
+const fs = require('fs');
 
-
+let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
 
 const productoController = {
-    index: function (req, res) {
-   
-        res.render(path.resolve(__dirname, '..', 'views','index'));
-    },
-    about: function (req, res) {
-               res.render(path.resolve(__dirname, '..', 'views', 'about'));
-    },
-    promos: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'promos'));
-    },
-    contacto: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'contacto'));
-    },
-    preguntasfrec: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'preguntasfrec'));
-    },
-    envios: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'envios'));
-    },
-    carrito: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'carrito'));
-        
-    },
     categoria: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views', 'categoria-productos'));
+        res.render(path.resolve(__dirname, '..', 'views','productos', 'categoria-productos'));
     },
      detalle: function (req, res) {
-         res.render(path.resolve(__dirname, '..', 'views', 'detalle-producto'));
-     }
+         res.render(path.resolve(__dirname, '..', 'views','productos', 'detalle-producto'));
+    },
+    aceites: function(req,res){
+        let productosSeleccionados= productos.filter(p => p.categoria==req.params.categoria);
+        let titulo = String(req.params.categoria).toUpperCase()
+        res.render(path.resolve(__dirname, '..', 'views','productos', 'categoria-aceites'),{productos:productosSeleccionados,titulo});
+    }
 
     
 

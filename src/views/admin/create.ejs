@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/header') %>
+
+<body>
+    <div class="container">
+
+
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+
+
+        <h1 class="h3login main-titulo">Agregar Producto</h1>
+
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row">
+                    <div>
+                        <div class="signup-form">
+                            <form action="/admin/create" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Categoría</label><br>
+                                    <select name="categoria" class="form-control" id="">
+                                        <option selected disabled value="#">Elegir Categoria</option>
+                                        <option value="0">-</option>
+                                        <option value="leche">Leches</option>
+                                        <option value="aceites">Aceites</option>
+                                        <option value="endulzantes">Endulzantes</option>
+                                        <option value="harinas">Harinas</option>
+                                        <option value="pastasyArroz">Pastas y Arroz</option>
+                                        <option value="postresySnacks">Postres y Snacks</option>
+                                        <option value="frutosSecos">Frutos Secos</option>
+                                        <option value="granolas">Granolas</option>
+                                        <option value="viandas">Viandas</option>>
+                                        <option value="bebidas">Bebidas</option>>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nombre del producto</label>
+                                    <input type="text" class="form-control" name="nombre" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descripción</label>
+                                    <input type="text" class="form-control" name="descripcion" required="required">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Cantidad de unidades</label>
+                                    <input type="number" class="form-control" name="stock" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Precio</label>
+                                    <input type="text" class="form-control" name="precio" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Descuento</label>
+                                    <select name="descuento" class="custom-select" required>
+                                        <option selected disabled value="#">Elegir Descuento</option>
+                                        <option value="0">Sin descuento</option>
+                                        <option value="15">15%</option>
+                                        <option value="30">30%</option>
+                                    </select>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="imagen" required>
+                                    <label class="custom-file-label" for="">Cargar Imagen</label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-secondary">Guardar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-------------Comienza el footer---------------------->
+        <%- include('../partials/footer') %>
+        <!--LIBRERIAS-->
+        <script src="bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js">
+        </script>
+</body>
+
+</html>
