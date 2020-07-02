@@ -8,5 +8,6 @@ const userController = require(path.resolve(__dirname, '../controllers/userContr
 // Métodos en nuestros controladores: index - show - edit - delete 
 router.get('/login', userController.login);
 router.get('/registro', userController.registro);
+router.post('/registro', userController.save);
 
 module.exports = router;
