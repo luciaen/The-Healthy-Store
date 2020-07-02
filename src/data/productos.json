@@ -1,146 +1,112 @@
 [
   {
-    "id": 1,
-    "categoria": "aceites",
-    "nombre": "aceite 1",
-    "descripcion": "aceite para cocinar prueba de id",
-    "stock": 10,
+    "nombre": "Aceto balsamico x 250cc - Anahata ",
+    "descripcion": "probando aceite otra vez  ",
+    "categoria": "aceite",
+    "stock": 100,
     "precio": 210,
     "descuento": 0,
     "recomendado": 0,
-    "imagen": "aceite-4.jpg"
+    "id": 1,
+    "imagen": "producto-1593714047740.jpg"
   },
   {
     "id": 2,
-    "nombre": "aceite 2",
     "categoria": "aceites",
-    "descripcion": "aceite para saborisar",
-    "stock": 20,
+    "nombre": "Aceite de Coco virgen Organico x 225cc - Oh Yeah Its Vegan",
+    "descripcion": "Aceite de Coco virgen Organico x 225cc - Oh Yeah Its Vegan",
+    "stock": 10,
     "precio": 500,
     "descuento": 0,
     "recomendado": 0,
-    "imagen": "aceite-3.jpg"
+    "imagen": "producto-1593645628819.jpg"
   },
   {
     "id": 3,
-    "nombre": "aceite 3",
     "categoria": "aceites",
-    "descripcion": "aceite re loco",
-    "stock": 30,
-    "precio": 266,
-    "descuento": 0,
+    "nombre": "Aceite de coco puro Neutro x225ml - God Bless You",
+    "descripcion": "Aceite de coco puro Neutro x225ml - God Bless You",
+    "stock": 1,
+    "precio": 50,
+    "descuento": 15,
     "recomendado": 0,
-    "imagen": "aceite-10.jpg"
+    "imagen": "producto-1593645852695.jpg"
   },
   {
     "id": 4,
-    "nombre": "aceite 5",
     "categoria": "aceites",
-    "descripcion": "aceite gg",
-    "stock": 40,
-    "precio": 88,
+    "nombre": "Aceite de olvida Nuncana",
+    "descripcion": "Aceite de olvida Nuncana",
+    "stock": 10,
+    "precio": 50,
     "descuento": 0,
-    "recomendado": 0,
-    "imagen": "aceite-5.png"
+    "imagen": "producto-1593646208892.jpg"
   },
   {
     "id": 5,
-    "nombre": "aceite 6",
     "categoria": "aceites",
-    "descripcion": "aceite para nada",
-    "stock": 50,
-    "precio": 155,
-    "descuento": 0,
-    "recomendado": 1,
-    "imagen": "aceite-6.jpg"
+    "nombre": "Aceto balsamico x 250cc - Anahata",
+    "descripcion": "Aceto balsamico x 250cc - Anahata",
+    "stock": 5,
+    "precio": 200,
+    "descuento": 15,
+    "imagen": "producto-1593646427644.jpg"
   },
   {
     "id": 6,
-    "nombre": "aceite 7",
     "categoria": "aceites",
-    "descripcion": "aceite para cocinar",
-    "stock": 60,
-    "precio": 789,
-    "descuento": 0,
-    "recomendado": 1,
-    "imagen": "aceite-7.jpg"
+    "nombre": "Aceite de oliva extra virgen Laur",
+    "descripcion": "Aceite de oliva extra virgen Laur",
+    "stock": 10,
+    "precio": 50,
+    "descuento": 15,
+    "recomendado": 0,
+    "imagen": "producto-1593659077899.png"
   },
   {
     "id": 7,
-    "nombre": "aceite 8",
-    "categoria": "aceites",
-    "descripcion": "aceite para cocinar",
-    "stock": 70,
-    "precio": 122,
-    "descuento": 0,
-    "recomendado": 1,
-    "imagen": "aceite-8.jpg"
+    "categoria": "bebidas",
+    "nombre": "Jugo de manzana roja x 1 Litro - Pura Frutta",
+    "descripcion": "jugo prueba",
+    "stock": 50,
+    "precio": 156,
+    "descuento": 15,
+    "recomendado":1,
+    "imagen": "producto-1593710724066.jpg"
   },
   {
     "id": 8,
-    "nombre": "aceite 9",
-    "categoria": "aceites",
-    "descripcion": "aceite para cocinar",
-    "stock": 80,
-    "precio": 719,
-    "descuento": 0,
+    "categoria": "bebidas",
+    "nombre": "Jugo de manzana verde x 1 Litro - Pura Frutta",
+    "descripcion": "Descripcion",
+    "stock": 50,
+    "precio": 70,
+    "descuento": 30,
     "recomendado": 1,
-    "imagen": "aceite-9.jpg"
+    "imagen": "producto-1593710961646.jpg"
   },
   {
     "id": 9,
-    "nombre": "Vianda uno",
-    "descripcion": "Vianda para vender",
-    "precio": "200",
-    "descuento": "0",
-    "imagen": "producto-1593581360250.jpg"
+    "categoria": "bebidas",
+    "nombre": "Jugo de manzana y Arandanos x 1 Litro - Pura Frutta",
+    "descripcion": "Descripcion",
+    "stock": 60,
+    "precio": 500,
+    "descuento": 15,
+    "recomendado": 1,
+    "imagen": "producto-1593714743038.jpg"
   },
+  
   {
     "id": 10,
-    "nombre": "bebida 1",
-    "descripcion": "Bebida de prueba",
-    "precio": "50",
-    "descuento": "15",
-    "imagen": "producto-1593581507782.png"
-  },
-  {
-    "id": 11,
-    "categoria": "6",
-    "nombre": "Postre 1",
-    "descripcion": "Postre prueba",
-    "stock": "5",
-    "precio": "100",
-    "descuento": "0",
-    "imagen": "producto-1593581782440.jpg"
-  },
-  {
-    "id": 12,
     "categoria": "bebidas",
-    "nombre": "Bebida 2",
-    "descripcion": "Segunda prueba",
+    "nombre": "Jugo de manzana y Frutilla x 1 Litro - Pura Frutta",
+    "descripcion": "Descripcion",
     "stock": 80,
     "precio": 60,
-    "descuento": 30,
-    "imagen": "producto-1593582115424.jpg"
-  },
-  {
-    "id": 13,
-    "categoria": "aceites",
-    "nombre": "cualquiera",
-    "descripcion": "bla",
-    "stock": 1,
-    "precio": 50,
-    "descuento": 0,
-    "imagen": "producto-1593634571116.jpg"
-  },
-  {
-    "id": 14,
-    "categoria": "leche",
-    "nombre": "leche prueba",
-    "descripcion": "bla ",
-    "stock": 1,
-    "precio": 50,
-    "descuento": 0,
-    "imagen": "producto-1593640448637.png"
+    "descuento": 15,
+    "recomendado": 1,
+    "imagen": "producto-1593714255107.jpg"
   }
+
 ]
