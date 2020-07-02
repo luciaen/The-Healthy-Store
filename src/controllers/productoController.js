@@ -1,22 +1,23 @@
 const path = require('path');
 const fs = require('fs');
 
-let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
+let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));
 
 const productoController = {
+    detalle: function (req, res) {
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));
+        let detalleSeleccionados= productos.filter(p=> p.id == req.params.id);
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'detalleProducto'),{detalleSeleccionados});
+
+    },
     categoria: function (req, res) {
-        res.render(path.resolve(__dirname, '..', 'views','productos', 'categoria-productos'));
-    },
-     detalle: function (req, res) {
-         res.render(path.resolve(__dirname, '..', 'views','productos', 'detalle-producto'));
-    },
-    aceites: function(req,res){
-        let productosSeleccionados= productos.filter(p => p.categoria==req.params.categoria);
+        let productosSeleccionados = productos.filter(p => p.categoria == req.params.categoria);
+        let detalleSeleccionados= productos.filter(p=> p.id == req.params.id);
         let titulo = String(req.params.categoria).toUpperCase()
-        res.render(path.resolve(__dirname, '..', 'views','productos', 'categoria-aceites'),{productos:productosSeleccionados,titulo});
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos: productosSeleccionados, titulo, detalleSeleccionados });
     }
 
-    
+
 
 }
 module.exports = productoController;
