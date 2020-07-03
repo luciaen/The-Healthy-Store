@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/header') %>
+
+<body>
+    <div class="container">
+
+
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+        <section class="row">
+            <article class="col-12  card pt-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center main-titulo">Borrar el Usuario</h1>
+                </div>
+            </article>
+        </section>
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mx-auto bg-light ">
+                        <div class="signup-form">
+                            <form action="/admin/delete/ <%=usuarioDelete.id%> ?_method=DELETE" method="POST"
+                                enctype="multipart/form-data">
+                                
+                                <div class="form-group">
+                                    <label for="">Nombre Del Usuario</label>
+                                    <input type="text" class="form-control" name="nombre"
+                                         required="required"
+                                        value="<%= usuarioDelete.nombre%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">E-mail</label>
+                                    <input type="text" class="form-control" name="email"
+                                        required="required"
+                                        value="<%= usuarioDelete.email%>">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Teléfono</label>
+                                    <input type="text" class="form-control" name="telefono"
+                                         required="required"
+                                        value="<%= usuarioDelete.telefono%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Contraseña</label>
+                                    <input type="password" class="form-control" name="contraseña"
+                                        required="required"
+                                        value="<%= usuarioDelete.contraseña%>">
+                                </div>
+                                
+                    <div class="col-6 mx-auto bg-light ">
+                        <div class="signup-form">
+                            <div class="custom-file">
+                                <figure class="form-group">
+                                    <img class="w-50 " src="/images/usuarios/<%= usuarioDelete.imagen%>"
+                                        alt="usuario">
+                                </figure>
+                                <button type="submit" class="btn btn btn-danger">Borrar El usuario</button>
+                                <a class="btn btn-primary" href="/usuarios">Volver</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------Comienza el footer---------------------->
+        <%- include('../partials/footer') %>
+        <!--LIBRERIAS-->
+        <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="/bootstrap/js/popper.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js">
+        </script>
+</body>

@@ -4,39 +4,46 @@
     "nombre": "Melvyn",
     "email": "mbacup0@yahoo.co.jp",
     "telefono": "3233286556",
-    "contraseña": "upbyjmC"
+    "contraseña": "upbyjmC",
+    "imagen": "usuario1.jpg"
   },
   {
     "id": 2,
     "nombre": "Daile",
     "email": "dmccrackan1@telegraph.co.uk",
     "telefono": "8955098259",
-    "contraseña": "WXaT5J7wCqY"
+    "contraseña": "WXaT5J7wCqY",
+    "imagen": "usuario2.jpg"
   },
   {
     "id": 3,
     "nombre": "Carlos",
     "email": "cschneidau2@joomla.org",
     "telefono": "7197010009",
-    "contraseña": "zGTZrlJ15G1"
+    "contraseña": "zGTZrlJ15G1",
+    "imagen": "usuario3.jpg"
   },
   {
     "id": 4,
     "nombre": "lucia",
     "email": "lucia@gmail.com",
     "telefono": "123455",
+    "contraseña": "1234",
+    "imagen": "usuario4.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Fede",
+    "email": "frde@gmail.com",
+    "telefono": "23436576",
     "contraseña": "1234"
   },
   {
-    "id": 5
-  },
-  {
-    "id": 6
-  },
-  {
-    "id": 7
-  },
-  {
-    "id": 8
+    "id": 6,
+    "nombre": "lucia",
+    "email": "luli@gmail.com",
+    "telefono": "1234556",
+    "contraseña": "1234",
+    "imagen": "usuario-1593744958178.jpg"
   }
 ]

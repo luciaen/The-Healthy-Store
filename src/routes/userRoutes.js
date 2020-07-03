@@ -24,8 +24,14 @@ const upload = multer({
 // Métodos en nuestros controladores: index - show - edit - delete 
 router.get('/login', userController.login);
 
+router.get('/usuarios', userController.index);
 router.get('/registro', userController.registro);
-router.post('/registro',userController.save);
+router.get('/user/detail/:id', userController.show);
+router.post('/registro', upload.single('imagen'), userController.save);
+router.get('/user/edit/:id', upload.single('imagen'), userController.edit);
+router.put('/user/edit/:id', upload.single('imagen'), userController.update);
+router.get('/user/delete/:id', userController.delete);
+router.delete('/user/delete/:id', upload.single('imagen'), userController.destroy);
 
 
 module.exports = router;

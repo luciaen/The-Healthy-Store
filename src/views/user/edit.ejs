@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/header') %>
+
+<body>
+    <div class="container">
+
+
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+        <section class="row">
+            <article class="col-12  card pt-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center main-titulo">Editar Usuario</h1>
+                </div>
+            </article>
+        </section>
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mx-auto bg-light ">
+                        <div class="signup-form">
+                            <form action="/admin/edit/ <%=usuarioEdit.id%> ?_method=PUT" method="POST"
+                                enctype="multipart/form-data">
+                                
+                                <div class="form-group">
+                                    <label for="">Nombre Del Usuario</label>
+                                    <input type="text" class="form-control" name="nombre"
+                                       required="required"
+                                        value="<%= usuarioEdit.nombre%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">E-mail del usuario</label>
+                                    <input type="email" class="form-control" name="email" required="required"
+                                        value="<%= usuariooEdit.email%>">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Teléfono</label>
+                                    <input type="text" class="form-control" name="telefono"
+                                         required="required"
+                                        value="<%= usuarioEdit.telefono%>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Contraseña</label>
+                                    <input type="number" class="form-control" name="contraseña"
+                                        required="required"
+                                        value="<%= usuarioEdit.contraseña%>">
+                                </div>
+                                                        </div>
+                    </div>
+                           <div class="custom-file">
+
+                                <input type="file" class="custom-file-input" name="imagen"
+                                    placeholder="Seleccione una imagen">
+                                <label class="custom-file-label" for="">Eligir la imagen...</label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn btn-primary">Actualizar</button>
+                                <a class="btn btn-danger" href="/usuarios">Volver</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------Comienza el footer---------------------->
+        <%- include('../partials/footer') %>
+        <!--LIBRERIAS-->
+        <script src="bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js">
+        </script>
+</body>
+
+</html>

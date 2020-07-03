@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/header') %>
+
+<body>
+    <div class="container">
+
+
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navbar') %>
+        <!---------Comienza el main------------------------>
+        <section class="row">
+            <article class="col-12  card pt-5">
+                <div class="card-body">
+                    <h1 class="card-title text-center main-titulo">Detalle del usuario</h1>
+                </div>
+            </article>
+        </section>
+
+        <section class="bg-home pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 mx-auto bg-light ">
+                        <div class="card">
+                            <ul class="list-group">
+                                <li class="list-group-item">ID: <%= usuarioShow.id %> </li>
+                                <li class="list-group-item">Nombre: <%= usuarioShow.nombre %> </li>
+                                <li class="list-group-item">E-mail: <%= usuarioShow.email %> </li>
+                                <li class="list-group-item">Teléfono: <%= usuarioShow.telefono %> </li>
+                                <li class="list-group-item">Contraseña: <%= usuarioShow.contraseña %> </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-6 mx-auto bg-light ">
+                        <div class="card">
+                            <figure class="form-group">
+                                <img class="w-50 " src="/images/productos/<%= usuarioShow.imagen %>"
+                                    alt="Imagen del usuario">
+                            </figure>
+                        </div>
+                        <a class="btn btn-primary" href="/usuarios">Volver</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-------------Comienza el footer---------------------->
+        <%- include('../partials/footer') %>
+        <!--LIBRERIAS-->
+        <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="/bootstrap/js/popper.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js">
+        </script>
+</body>
