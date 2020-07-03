@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../models/usuarios.json')));
+let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
 const userController = {
         
@@ -13,8 +13,8 @@ const userController = {
     },
 
     save: function (req, res) {
-            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../models/usuarios.json')));
-            let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../models/usuarios.json')));
+            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+            let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let ultimoUsuario = usuariosTotales.pop();
 
             let nuevoUsuario = {
@@ -27,7 +27,7 @@ const userController = {
             }
             usuarios.push(nuevoUsuario);
             usuariosJSON = JSON.stringify(usuarios, null, 2);
-            fs.writeFileSync(path.resolve(__dirname, '../models/usuarios.json'), usuariosJSON);
+            fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
             res.redirect('/registro');
     }
 }

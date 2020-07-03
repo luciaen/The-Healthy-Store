@@ -22,7 +22,7 @@ const upload = multer({
 })
 
 // Métodos en nuestros controladores: index - show - edit - delete 
-router.get('/user/login', userController.login);
+router.get('/login', userController.login);
 
 router.get('/registro', userController.registro);
 router.post('/registro',userController.save);
