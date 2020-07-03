@@ -61,18 +61,12 @@
                         <div class="signup-form">
 
                             <div class="form-group">
-                                <label for="">Descuento Del Producto</label>
-                                <select name="descuento" class="custom-select" required>
-                                    <option selected disabled value="#">Elija su descuento</option>
-                                    <option
-                                        value="<%= productoEdit.descuento == 0 ? 0 :productoEdit.descuento %>"
-                                        selected>Sin descuento</option>
-                                    <option
-                                        value="<%= productoEdit.descuento == 15 ? 15:productoEdit.descuento %>"
-                                        selected> 15%</option>
-                                    <option
-                                        value="<%= productoEdit.descuento == 30? 30:productoEdit.descuento %>"
-                                        selected>30%</option>
+                                <select  name="descuento" class="custom-select"  required>
+                                  <option disabled value="#">Seleccione un descuento"</option>
+                                  <option value="0" <%= productoEdit.descuento == 0 ? "selected" : null %>
+                                    >Sin descuento</option>
+                                  <option value="15" <%= productoEdit.descuento == 15 ? "selected" : null %>>15%</option>
+                                  <option value="30" <%= productoEdit.descuento == 30 ? "selected" : null %>>30%</option>
                                 </select>
                             </div>
                             <div class="custom-file">

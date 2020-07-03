@@ -6,7 +6,7 @@ const path = require('path');
 const productoController = require(path.resolve(__dirname, '../controllers/productoController'));
 
 // Métodos en nuestros controladores: index - show - edit - delete 
-router.get('/detalleProducto/', productoController.detalle);
+router.get('/detalleProducto/:id', productoController.detalle);
 router.get('/categoria/:categoria',productoController.categoria);
 
 

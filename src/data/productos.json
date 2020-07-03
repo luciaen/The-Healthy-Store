@@ -71,7 +71,7 @@
     "stock": 50,
     "precio": 156,
     "descuento": 15,
-    "recomendado":1,
+    "recomendado": 1,
     "imagen": "producto-1593710724066.jpg"
   },
   {
@@ -96,17 +96,15 @@
     "recomendado": 1,
     "imagen": "producto-1593714743038.jpg"
   },
-  
   {
     "id": 10,
     "categoria": "bebidas",
     "nombre": "Jugo de manzana y Frutilla x 1 Litro - Pura Frutta",
-    "descripcion": "Descripcion",
-    "stock": 80,
-    "precio": 60,
-    "descuento": 15,
+    "descripcion": "dddddd",
+    "stock": 20,
+    "precio": 40,
+    "descuento": 0,
     "recomendado": 1,
-    "imagen": "producto-1593714255107.jpg"
+    "imagen": "producto-1593741320785.jpg"
   }
-
 ]
