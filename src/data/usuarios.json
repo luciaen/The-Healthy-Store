@@ -45,5 +45,13 @@
     "telefono": "1234556",
     "contraseña": "1234",
     "imagen": "usuario-1593744958178.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Nicolas",
+    "email": "Fede_devm@gmail.com",
+    "telefono": "1555058829",
+    "contraseña": "natsu890",
+    "imagen": "usuario-1593749372535.jpg"
   }
 ]

@@ -5,14 +5,18 @@ let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/prod
 
 const productoController = {
     detalle: function (req, res) {
-        let detalleSeleccionados= productos.filter(p=> p.id == req.params.id);
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'detalleProducto'),{detalleSeleccionados});
+        let productoId = req.params.id;
+        const productoDetalle = productos.find(p => p.id == productoId);
+        res.render(path.resolve(__dirname, '..', 'views', 'admin', 'detalleProducto'), { productoDetalle });
+
 
     },
     categoria: function (req, res) {
         let productosSeleccionados = productos.filter(p => p.categoria == req.params.categoria);
+        let productoId = req.params.id;
+        const productoDetalle = productos.find(p => p.id == productoId);
         let titulo = String(req.params.categoria).toUpperCase()
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos: productosSeleccionados, titulo });
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos: productosSeleccionados, titulo, productoDetalle });
     }
 
 
