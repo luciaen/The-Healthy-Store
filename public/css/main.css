@@ -154,7 +154,7 @@ main article a{
     color:#FD9C65;
     text-align: center;
     border-bottom: solid;
-    margin-top: 20px;
+    margin-top: 0;
 }
 .footer-tarjetas ul{
     text-align: center;
@@ -181,14 +181,9 @@ main article a{
     .shopping{
 
         margin-top: 110px;
+        text-align: end;
     }
-    .shopping i{
-        font-size: 20px;
-    }
-    .shopping a{
-        font-size: 18px;
-        margin-left: 15px;
-    }
+
   /*CSS MAIN----------------*/
   .main-titulo{
       text-align: left;

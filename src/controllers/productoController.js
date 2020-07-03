@@ -7,7 +7,7 @@ const productoController = {
     detalle: function (req, res) {
         let productoId = req.params.id;
         const productoDetalle = productos.find(p => p.id == productoId);
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'detalleProducto'), { productoDetalle });
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'detalleProducto'), {productoDetalle});
 
 
     },

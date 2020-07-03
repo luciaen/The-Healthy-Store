@@ -2,12 +2,13 @@
 <html lang="es">
 
 <%- include('../partials/header.ejs') %>
+
 <body>
     <div class="container">
 
-<!---------Comienza el nav--------------------->
-<%- include('../partials/navBar.ejs') %>
-<!---------Comienza el main------------------------>
+        <!---------Comienza el nav--------------------->
+        <%- include('../partials/navBar.ejs') %>
+        <!---------Comienza el main------------------------>
 
 
         <main class="row">
@@ -15,16 +16,18 @@
 
 
             <% for (let i= 0; i<productos.length; i++){ %>
-                <%if(productos[i].recomendado== 0){%>
+            <%if(productos[i].recomendado== 0){%>
             <article class="col-sm-12 col-md-6 col-lg-3">
                 <img width="50%" src="/images/productos/<%= productos[i].imagen%>" alt="">
-                <h4><%= productos[i].descripcion %></h4>
-                <p>$<%= productos[i].precio %></p>
-                <ul>
-                    <button type="button" class="btn btn-primary"><a href="/detalleProducto/">Detalles</a></button>
-                    <button type="button" class="btn btn-primary"><a href="/carrito"><i class="fas fa-cart-plus"></i> Comprar
-                        </a></button>
-                </ul>
+                    <h4><%= productos[i].descripcion %></h4>
+                    <p>$<%= productos[i].precio %></p>
+                    <ul>
+                        <button type="button" class="btn btn-primary"><a href="/detalleProducto/">Detalles</a></button>
+                        <button type="button" class="btn btn-primary"><a href="/carrito"><i
+                                    class="fas fa-cart-plus"></i>
+                                Comprar
+                            </a></button>
+                    </ul>
             </article>
             <% } %>
             <%} %>
@@ -33,12 +36,13 @@
             <% for (let i= 0; i<productos.length; i++){ %>
             <%if(productos[i].recomendado== 1){%>
             <article class="col-sm-12 col-md-6 col-lg-3">
-                <img width="50%" src="/images/productos/<%= productos[i].imagen%>"alt="">
+                <img width="50%" src="/images/productos/<%= productos[i].imagen%>" alt="">
                 <h4><%= productos[i].descripcion %></h4>
                 <p>$<%= productos[i].precio %></p>
                 <ul>
                     <button type="button" class="btn btn-primary"><a href="/detalleProducto">Detalles</a></button>
-                    <button type="button" class="btn btn-primary"><a href="/carrito"><i class="fas fa-cart-plus"></i> Comprar
+                    <button type="button" class="btn btn-primary"><a href="/carrito"><i class="fas fa-cart-plus"></i>
+                            Comprar
                         </a></button>
                 </ul>
             </article>
@@ -47,12 +51,12 @@
         </main>
 
         <!-------------Comienza el footer---------------------->
-          <%- include('../partials/footer.ejs') %>
-          <!--LIBRERIAS-->
-          <script src="bootstrap/js/jquery-3.5.1.js"></script>
-          <script src="bootstrap/js/popper.min.js"></script>
-          <script src="bootstrap/js/bootstrap.min.js">
-          </script>
-          </body>
+        <%- include('../partials/footer.ejs') %>
+        <!--LIBRERIAS-->
+        <script src="bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js">
+        </script>
+</body>
 
-          </html>
+</html>
