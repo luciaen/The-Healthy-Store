@@ -106,5 +106,15 @@
     "descuento": 0,
     "recomendado": 1,
     "imagen": "producto-1593741320785.jpg"
+  },
+  {
+    "id": 11,
+    "categoria": "endulzantes",
+    "nombre": "endulzanteee",
+    "descripcion": "eeeeeee",
+    "stock": 6660,
+    "precio": 50,
+    "descuento": 30,
+    "imagen": "producto-1593794516661.jpg"
   }
 ]
