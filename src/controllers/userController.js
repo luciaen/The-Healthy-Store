@@ -10,7 +10,7 @@ const userController = {
     },
     index: function (req, res) {
 
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'));
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
     registro: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views','user', 'registro'));
