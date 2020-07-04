@@ -16,7 +16,7 @@
                 <h4><%= productos[i].nombre %></h4>
                 <p>$<%= productos[i].precio %></p>
                 <ul>
-                    <button type="button" class="btn btn-primary"><a href="/detalleProducto/">Detalles</a></button>
+                    <button type="button" class="btn btn-primary"><a href="/detalleProducto/<%= productos[i].id %> ">Detalles</a></button>
                     <button type="button" class="btn btn-primary"><a href="/carrito"><i class="fas fa-cart-plus"></i> Comprar
                         </a></button>
                 </ul>
@@ -28,9 +28,9 @@
         <!-------------Comienza el footer---------------------->
         <%- include('../partials/footer') %>
  <!--LIBRERIAS-->
- <script src="bootstrap/js/jquery-3.5.1.js"></script>
- <script src="bootstrap/js/popper.min.js"></script>
- <script src="bootstrap/js/bootstrap.min.js">
+ <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+ <script src="/bootstrap/js/popper.min.js"></script>
+ <script src="/bootstrap/js/bootstrap.min.js">
      </script>
 </body>
 
