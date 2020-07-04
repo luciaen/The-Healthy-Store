@@ -193,6 +193,9 @@ main article a{
     font-size: 20px;
     margin: 0 15px;
     }
+    .altura{
+        max-height: 15vh;
+    }
     .main-tercer-titulo{
         text-align: left;
         border-bottom: solid;

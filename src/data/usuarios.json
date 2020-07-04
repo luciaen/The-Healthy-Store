@@ -53,5 +53,21 @@
     "telefono": 1560534153,
     "contraseña": "natsu890",
     "imagen": "usuario-1593812442026.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Ronaldo Patricio Quinn",
+    "email": "ronacho07@gmail.com",
+    "telefono": "3058747044",
+    "contraseña": "123",
+    "imagen": "usuario-1593904959407.PNG"
+  },
+  {
+    "id": 9,
+    "nombre": "Ronaldo Patricio Quinn",
+    "email": "ronacho07@gmail.com",
+    "telefono": "3058747044",
+    "contraseña": "$2b$10$d4p3UpoiXEdbIWYe/fUEvuWQeO7z67F9iuTC4B2AnDzfAfeAiXIPW",
+    "imagen": "usuario-1593905273469.PNG"
   }
 ]

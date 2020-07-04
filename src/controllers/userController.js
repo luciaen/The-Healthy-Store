@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+const bcrypt = require ('bcrypt')
 
 const userController = {
         
@@ -33,7 +34,7 @@ const userController = {
                 nombre: req.body.nombre,
                 email: req.body.email,
                 telefono: req.body.telefono,
-                contraseña: req.body.contraseña,
+                contraseña: bcrypt.hashSync(req.body.contraseña,10),
                 imagen: req.file ? req.file.filename : ""
             
             }
@@ -78,11 +79,15 @@ const userController = {
           destroy: function (req, res) {
               let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
               const usuarioId = req.params.id;
-              const usuarioDestroy = usuarios.filter(u => u.id != usuariosId);
-              usuariosJSON = JSON.stringify(usuariosDestroy, null, 2);
+              const usuarioDestroy = usuarios.filter(u => u.id != usuarioId);
+              usuariosJSON = JSON.stringify(usuarioDestroy, null, 2);
               fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
               res.redirect('/usuarios');
-          }
+          },
+          login: function (req, res) {
+
+            res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
+          }   
 }
 
 module.exports = userController;
