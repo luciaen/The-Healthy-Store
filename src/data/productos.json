@@ -77,17 +77,6 @@
     "imagen": "producto-1593830933671.jpg"
   },
   {
-    "id": 8,
-    "categoria": "bebidas",
-    "nombre": "Jugo de manzana y Frutilla x 1 Litro - Pura Frutta",
-    "descripcion": "Hola soy descripción!",
-    "stock": 147,
-    "precio": 218,
-    "descuento": 15,
-    "recomendado": "noRecomendado",
-    "imagen": "producto-1593830998958.jpg"
-  },
-  {
     "id": 9,
     "categoria": "endulzantes",
     "nombre": "Azucar integral mascabo x 1 Kg",

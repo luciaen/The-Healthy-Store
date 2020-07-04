@@ -32,7 +32,7 @@ const userController = {
                 id: ultimoUsuario.id + 1,
                 nombre: req.body.nombre,
                 email: req.body.email,
-                telefono: req.body.telefono,
+                telefono: Number(req.body.telefono),
                 contraseña: req.body.contraseña,
                 imagen: req.file ? req.file.filename : ""
             
@@ -78,8 +78,8 @@ const userController = {
           destroy: function (req, res) {
               let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
               const usuarioId = req.params.id;
-              const usuarioDestroy = usuarios.filter(u => u.id != usuariosId);
-              usuariosJSON = JSON.stringify(usuariosDestroy, null, 2);
+              const usuarioDestroy = usuarios.filter(u => u.id != usuarioId);
+              usuariosJSON = JSON.stringify(usuarioDestroy, null, 2);
               fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
               res.redirect('/usuarios');
           }
