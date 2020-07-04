@@ -5,8 +5,6 @@ let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/produc
 
 const webController = {
     index: function (req, res) {
-        let recomendados
-        let vendidos
         res.render(path.resolve(__dirname, '..', 'views','web','index'),{productos});
     },
     about: function (req, res) {

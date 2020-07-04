@@ -69,6 +69,15 @@
                                   <option value="30" <%= productoEdit.descuento == 30 ? "selected" : null %>>30%</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <select  name="recomendado" class="custom-select"  required>
+                                  <option disabled value="#">Elegir Recomendacion"</option>
+                                  <option value="noRecomendado" <%= productoEdit.recomendado == "noRecomendado" ? "selected" : null %>
+                                    >No Recomendado</option>
+                                  <option value="recomendado" <%= productoEdit.recomendado == "recomendado" ? "selected" : null %>>Productos Recomendados</option>
+                                  <option value="vendido" <%= productoEdit.recomendado == "vendido" ? "selected" : null %>>Mas Vendidos</option>
+                                </select>
+                            </div>
                             <div class="custom-file">
 
                                 <input type="file" class="custom-file-input" name="imagen"

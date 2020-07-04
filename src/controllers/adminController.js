@@ -28,7 +28,8 @@ const adminController = {
                 descripcion : req.body.descripcion,
                 stock:Number(req.body.stock),
                 precio: Number(req.body.precio),
-                descuento: Number(req.body.descuento),  
+                descuento: Number(req.body.descuento),
+                recomendado:(req.body.recomendado),  
                 imagen: req.file ? req.file.filename : ""  
             }
             productos.push(nuevoProducto);
@@ -54,6 +55,7 @@ const adminController = {
                     p.stock =  Number(req.body.stock),
                     p.precio = Number(req.body.precio),
                     p.descuento = Number(req.body.descuento),
+                    p.recomendado=(req.body.recomendado), 
                     p.imagen = req.file ? req.file.filename : ""
                 }
                 return p;
