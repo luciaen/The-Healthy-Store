@@ -77,7 +77,6 @@
     "imagen": "producto-1593830933671.jpg"
   },
   {
-<<<<<<< HEAD
     "id": 8,
     "categoria": "bebidas",
     "nombre": "Jugo de manzana y Frutilla ",
@@ -89,8 +88,6 @@
     "imagen": "producto-1593830998958.jpg"
   },
   {
-=======
->>>>>>> cd38f569f9d19566886358c8bbd0a146a9e5ae7d
     "id": 9,
     "categoria": "endulzantes",
     "nombre": "Azucar integral mascabo x 1 Kg",

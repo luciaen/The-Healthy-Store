@@ -85,5 +85,4 @@ const userController = {
               res.redirect('/usuarios');
           }
         } 
-
 module.exports = userController;
