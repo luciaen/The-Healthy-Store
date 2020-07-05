@@ -33,13 +33,8 @@ const userController = {
                 id: ultimoUsuario.id + 1,
                 nombre: req.body.nombre,
                 email: req.body.email,
-<<<<<<< HEAD
                 telefono: req.body.telefono,
                 contraseña: bcrypt.hashSync(req.body.contraseña,10),
-=======
-                telefono: Number(req.body.telefono),
-                contraseña: req.body.contraseña,
->>>>>>> cd38f569f9d19566886358c8bbd0a146a9e5ae7d
                 imagen: req.file ? req.file.filename : ""
             
             }
@@ -88,11 +83,7 @@ const userController = {
               usuariosJSON = JSON.stringify(usuarioDestroy, null, 2);
               fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
               res.redirect('/usuarios');
-          },
-          login: function (req, res) {
-
-            res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
-          }   
-}
+          }
+        } 
 
 module.exports = userController;
