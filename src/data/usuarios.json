@@ -24,27 +24,11 @@
     "imagen": "usuario3.jpg"
   },
   {
-    "id": 4,
-    "nombre": "lucia",
-    "email": "lucia@gmail.com",
-    "telefono": "123455",
-    "contraseña": "1234",
-    "imagen": "usuario4.jpg"
-  },
-  {
     "id": 5,
     "nombre": "Fede",
     "email": "frde@gmail.com",
     "telefono": "23436576",
     "contraseña": "1234"
-  },
-  {
-    "id": 6,
-    "nombre": "lucia",
-    "email": "luli@gmail.com",
-    "telefono": "1234556",
-    "contraseña": "1234",
-    "imagen": "usuario-1593744958178.jpg"
   },
   {
     "id": 7,
@@ -69,5 +53,13 @@
     "telefono": "3058747044",
     "contraseña": "$2b$10$d4p3UpoiXEdbIWYe/fUEvuWQeO7z67F9iuTC4B2AnDzfAfeAiXIPW",
     "imagen": "usuario-1593905273469.PNG"
+  },
+  {
+    "id": 10,
+    "nombre": "Lucia",
+    "email": "luli@gmail.com",
+    "telefono": "1541556787",
+    "contraseña": "$2b$10$iQctnFB0065mwZXPpVZt6O8KEga/qbl956A8JDwRib4swbHnQmOzS",
+    "imagen": "usuario-1594068631021.JPG"
   }
 ]
