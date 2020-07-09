@@ -60,12 +60,20 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 * colores de la página, incluye el contacto en redes sociales además de videos para hacer tus comidas
 
 ## Tablero de trabajo:
-1. [Tablero de tabajo Trello](https://trello.com/b/MFo7gS4r/trabajo-integrador-dh)
+1. [Tablero de tabajo Trello - Sprint 2](https://trello.com/b/MFo7gS4r/trabajo-integrador-dh)
+2. [Tablero de tabajo Trello - Sprint 3](https://trello.com/invite/b/2rz3WLpy/7d1aeb3ea7f12201b478dce3624aac1a/pi-sprint-3)
 
-## Retrospectiva:
+## Retrospectiva Sprint 2:
 - Comenzar a hacer: Organizar las prioridades y asignar las tareas desde un comienzo.
 - Hacer más: Definir los pasos a seguir y asignarlos de forma más coordinada.
 - Continuar haciendo: cumplir con todos los puntos en tiempo y forma.
 - Hacer menos: trabajo individual sin comunicación.
 - Dejar de hacer: Duplicar tareas.
+
+## Retrospectiva Sprint 3:
+- Comenzar a hacer: Establecer fechas para las reuniones de equipo.
+- Hacer más: Definir los pasos desde el inicio con mayor claridad.
+- Continuar haciendo: Asignar las tareas de forma mas coordinada. cumplir con todos los puntos con tiempo para poder dedicarle más tiempo a algunos detalles.
+- Hacer menos: tareas repetidas.
+- Dejar de hacer: Cambios en el proyecto sin saber que funcionan.
 
