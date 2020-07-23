@@ -1,0 +1,23 @@
+const path = require('path');
+const fs = require('fs');
+
+let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));
+
+const productoController = {
+    detalle: function (req, res) {
+        let productoId = req.params.id;
+        const productoDetalle = productos.find(p => p.id == productoId);
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'detalleProducto'), {productos, productoDetalle});
+
+
+    },
+    categoria: function (req, res) {
+        let productosSeleccionados = productos.filter(p => p.categoria == req.params.categoria);
+        let titulo = String(req.params.categoria).toLowerCase()
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos:productosSeleccionados, titulo,});
+    }
+
+
+
+}
+module.exports = productoController;

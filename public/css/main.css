@@ -51,8 +51,8 @@ header{
     max-width: 500px;
 }
   .fa-facebook, .fa-twitter, .fa-google-plus-g , .fa-instagram, .fa-youtube{
-    font-size: 2rem;
-    padding:.5rem;
+    font-size: 1.5rem;
+    padding:.3rem;
   }
   .fa-cc-visa, .fa-cc-mastercard, .fa-cc-amex, .fa-cc-amazon-pay, .fa-cc-diners-club{
     font-size: 4.5rem;

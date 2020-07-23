@@ -5,17 +5,7 @@
          <figure>
              <a href="/"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
          </figure>
-      </section>
-            <% if(locals.usuario) { %>
-      <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">        
-        <button type="button" class="btn btn-light"><a href="/logout"><i class="fas fa-sign-out-alt"></i>
-                Cerrar cuenta</a></button>
-        <figure class="form-group">
-             <img width="120px" style="border-radius: 100%;" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
-                </figure>
-         <h1>Bienvenido <%= locals.usuario.nombre %></h1>       
-             </section>
-<%} else {%> 
+     </section>
      <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">
          <button type="button" class="btn btn-light"><a href="/registro"><i class="fas fa-user-plus"></i>
                  Crear
@@ -23,9 +13,8 @@
          <button type="button" class="btn btn-light"><a href="/login"><i class="fas fa-sign-in-alt"></i>
                  Iniciar
                  Sesion</a></button>
-           </section>        
-         <%}%>           
-      <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
+     </section>
+     <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
          <section class="social">
              <a target="__blank" href="https://www.facebook.com/">
                  <i class="fab fa-facebook"></i>

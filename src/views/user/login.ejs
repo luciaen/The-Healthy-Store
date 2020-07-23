@@ -10,18 +10,24 @@
         <%- include('../partials/navbar') %>
         <!---------Comienza el main------------------------>
         <h1 class="h3login main-titulo">Iniciar Sesión</h1>
-        <form class="form-login">
+        <form action="/login" method="POST" class="form-login">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" value="<%= typeof old == 'undefined'? '': old.email %> ">
+                <% if(typeof errors != 'undefined' && errors.email){ %> 
+                <span class="text-danger"><%= errors.email.msg %></span>
                 <small id="emailHelp" class="form-text text-muted"></small>
+               <% } %> 
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                <% if(typeof errors != 'undefined' && errors.password){%>
+                <span class="text-danger"><%= errors.password.msg %></span>
+               <% } %> 
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input type="checkbox" name="recordame" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Recordame</label>
             </div>
             <button type="submit" class="btn btn-secondary botonlogin">Iniciar Sesión</button>

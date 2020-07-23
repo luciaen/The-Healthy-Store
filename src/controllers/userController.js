@@ -1,17 +1,16 @@
 const path = require('path');
 const fs = require('fs');
+const bcrypt = require ("bcrypt")
+const {check,validationResult,body} = require('express-validator');
+
 let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-const bcrypt = require ('bcrypt')
 
 const userController = {
-        
     login: function (req, res) {
-
-        res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
+     res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
     },
     index: function (req, res) {
-
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
+    res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
     registro: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views','user', 'registro'));
@@ -23,26 +22,30 @@ const userController = {
             usuarioShow
         });
     },
-
-    save: function (req, res) {
+    save: function (req, res,next) {
+        let errors = validationResult(req);
+      if (errors.isEmpty()) {
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let ultimoUsuario = usuariosTotales.pop();
 
             let nuevoUsuario = {
                 id: ultimoUsuario.id + 1,
-                nombre: req.body.nombre,
+                nombre: req.body.name,
                 email: req.body.email,
                 telefono: req.body.telefono,
-                contraseña: bcrypt.hashSync(req.body.contraseña,10),
+                contraseña: bcrypt.hashSync(req.body.password,10),
                 imagen: req.file ? req.file.filename : ""
-            
             }
             usuarios.push(nuevoUsuario);
             usuariosJSON = JSON.stringify(usuarios, null, 2);
             fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-            res.redirect('/registro');
-    },
+        } else {
+            return res.render(path.resolve(__dirname, '../views/user/registro'),{ 
+              errors: errors.errors });
+          }
+        },
+    
      edit: function (req, res) {
          let usuarioId = req.params.id;
          const usuarioEdit = usuarios.find(u => u.id == usuarioId);
@@ -83,6 +86,26 @@ const userController = {
               usuariosJSON = JSON.stringify(usuarioDestroy, null, 2);
               fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
               res.redirect('/usuarios');
+          },
+          ingresar:(req, res) => {
+         const errors = validationResult(req);
+              if(errors.isEmpty()){
+         const archivoUsuarios = JSON.parse(fs.readFileSync (path.resolve(__dirname, '..', 'data', 'usuarios.json')));
+         let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
+         delete usuarioLogueado.password;
+         req.session.usuario = usuarioLogueado;
+          if(req.body.recordame){
+         res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 120 })
           }
-        } 
+          return res.redirect ("/");
+       }else{
+        res.render(path.resolve(__dirname, '..', 'views','user', 'login'),{errors:errors.mapped(), old:req.body});
+        }
+      },
+      logout: (req, res)=> {
+          req.session.destroy();
+          res.cookie('email',null,{maxAge:-1})
+          res.redirect("/")
+       }
+   } 
 module.exports = userController;
