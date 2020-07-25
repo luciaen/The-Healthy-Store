@@ -1,16 +1,18 @@
 const path = require('path');
 const fs = require('fs');
-const bcrypt = require ("bcrypt")
-const {check,validationResult,body} = require('express-validator');
-
+const bcrypt = require('bcryptjs');
+const { validationResult } = require('express-validator');
 let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
 const userController = {
+        
     login: function (req, res) {
-     res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
+
+        res.render(path.resolve(__dirname, '..', 'views','user', 'login'));
     },
     index: function (req, res) {
-    res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
+
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
     registro: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views','user', 'registro'));
@@ -22,30 +24,33 @@ const userController = {
             usuarioShow
         });
     },
-    save: function (req, res,next) {
-        let errors = validationResult(req);
-      if (errors.isEmpty()) {
+
+    create: function (req, res) {
+            let errors=validationResult(req);
+         if(errors.isEmpty()){
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let ultimoUsuario = usuariosTotales.pop();
 
             let nuevoUsuario = {
                 id: ultimoUsuario.id + 1,
-                nombre: req.body.name,
+                nombre: req.body.nombre,
                 email: req.body.email,
-                telefono: req.body.telefono,
-                contraseña: bcrypt.hashSync(req.body.password,10),
+                telefono: Number(req.body.telefono),
+                contraseña:  bcrypt.hashSync(req.body.password, 10),
                 imagen: req.file ? req.file.filename : ""
+            
             }
             usuarios.push(nuevoUsuario);
             usuariosJSON = JSON.stringify(usuarios, null, 2);
             fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-        } else {
-            return res.render(path.resolve(__dirname, '../views/user/registro'),{ 
-              errors: errors.errors });
-          }
-        },
-    
+            res.redirect('/login');
+         }else{
+            return res.render(path.resolve(__dirname, '../views/user/registro'), {
+                errors: errors.errors, old: req.body
+              });
+         }    
+    },
      edit: function (req, res) {
          let usuarioId = req.params.id;
          const usuarioEdit = usuarios.find(u => u.id == usuarioId);
@@ -87,25 +92,26 @@ const userController = {
               fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
               res.redirect('/usuarios');
           },
-          ingresar:(req, res) => {
-         const errors = validationResult(req);
-              if(errors.isEmpty()){
-         const archivoUsuarios = JSON.parse(fs.readFileSync (path.resolve(__dirname, '..', 'data', 'usuarios.json')));
-         let usuarioLogueado = archivoUsuarios.find(usuario => usuario.email == req.body.email)
-         delete usuarioLogueado.password;
-         req.session.usuario = usuarioLogueado;
-          if(req.body.recordame){
-         res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 120 })
+          ingresar: function(req,res){
+            const errors = validationResult(req); 
+            if(errors.isEmpty()){
+                let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+                let usuarioLogueado = usuarios.find(u => u.email == req.body.email)
+                delete usuarioLogueado.password;
+                req.session.usuario = usuarioLogueado;
+                if(req.body.recordarme){
+                    res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
+                  }
+                  return res.redirect('/');
+                }else{
+                    res.render(path.resolve(__dirname, '../views/user/login'),{errors:errors.mapped(),old:req.body});  
+                }
+          },
+          logout: function(req,res){
+            req.session.destroy();
+            res.cookie('email',null,{maxAge: -1});
+            res.redirect('/')
           }
-          return res.redirect ("/");
-       }else{
-        res.render(path.resolve(__dirname, '..', 'views','user', 'login'),{errors:errors.mapped(), old:req.body});
-        }
-      },
-      logout: (req, res)=> {
-          req.session.destroy();
-          res.cookie('email',null,{maxAge:-1})
-          res.redirect("/")
-       }
-   } 
+}
+
 module.exports = userController;

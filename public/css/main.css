@@ -19,7 +19,22 @@ header{
     width: 100% ;
     margin-top: 10px;
 }
+
 .index-login a{
+    color: #F5803E;
+    font-size: 15px;
+    
+}
+.imguser{
+    width: 10%;
+    border-radius: 10%;
+}
+.saludouser{
+    width: 50%;
+    color: white;
+    font-size: 20px;
+}
+.cerrarsesion a{
     color: #F5803E;
     font-size: 15px;
 }
@@ -51,8 +66,8 @@ header{
     max-width: 500px;
 }
   .fa-facebook, .fa-twitter, .fa-google-plus-g , .fa-instagram, .fa-youtube{
-    font-size: 1.5rem;
-    padding:.3rem;
+    font-size: 2rem;
+    padding:.5rem;
   }
   .fa-cc-visa, .fa-cc-mastercard, .fa-cc-amex, .fa-cc-amazon-pay, .fa-cc-diners-club{
     font-size: 4.5rem;
@@ -193,9 +208,6 @@ main article a{
     font-size: 20px;
     margin: 0 15px;
     }
-    .altura{
-        max-height: 15vh;
-    }
     .main-tercer-titulo{
         text-align: left;
         border-bottom: solid;
@@ -323,8 +335,4 @@ margin-left: 10px;
 }
 .agregar-prod{
     color: white;
-}
-
-.article-hover:hover{
-    opacity: 0.7 ;
 }
