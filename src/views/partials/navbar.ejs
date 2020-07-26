@@ -1,19 +1,33 @@
- <!-----------------COMIENZA HEADER------------------------------------------->
+<!-----------------COMIENZA HEADER------------------------------------------->
 
- <header class="row">
-     <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
-         <figure>
-             <a href="/"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
-         </figure>
-     </section>
-     <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">
-         <button type="button" class="btn btn-light"><a href="/registro"><i class="fas fa-user-plus"></i>
-                 Crear
-                 cuenta</a></button>
-         <button type="button" class="btn btn-light"><a href="/login"><i class="fas fa-sign-in-alt"></i>
-                 Iniciar
-                 Sesion</a></button>
-     </section>
+<header class="row">
+    <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
+        <figure>
+            <a href="/"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
+        </figure>
+    </section>
+    <% if(locals.usuario) { %>
+    <section class="col-sm-12 col-md-5 col-lg-5 index-login2 p-0">
+        <figure class="form-group">
+            <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>"
+                alt="Imagen del usuario">
+            <h5 class="saludouser">Bienvenido (a) <%= locals.usuario.nombre %></h5>
+            </li>
+        </figure>
+        <button class="cerrarsesion" type="button" class="btn btn-light"><a href="/logout"><i class="fas fa-sign-out-alt"></i>
+                Cerrar cuenta</a></button>
+    </section>
+
+    <%} else {%>
+    <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">
+        <button type="button" class="btn btn-light"><a href="/registro"><i class="fas fa-user-plus"></i>
+                Crear
+                cuenta</a></button>
+        <button type="button" class="btn btn-light"><a href="/login"><i class="fas fa-sign-in-alt"></i>
+                Iniciar
+                Sesion</a></button>
+    </section>
+    <%}%> 
      <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
          <section class="social">
              <a target="__blank" href="https://www.facebook.com/">

@@ -13,8 +13,8 @@ const productoController = {
     },
     categoria: function (req, res) {
         let productosSeleccionados = productos.filter(p => p.categoria == req.params.categoria);
-        let titulo = String(req.params.categoria).toLowerCase()
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos:productosSeleccionados, titulo,});
+        let titulo = String(req.params.categoria).toUpperCase()
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos: productosSeleccionados, titulo,});
     }
 
 

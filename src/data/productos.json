@@ -2,7 +2,7 @@
   {
     "id": 1,
     "categoria": "aceites",
-    "nombre": "Aceite de Coco virgen Organico ",
+    "nombre": "Aceite de Coco virgen Organico x 225cc - Oh Yeah Its Vegan",
     "descripcion": "Descripción bla",
     "stock": 500,
     "precio": 50000,
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "categoria": "aceites",
-    "nombre": "Aceite de coco puro Neutro ",
+    "nombre": "Aceite de coco puro Neutro x225ml - God Bless You",
     "descripcion": "Descripcion 2",
     "stock": 665465,
     "precio": 13213,
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana roja x 1 Litro ",
+    "nombre": "Jugo de manzana roja x 1 Litro - Pura Frutta",
     "descripcion": "Hola soy descripción!",
     "stock": 789,
     "precio": 176,
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana verde x 1 Litro",
+    "nombre": "Jugo de manzana verde x 1 Litro - Pura Frutta",
     "descripcion": " Hola soy descripción!",
     "stock": 4655,
     "precio": 176,
@@ -68,24 +68,13 @@
   {
     "id": 7,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana y Arandanos ",
+    "nombre": "Jugo de manzana y Arandanos x 1 Litro - Pura Frutta",
     "descripcion": "Hola soy descripción!",
     "stock": 369,
     "precio": 210,
     "descuento": 15,
     "recomendado": "noRecomendado",
     "imagen": "producto-1593830933671.jpg"
-  },
-  {
-    "id": 8,
-    "categoria": "bebidas",
-    "nombre": "Jugo de manzana y Frutilla ",
-    "descripcion": "Hola soy descripción!",
-    "stock": 147,
-    "precio": 218,
-    "descuento": 15,
-    "recomendado": "noRecomendado",
-    "imagen": "producto-1593830998958.jpg"
   },
   {
     "id": 9,
@@ -101,7 +90,7 @@
   {
     "id": 10,
     "categoria": "endulzantes",
-    "nombre": "Miel Organica liquida x 400grs",
+    "nombre": "Miel Organica liquida x 400grs - Las Quinas",
     "descripcion": "Hola soy descripción!",
     "stock": 656,
     "precio": 265,
@@ -112,7 +101,7 @@
   {
     "id": 11,
     "categoria": "harinas",
-    "nombre": "Fecula de Mandioca sin tacc",
+    "nombre": "Fecula de Mandioca sin tacc x 1kg - Natuzen",
     "descripcion": "Hola soy descripción!",
     "stock": 354,
     "precio": 248,
@@ -123,7 +112,7 @@
   {
     "id": 12,
     "categoria": "harinas",
-    "nombre": "Almion de Maiz sin tacc ",
+    "nombre": "Almion de Maiz sin tacc x 1kg - Natuzen",
     "descripcion": "Hola soy descripción!",
     "stock": 656,
     "precio": 228,

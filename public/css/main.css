@@ -19,7 +19,22 @@ header{
     width: 100% ;
     margin-top: 10px;
 }
+
 .index-login a{
+    color: #F5803E;
+    font-size: 15px;
+    
+}
+.imguser{
+    width: 10%;
+    border-radius: 10%;
+}
+.saludouser{
+    width: 50%;
+    color: white;
+    font-size: 20px;
+}
+.cerrarsesion a{
     color: #F5803E;
     font-size: 15px;
 }
@@ -193,9 +208,6 @@ main article a{
     font-size: 20px;
     margin: 0 15px;
     }
-    .altura{
-        max-height: 15vh;
-    }
     .main-tercer-titulo{
         text-align: left;
         border-bottom: solid;
@@ -323,8 +335,4 @@ margin-left: 10px;
 }
 .agregar-prod{
     color: white;
-}
-
-.article-hover:hover{
-    opacity: 0.7 ;
 }

@@ -2,6 +2,13 @@ const express = require('express');
 const methodOverride = require('method-override');
 const app = express();
 
+//Requerimos los paquetes de session y cookies
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+//requerimos el middleware acceso
+const acceso = require('./middlewares/acceso');
+
 // Archivos estaticos
 
 app.use(express.static('public'));
@@ -11,6 +18,18 @@ app.use(express.urlencoded({ extended: false }));
 
 //Middleware para determinar metodos HTTP distintos a los aceptados por los formularios (GET - POST)
 app.use(methodOverride('_method'));
+
+//middlewares de session y cookies
+
+app.use(session({
+    secret : 'topSecret',
+    resave: true,
+    saveUninitialized: true,
+}))
+
+app.use(cookieParser());
+
+app.use(acceso);
 
 //Aca instalamos EJS
 app.set('view engine', 'ejs');
