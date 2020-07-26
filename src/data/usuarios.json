@@ -28,10 +28,11 @@
   },
   {
     "id": 4,
-    "nombre": "Lucia",
-    "email": "luli@gmail.com",
-    "telefono": 1531995678,
-    "imagen": "usuario-1595741308077.JPG",
-    "apellido": "Enríquez"
+    "nombre": "gabriel",
+    "apellido": "Rodriguez",
+    "email": "gabo@gmail.com",
+    "telefono": 16546546554,
+    "contraseña": "$2a$10$Cczvw6oIbTjVKY56uiaMIu0EHtnNTfzwo9MI/ZXQN7y/vldJwdDiK",
+    "imagen": "usuario-1595805671419.png"
   }
 ]

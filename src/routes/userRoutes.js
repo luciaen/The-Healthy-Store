@@ -105,7 +105,7 @@ router.post('/login',[
             }
         }
         return false
-    }).withMessage('Usuario no se encuentra registrado...'),
+    }).withMessage('Usuario no Registrado'),
     body('password').custom(function(value){
         //requiero mi archivo JSon de Usuarios
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
