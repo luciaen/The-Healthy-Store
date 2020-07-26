@@ -1,65 +1,25 @@
-[
-  {
+[{
     "id": 1,
-    "nombre": "Melvyn",
-    "email": "mbacup0@yahoo.co.jp",
-    "telefono": "3233286556",
-    "contraseña": "upbyjmC",
-    "imagen": "usuario1.jpg"
+    "nombre": "Federico Nicolas",
+    "email": "cuellofederico94@gmail.com",
+    "telefono": "1160534153",
+    "contraseña": "$2a$10$YSG3n9c0btmI6Y94ePqI9uCxpn4L5aajaYpkoCGkCedAMpgYH6opW",
+    "imagen": "usuario-1595684398040.jpg"
   },
   {
     "id": 2,
-    "nombre": "Daile",
-    "email": "dmccrackan1@telegraph.co.uk",
-    "telefono": "8955098259",
-    "contraseña": "WXaT5J7wCqY",
-    "imagen": "usuario2.jpg"
+    "nombre": "Milagros zacariaz",
+    "email": "Mili@gmail.com",
+    "telefono": 1160534153,
+    "contraseña": "$2a$10$ZEvk4sZW61TBybnIMJlMpOTSeKlK1snL0tHxH0H77QtTkGrjZD2CG",
+    "imagen": "usuario-1595686010613.jpg"
   },
   {
     "id": 3,
-    "nombre": "Carlos",
-    "email": "cschneidau2@joomla.org",
-    "telefono": "7197010009",
-    "contraseña": "zGTZrlJ15G1",
-    "imagen": "usuario3.jpg"
-  },
-  {
-    "id": 5,
-    "nombre": "Fede",
-    "email": "frde@gmail.com",
-    "telefono": "23436576",
-    "contraseña": "1234"
-  },
-  {
-    "id": 7,
-    "nombre": "Fedeeee",
-    "email": "fede_devm@gmail.com",
-    "telefono": 1560534153,
-    "contraseña": "natsu890",
-    "imagen": "usuario-1593812442026.jpg"
-  },
-  {
-    "id": 8,
-    "nombre": "Ronaldo Patricio Quinn",
-    "email": "ronacho07@gmail.com",
-    "telefono": "3058747044",
-    "contraseña": "123",
-    "imagen": "usuario-1593904959407.PNG"
-  },
-  {
-    "id": 9,
-    "nombre": "Ronaldo Patricio Quinn",
-    "email": "ronacho07@gmail.com",
-    "telefono": "3058747044",
-    "contraseña": "$2b$10$d4p3UpoiXEdbIWYe/fUEvuWQeO7z67F9iuTC4B2AnDzfAfeAiXIPW",
-    "imagen": "usuario-1593905273469.PNG"
-  },
-  {
-    "id": 10,
-    "nombre": "Lucia",
-    "email": "luli@gmail.com",
-    "telefono": "1541556787",
-    "contraseña": "$2b$10$iQctnFB0065mwZXPpVZt6O8KEga/qbl956A8JDwRib4swbHnQmOzS",
-    "imagen": "usuario-1594068631021.JPG"
+    "nombre": "Nicolas",
+    "email": "nico@gmail.com",
+    "telefono": 515151515151,
+    "contraseña": "$2a$10$3koFYAAx0be0NnY5OqzxVO3pA4kKjs/Iw90mZlWyM7kXQWB05DRzG",
+    "imagen": "usuario-1595711896562.jpg"
   }
 ]
