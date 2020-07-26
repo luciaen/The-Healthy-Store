@@ -134,7 +134,7 @@ const userController = {
         if (errors.isEmpty()) {
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
             let usuarioLogueado = usuarios.find(u => u.email == req.body.email)
-            delete usuarioLogueado.password;
+            delete usuarioLogueado.contraseña;
             req.session.usuario = usuarioLogueado;
             if (req.body.recordarme) {
                 res.cookie('email', usuarioLogueado.email, { maxAge: 1000 * 60 * 60 * 24 })

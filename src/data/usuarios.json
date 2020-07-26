@@ -33,23 +33,5 @@
     "telefono": 1531995678,
     "imagen": "usuario-1595741308077.JPG",
     "apellido": "Enríquez"
-  },
-  {
-    "id": 5,
-    "nombre": "Enzo ",
-    "apellido": "dominguez",
-    "email": "enzo@gmail.com",
-    "telefono": 15151515151,
-    "contraseña": "$2a$10$sC4nTTXjQGh7Sgwk0.PQde1P3mMFv9pMA7gXIkCEDXSBKjbZdEWZe",
-    "imagen": "usuario-1595780353139.jpg"
-  },
-  {
-    "id": 6,
-    "nombre": "Gabriel ",
-    "apellido": "Rodriguez",
-    "email": "gabo@gmail.com",
-    "telefono": 6616541654654,
-    "contraseña": "$2a$10$1f1R4mtbMN1QUOoMICHiceWUK3szSXQs082CKJbX8t8KA7x1BTTOW",
-    "imagen": "usuario-1595794516224.jpg"
   }
 ]

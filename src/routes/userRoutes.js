@@ -116,7 +116,7 @@ router.post('/login',[
             }
         }
         return false
-    }).withMessage('Contraseña incorrecta'),
+    }).withMessage('Contraseña Incorrecta'),
 ],userController.ingresar);
 
 
