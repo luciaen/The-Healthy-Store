@@ -2,9 +2,9 @@
     "id": 1,
     "nombre": "Federico Nicolas",
     "email": "cuellofederico94@gmail.com",
-    "telefono": "1160534153",
+    "telefono": 1160534153,
     "contraseña": "$2a$10$YSG3n9c0btmI6Y94ePqI9uCxpn4L5aajaYpkoCGkCedAMpgYH6opW",
-    "imagen": "usuario-1595684398040.jpg"
+    "imagen": "usuario-1595723295684.jpg"
   },
   {
     "id": 2,
@@ -12,7 +12,7 @@
     "email": "Mili@gmail.com",
     "telefono": 1160534153,
     "contraseña": "$2a$10$ZEvk4sZW61TBybnIMJlMpOTSeKlK1snL0tHxH0H77QtTkGrjZD2CG",
-    "imagen": "usuario-1595686010613.jpg"
+    "imagen": "usuario-1595723314735.jpg"
   },
   {
     "id": 3,
@@ -20,6 +20,6 @@
     "email": "nico@gmail.com",
     "telefono": 515151515151,
     "contraseña": "$2a$10$3koFYAAx0be0NnY5OqzxVO3pA4kKjs/Iw90mZlWyM7kXQWB05DRzG",
-    "imagen": "usuario-1595711896562.jpg"
+    "imagen": "usuario-1595723394932.jpg"
   }
 ]
