@@ -28,6 +28,7 @@ header{
 .imguser{
     width: 10%;
     border-radius: 50%;
+    color: white;
 }
 .saludouser{
     width: 50%;
@@ -37,10 +38,6 @@ header{
     margin-right: 10px ;
     
 
-}
-.cerrarsesion a{
-    color: #F5803E;
-    font-size: 15px;
 }
 .index-social-cart{
     margin-top: 20px;
