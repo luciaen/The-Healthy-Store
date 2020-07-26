@@ -8,14 +8,18 @@
     </section>
     <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5 index-login2 p-0">
-        <figure class="form-group">
+         <figure class="form-group"></figure>
+        <a class="saludouser " href="perfil/<%=usuario.id%>">
+           
             <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>"
                 alt="Imagen del usuario">
-            <h5 class="saludouser">Bienvenido (a) <%= locals.usuario.nombre %></h5>
-            </li>
+              Bienvenido (a)
+                    <%= locals.usuario.nombre %> </a>
+            
         </figure>
-        <button class="cerrarsesion" type="button" class="btn btn-light"><a href="/logout"><i class="fas fa-sign-out-alt"></i>
-                Cerrar cuenta</a></button>
+        <button class="cerrarsesion" type="button" class="btn btn-light"><a
+                href="/logout"><i class="fas fa-sign-out-alt"></i>
+                Cerrar sesión</a></button>
     </section>
 
     <%} else {%>

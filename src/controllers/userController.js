@@ -24,7 +24,42 @@ const userController = {
             usuarioShow
         });
     },
+    
+     perfil: function (req, res) {
+         let userId = req.params.id;
+         const usuarioPerfil = usuarios.find(u => u.id == userId);
+         res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {
+             usuarioPerfil
+         });
+     },
+      editperfil: function (req, res) {
+              let usuarioId = req.params.id;
+              const editPerfil = usuarios.find(u => u.id == usuarioId);
+              res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {
+                  editPerfil
+              });
+          },
+          updateperfil: function (req, res) {
 
+              let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+              req.body.id = req.params.id;
+              let usuariosUpdate = usuarios.map(u => {
+                  if (u.id == req.body.id) {
+
+                      u.nombre = req.body.nombre,
+                          u.apellido = req.body.lastname,
+                          u.email = req.body.email,
+                          u.telefono = Number(req.body.telefono),
+                          u.contraseña = req.body.contraseña,
+                          u.imagen = req.file ? req.file.filename : ""
+                  }
+                  return u;
+              });
+              usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
+              fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
+              res.redirect('/');
+          },
+          
     create: function (req, res) {
             let errors=validationResult(req);
          if(errors.isEmpty()){
@@ -35,6 +70,7 @@ const userController = {
             let nuevoUsuario = {
                 id: ultimoUsuario.id + 1,
                 nombre: req.body.nombre,
+                apellido: req.body.lastname,
                 email: req.body.email,
                 telefono: Number(req.body.telefono),
                 contraseña:  bcrypt.hashSync(req.body.password, 10),
@@ -66,6 +102,7 @@ const userController = {
                   if (u.id == req.body.id) {
 
                           u.nombre = req.body.nombre,
+                          u.apellido = req.body.lastname,
                           u.email = req.body.email,
                           u.telefono = Number(req.body.telefono),
                           u.contraseña = req.body.contraseña,

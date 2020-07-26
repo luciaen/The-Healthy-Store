@@ -23,9 +23,9 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Teléfono</th>
-                        <th scope="col">Contraseña</th>
                         <th scope="col">Ver</th>
                         <th scope="col">Editar</th>
                         <th scope="col">Borrar</th>
@@ -36,9 +36,9 @@
                     <tr>
                         <th scope="row"><%=usuario.id%></th>
                         <td><%=usuario.nombre%></td>
+                        <td><%=usuario.apellido%></td>
                         <td><%=usuario.email%></td>
                         <td><%=usuario.telefono%></td>
-                        <td><%=usuario.contraseña%></td>
                         <td><a href="/user/detail/<%=usuario.id%>"><i class="far fa-eye"></i></a></td>
                         <td><a href="/user/edit/<%=usuario.id%>"><i class="fas fa-pencil-alt"></i></a></td>
                         <td><a href="/user/delete/<%=usuario.id%>"><i class="fas fa-trash"></i></a></td>

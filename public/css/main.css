@@ -27,12 +27,16 @@ header{
 }
 .imguser{
     width: 10%;
-    border-radius: 10%;
+    border-radius: 50%;
 }
 .saludouser{
     width: 50%;
     color: white;
     font-size: 20px;
+    text-decoration: none;
+    margin-right: 10px ;
+    
+
 }
 .cerrarsesion a{
     color: #F5803E;
