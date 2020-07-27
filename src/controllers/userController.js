@@ -82,9 +82,10 @@ const userController = {
             fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
             res.redirect('/login');
         } else {
-            return res.render(path.resolve(__dirname, '../views/user/registro'), {
+            res.render(path.resolve(__dirname, '../views/user/registro'), { errors: errors.mapped(), old: req.body });
+            /*return res.render(path.resolve(__dirname, '../views/user/registro'), {
                 errors: errors.errors, old: req.body
-            });
+            });*/
         }
     },
     edit: function (req, res) {

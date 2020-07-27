@@ -49,11 +49,13 @@
                  <i class="fab fa-youtube"></i>
              </a>
          </section>
+         <% if(locals.usuario) { %>
          <section class="shopping">
              <a href="/carrito"><i class="fas fa-cart-arrow-down"></i></a>
              <a href="/carrito">Productos: 2</a>
              <a href="/carrito">Total: $640</a>
          </section>
+         <%} else {%><%}%> 
      </section>
  </header>
 
