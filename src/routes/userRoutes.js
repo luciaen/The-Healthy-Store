@@ -98,10 +98,7 @@ router.post('/login',[
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
         for(let i =0;i<usuarios.length;i++){
             if (usuarios[i].email == value) {
-                //Antes de hacer el return  deben validar si las contraseñas son las mismas
-                //compareSync
                 return true    
-    
             }
         }
         return false
@@ -117,7 +114,7 @@ router.post('/login',[
         }
         return false
     }).withMessage('Contraseña Incorrecta'),
-],userController.ingresar);
+],userController.getIn);
 
 
 router.post('/registro', upload.single('imagen'),
