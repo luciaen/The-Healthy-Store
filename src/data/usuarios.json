@@ -34,5 +34,14 @@
     "telefono": 16546546554,
     "contraseña": "$2a$10$Cczvw6oIbTjVKY56uiaMIu0EHtnNTfzwo9MI/ZXQN7y/vldJwdDiK",
     "imagen": "usuario-1595805671419.png"
+  },
+  {
+    "id": 5,
+    "nombre": "fede",
+    "apellido": "cuello",
+    "email": "fede@gmail.com",
+    "telefono": 1561654654,
+    "contraseña": "$2a$10$aLJFbElxH9JRt0vIZ/OZEOrFx6uJTBYyVSs410uUDYD5FkpDhM39i",
+    "imagen": "usuario-1595898756451.png"
   }
 ]

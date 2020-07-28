@@ -11,7 +11,9 @@ module.exports = (req,res,next) =>{
     }else if(req.cookies.email){
         let usuario = usuarios.find(u => u.email == req.cookies.email)
         //return res.send(usuario);
-        delete usuario.password;
+        if(usuario.password != "undefined"){
+            delete usuario.password;
+        }
         req.session.usuario = usuario;
         res.locals.usuario = usuario;
         return next();
