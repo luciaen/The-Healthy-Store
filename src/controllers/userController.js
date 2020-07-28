@@ -117,11 +117,11 @@ const userController = {
         let usuariosUpdate = usuarios.map(u => {
             if (u.id == req.body.id) {
 
-                u.nombre = req.body.nombre,
+                    u.nombre = req.body.nombre,
                     u.apellido = req.body.lastname,
                     u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
-                    u.contraseña = req.body.contraseña,
+                   // u.contraseña = req.body.contraseña,
                     u.imagen = req.file ? req.file.filename : ""
             }
             return u;
