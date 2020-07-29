@@ -28,10 +28,20 @@
   },
   {
     "id": 4,
-    "nombre": "Lucia",
+    "nombre": "lucia",
+    "apellido": "enriquez",
     "email": "luli@gmail.com",
-    "telefono": 1531995678,
-    "imagen": "usuario-1595741308077.JPG",
-    "apellido": "Enríquez"
+    "telefono": 125236585,
+    "contraseña": "$2a$10$UXG05aMbfQelVs0InGVdO.Wqgr4Norr6nT989r3jund00R/xYrgMC",
+    "imagen": "usuario-1595802541326.JPG"
+  },
+  {
+    "id": 5,
+    "nombre": "juan",
+    "apellido": "perez",
+    "email": "juanp@gmail.com",
+    "telefono": 12345667,
+    "contraseña": "$2a$10$P6Cbf1uGCGKdEycgeUljnOjvpDQTHAY9ekgotqYRZ3a6.dZ6uNinW",
+    "imagen": "usuario-1595802772553.JPG"
   }
 ]
