@@ -78,11 +78,17 @@
                                   <option value="vendido" <%= productoEdit.recomendado == "vendido" ? "selected" : null %>>Mas Vendidos</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="">Imagen del producto</label>
+                                <figure class="form-group">
+                                    <img class="w-50 " src="/images/productos/<%=  productoEdit.imagen %>"
+                                        alt="Imagen del del plato">
+                                </figure>
+                            </div>
                             <div class="custom-file">
-
                                 <input type="file" class="custom-file-input" name="imagen"
                                     placeholder="Seleccione una imagen">
-                                <label class="custom-file-label" for="">Eligir la imagen...</label>
+                                <label class="custom-file-label" for="">Eligir nueva imagen...</label>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn btn-primary">Actualizar</button>
