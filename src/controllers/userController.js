@@ -16,6 +16,12 @@ const userController = {
     index: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
+    index2: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index2'),{usuarios});
+    },
+    index3: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index3'),{usuarios});
+    },
     create: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
