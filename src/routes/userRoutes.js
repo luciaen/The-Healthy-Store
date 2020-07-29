@@ -102,12 +102,8 @@ router.post('/registro', upload.single('imagen'),
 
 router.put('/user/editperfil/:id', upload.single('imagen'),
     [
-        check('nombre').isLength({
-            min: 1
-        }).withMessage('Campo nombre obligatorio'),
-        check('lastname').isLength({
-            min: 1
-        }).withMessage('Campo apellido obligatorio'),
+        check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
+        check('lastname').isLength({min: 1}).withMessage('Campo apellido obligatorio'),
         check('email').isEmail().withMessage('Mail invalido'),
         check('telefono').isLength({
             min: 1

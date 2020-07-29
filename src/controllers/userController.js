@@ -112,6 +112,7 @@ const userController = {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'),{editPerfil});
     },
     updateperfil: function (req, res) {
+        //Requerir los errores de las ruta
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
         let usuariosUpdate = usuarios.map(u => {
