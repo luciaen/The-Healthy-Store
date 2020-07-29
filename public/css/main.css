@@ -12,6 +12,17 @@ body{
     background-color:white
 }
 /*----------header css----------*/
+.carousel-item {
+    margin-top: 0px;
+    margin-left: 0px;
+    /*height: 50vh;
+    min-height: 350px;*/
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 header{
     background-color: #F5803E;
 }
@@ -28,6 +39,7 @@ header{
 .imguser{
     width: 10%;
     border-radius: 50%;
+    color: white;
 }
 .saludouser{
     width: 50%;
@@ -37,10 +49,6 @@ header{
     margin-right: 10px ;
     
 
-}
-.cerrarsesion a{
-    color: #F5803E;
-    font-size: 15px;
 }
 .index-social-cart{
     margin-top: 20px;
@@ -112,7 +120,6 @@ header{
 
 .main-titulo{
     color:#FD9C65;
-    margin: 20px 0px;
     text-align: center;
     border-bottom: solid;
     font-weight: 700;
@@ -202,6 +209,10 @@ main article a{
         margin-top: 110px;
         text-align: end;
     }
+    .carousel-item {
+        height: 50vh;
+        min-height: 350px;
+       }
 
   /*CSS MAIN----------------*/
   .main-titulo{
@@ -243,6 +254,10 @@ main article a{
     .shopping a{
     margin-left: 20px;
     }
+    .carousel-item {
+        height: 50vh;
+        min-height: 350px;
+       }
     /*-css main----------*/
      main article img{
         width: 100%;
@@ -271,6 +286,10 @@ main article a{
         font-size: 22px;
         margin-left: 25px;
     }
+    .carousel-item {
+        height: 50vh;
+        min-height: 350px;
+       }
  /*CSS FOOTER-------------*/   
     .index-footer{
         height: 20vh;

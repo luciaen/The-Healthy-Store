@@ -2,10 +2,10 @@
   {
     "id": 1,
     "categoria": "aceites",
-    "nombre": "Aceite de Coco virgen Organico x 225cc - Oh Yeah Its Vegan",
-    "descripcion": "Descripción bla",
+    "nombre": "Aceite de Coco Orgánico",
+    "descripcion": "Virgen primera prensada",
     "stock": 500,
-    "precio": 50000,
+    "precio": 500,
     "descuento": 30,
     "recomendado": "recomendado",
     "imagen": "producto-1593829585998.jpg"
@@ -13,10 +13,10 @@
   {
     "id": 2,
     "categoria": "aceites",
-    "nombre": "Aceite de coco puro Neutro x225ml - God Bless You",
-    "descripcion": "Descripcion 2",
-    "stock": 665465,
-    "precio": 13213,
+    "nombre": "Aceite de Coco Neutro" ,
+    "descripcion": "Producto Brazil",
+    "stock": 465,
+    "precio": 733,
     "descuento": 0,
     "recomendado": "vendido",
     "imagen": "producto-1593829791979.jpg"
@@ -24,10 +24,10 @@
   {
     "id": 3,
     "categoria": "aceites",
-    "nombre": "Aceite de Lino x 250ml - Campo Claro",
-    "descripcion": "Hola soy descripción!",
+    "nombre": "Aceite de Lino ",
+    "descripcion": "Producto Chivilcoy",
     "stock": 132,
-    "precio": 135,
+    "precio": 835,
     "descuento": 15,
     "recomendado": "noRecomendado",
     "imagen": "producto-1593830611517.jpg"
@@ -35,8 +35,8 @@
   {
     "id": 4,
     "categoria": "aceites",
-    "nombre": "Aceto balsamico x 250cc - Anahata",
-    "descripcion": " Hola soy descripción!",
+    "nombre": "Aceto balsamico ",
+    "descripcion": "Similar Modena",
     "stock": 666,
     "precio": 332,
     "descuento": 30,
@@ -46,10 +46,10 @@
   {
     "id": 5,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana roja x 1 Litro - Pura Frutta",
-    "descripcion": "Hola soy descripción!",
+    "nombre": "Jugo de manzana roja ",
+    "descripcion": "Litro Marca Pura Frutta",
     "stock": 789,
-    "precio": 176,
+    "precio": 976,
     "descuento": 0,
     "recomendado": "recomendado",
     "imagen": "producto-1593830758621.jpg"
@@ -57,9 +57,9 @@
   {
     "id": 6,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana verde x 1 Litro - Pura Frutta",
-    "descripcion": " Hola soy descripción!",
-    "stock": 4655,
+    "nombre": "Jugo de manzana verde ",
+    "descripcion": " Litro Marca Pura Frutta",
+    "stock": 855,
     "precio": 176,
     "descuento": 15,
     "recomendado": "vendido",
@@ -68,9 +68,9 @@
   {
     "id": 7,
     "categoria": "bebidas",
-    "nombre": "Jugo de manzana y Arandanos x 1 Litro - Pura Frutta",
-    "descripcion": "Hola soy descripción!",
-    "stock": 369,
+    "nombre": "Jugo de manzana y Arandanos ",
+    "descripcion": "Litro Pura - Frutta",
+    "stock": 869,
     "precio": 210,
     "descuento": 15,
     "recomendado": "noRecomendado",
@@ -79,9 +79,9 @@
   {
     "id": 9,
     "categoria": "endulzantes",
-    "nombre": "Azucar integral mascabo x 1 Kg",
-    "descripcion": "Hola soy descripción!",
-    "stock": 5552,
+    "nombre": "Azucar integral mascabo",
+    "descripcion": "Producto Misiones",
+    "stock": 552,
     "precio": 248,
     "descuento": 30,
     "recomendado": "recomendado",
@@ -90,8 +90,8 @@
   {
     "id": 10,
     "categoria": "endulzantes",
-    "nombre": "Miel Organica liquida x 400grs - Las Quinas",
-    "descripcion": "Hola soy descripción!",
+    "nombre": "Miel Organica liquida ",
+    "descripcion": "Liquida Marca Las Quinas",
     "stock": 656,
     "precio": 265,
     "descuento": 0,
@@ -101,8 +101,8 @@
   {
     "id": 11,
     "categoria": "harinas",
-    "nombre": "Fecula de Mandioca sin tacc x 1kg - Natuzen",
-    "descripcion": "Hola soy descripción!",
+    "nombre": "Fecula de Mandioca ",
+    "descripcion": "Apto celíacos Marca Matuzzen",
     "stock": 354,
     "precio": 248,
     "descuento": 15,
@@ -112,11 +112,11 @@
   {
     "id": 12,
     "categoria": "harinas",
-    "nombre": "Almion de Maiz sin tacc x 1kg - Natuzen",
-    "descripcion": "Hola soy descripción!",
+    "nombre": "Almion de Maiz ",
+    "descripcion": "Sin tacc x 1kg - Natuzen",
     "stock": 656,
     "precio": 228,
-    "descuento": null,
+    "descuento": 15,
     "recomendado": "vendido",
     "imagen": "producto-1593832333241.png"
   }
