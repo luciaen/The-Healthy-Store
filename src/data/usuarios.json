@@ -1,12 +1,12 @@
 [
   {
     "id": 1,
-    "nombre": "Federico Nicolas",
+    "nombre": "Federico  ",
     "apellido": "Cuello",
     "email": "cuellofederico94@gmail.com",
     "telefono": 1160534153,
-    "contraseña": "$2a$10$YSG3n9c0btmI6Y94ePqI9uCxpn4L5aajaYpkoCGkCedAMpgYH6opW",
-    "imagen": "usuario-1595988805295.jpg"
+    "contraseña": "$2a$10$CMSAPmYNA0zlc5VDfQHdVerysEbNAsYBmGLxQUziQ/2N87p0vL9SO",
+    "imagen": "usuario-1596128347990.jpg"
   },
   {
     "id": 2,
@@ -118,11 +118,11 @@
   },
   {
     "id": 15,
-    "nombre": "Lucia",
-    "apellido": "Enriquez",
-    "email": "luli@gmail.com",
-    "telefono": 15312456,
-    "contraseña": "$2a$10$w45kVUYNk0H/UYn.W/msneTnOVzZsrjfJOXJrErOPaiKe5EWJzm5e",
-    "imagen": "usuario-1596128578751.JPG"
+    "nombre": "Claudia",
+    "apellido": "Cuello",
+    "email": "clau@gmail.com",
+    "telefono": 1565465456,
+    "contraseña": "$2a$10$QBfHFNuwOTJ0YMPLiPsZneqC5FEQTEApy92BZzLOvhhbR0ujAlXLG",
+    "imagen": "usuario-1596126542000.png"
   }
 ]
