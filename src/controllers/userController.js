@@ -62,17 +62,26 @@ const userController = {
         req.body.id = req.params.id;
         let usuariosUpdate = usuarios.map(u => {
             if (u.id == req.body.id) {
-                u.nombre = req.body.nombre,
+                    u.nombre = req.body.nombre,
                     u.apellido = req.body.apellido,
                     u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
-                    u.imagen = req.file ? req.file.filename : ""
+                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
+                    u.imagen = req.file ? req.file.filename : req.body.image_old
             }
             return u;
         });
-        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+        usuariosJSON = JSON.stringify(usuarios, null, 2);
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
         res.redirect('/usuarios');
+    }
+    else {
+        let usuarioId = req.params.id;
+            const usuarioEdit = usuarios.find(u => u.id == usuarioId);
+            return res.render(path.resolve(__dirname, '../views/user/edit'), {errors: errors.mapped(),usuarioEdit : usuarioEdit});
+        }
     },
     delete: function (req, res) {
         let usuarioId = req.params.id;
@@ -118,25 +127,7 @@ const userController = {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'),{editPerfil});
     },
     updateperfil: function (req, res) {
-            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-            req.body.id = req.params.id;
-            let editPerfil = usuarios.map(u => {
-                if (u.id == req.body.id) {
-                    u.nombre = req.body.nombre,
-                        u.apellido = req.body.apellido,
-                        u.email = req.body.email,
-                        u.telefono = Number(req.body.telefono),
-                        u.contraseña = bcrypt.hashSync(req.body.password, 10),
-                        u.imagen = req.file ? req.file.filename : ""
-                }
-                return u;
-            });
-            usuariosJSON = JSON.stringify(editPerfil, null, 2);
-            fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-            res.redirect('/'); /*
-     let errors = validationResult(req);
-    
-     if (errors.isEmpty()) {
+        //Requerir los errores de las ruta
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
         let usuariosUpdate = usuarios.map(u => {
@@ -155,13 +146,6 @@ const userController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON, );
         res.redirect('/');
     }
-    else {
-        res.render(path.resolve(__dirname, '../views/user/editperfil'), {
-            errors: errors.mapped(),
-            old: req.body});
-    
-}*/
-}} 
-    
+}
 
 module.exports = userController;
