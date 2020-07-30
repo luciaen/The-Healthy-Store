@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luciaen/The-Healthy-Store.git"
+    "url": "git+https://github.com/luciaen/proyecto.git"
   },
   "author": "Lucia Enriquez-Ronaldo Quinn- Federico Cuello",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luciaen/The-Healthy-Store/issues"
+    "url": "https://github.com/luciaen/proyecto/issues"
   },
-  "homepage": "https://github.com/luciaen/The-Healthy-Store#readme",
+  "homepage": "https://github.com/luciaen/proyecto.git#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",

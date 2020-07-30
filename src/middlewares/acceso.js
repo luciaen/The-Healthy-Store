@@ -10,7 +10,7 @@ module.exports = (req,res,next) =>{
         return next();
     }else if(req.cookies.email){
         let usuario = usuarios.find(u => u.email == req.cookies.email)
-        //return res.send(usuario);
+      //  return res.send(usuario);
        if(usuario.password != "undefined"){
             delete usuario.password;
         }

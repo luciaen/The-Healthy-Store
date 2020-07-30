@@ -38,19 +38,82 @@
   {
     "id": 5,
     "nombre": "Enzo",
-    "apellido": "Navaz",
+    "apellido": "dominguez",
     "email": "enzo@gmail.com",
     "telefono": 1560534153,
     "contraseña": "$2a$10$2dGPcoQvb4MmHUmvrMNtx.pnJNvSgQt8E0vxOckmMGHuxbK6HUU6y",
-    "imagen": "usuario-1595908819267.png"
+    "imagen": "usuario-1596041110661.png"
   },
   {
     "id": 6,
+    "nombre": "Luis",
+    "apellido": "Ranniti",
+    "email": "luis@gmail.com",
+    "telefono": 1654654,
+    "contraseña": "$2a$10$ieMetD7pLXVBmNrxqJVk6eAXZALVZS3bZ9K3ovrSaRG3rOwOLhfTW",
+    "imagen": "usuario-1596051998018.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Hernan",
+    "apellido": "Sueyro",
+    "email": "hernan@gmail.com",
+    "telefono": 1654684989,
+    "contraseña": "$2a$10$e54icK3VuVGQ8TkM6ZzeguN3g0jVRBg0Oik46AejH5WECnweRSk52",
+    "imagen": "usuario-1596052089769.png"
+  },
+  {
+    "id": 8,
+    "nombre": "Ezequiel",
+    "apellido": "scarraffioca",
+    "email": "ezequiel@gmail.com",
+    "telefono": 1654798498799,
+    "contraseña": "$2a$10$nnbz1QCb7rk1t8OmyJ1Rf.Z0cSaTm8xJmg1PPEgyPNdNZAdwj0inm",
+    "imagen": "usuario-1596052133182.png"
+  },
+  {
+    "id": 9,
+    "nombre": "Maximiliano",
+    "apellido": "Ranitti",
+    "email": "maxi@gmail.com",
+    "telefono": 1465498794321,
+    "contraseña": "$2a$10$Duwp9nieNPwZ4r6dy7cchO99d4ZArFrQiihoXtUhfvp3vMr7d4CVG",
+    "imagen": "usuario-1596052207241.png"
+  },
+  {
+    "id": 10,
+    "nombre": "Aylen",
+    "apellido": "Legato",
+    "email": "aylen@gmail.com",
+    "telefono": 16546549879132,
+    "contraseña": "$2a$10$GIhU9E0Af.BiF/0.TUch/eHj26cnmdxwtmMvAM/aLq/V7j8ksr0pC",
+    "imagen": "usuario-1596052241908.png"
+  },
+  {
+    "id": 11,
+    "nombre": "Jonathan",
+    "apellido": "Munro",
+    "email": "jonathan@gmail.com",
+    "telefono": 1516548496546,
+    "contraseña": "$2a$10$whvF4mdZlY2Diwjpc.rTMOCg0VoCmLytk7WoKmVFF/V4vpqKhGO7C",
+    "imagen": "usuario-1596052334359.png"
+  },
+  {
+    "id": 12,
+    "nombre": "Alejandro",
+    "apellido": "Suarez",
+    "email": "ale@gmail.com",
+    "telefono": 1654879843216,
+    "contraseña": "$2a$10$9g1olU6QeBdGpM2CLyKGbu7H3DihBkhTvbGxRq.yLfcpawvhP4tfG",
+    "imagen": "usuario-1596052392898.png"
+  },
+  {
+    "id": 13,
     "nombre": "Lucia",
     "apellido": "Enriquez",
     "email": "luli@gmail.com",
-    "telefono": 122353456,
-    "contraseña": "$2a$10$ckstIJeCJ3z/fH01yVwMN.MuHRc3tfqvXXq0Ei2hSyKxhr//1orpm",
-    "imagen": "usuario-1595991352170.JPG"
+    "telefono": 12345677,
+    "contraseña": "$2a$10$33ebui/WXVWXItmyDVF3/eOO.9ZSRhzQxWXbF.hVNvWD93FF10PFW",
+    "imagen": "usuario-1596066902837.JPG"
   }
 ]
