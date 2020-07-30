@@ -13,7 +13,11 @@
   {
     "id": 2,
     "categoria": "aceites",
+<<<<<<< HEAD
     "nombre": "Aceite de Coco Neutro" ,
+=======
+    "nombre": "Aceite de Coco Neutro",
+>>>>>>> aecad205434acdb8318c7a917be6f870ee5e901e
     "descripcion": "Producto Brazil",
     "stock": 465,
     "precio": 733,
@@ -77,7 +81,7 @@
     "imagen": "producto-1593830933671.jpg"
   },
   {
-    "id": 9,
+    "id": 8,
     "categoria": "endulzantes",
     "nombre": "Azucar integral mascabo",
     "descripcion": "Producto Misiones",
@@ -88,7 +92,7 @@
     "imagen": "producto-1593831060766.jpg"
   },
   {
-    "id": 10,
+    "id": 9,
     "categoria": "endulzantes",
     "nombre": "Miel Organica liquida ",
     "descripcion": "Liquida Marca Las Quinas",
@@ -99,7 +103,7 @@
     "imagen": "producto-1593831102689.jpg"
   },
   {
-    "id": 11,
+    "id": 10,
     "categoria": "harinas",
     "nombre": "Fecula de Mandioca ",
     "descripcion": "Apto celíacos Marca Matuzzen",
@@ -110,14 +114,19 @@
     "imagen": "producto-1593832296136.png"
   },
   {
+<<<<<<< HEAD
     "id": 12,
     "categoria": "harinas",
+=======
+    "id": 11,
+>>>>>>> aecad205434acdb8318c7a917be6f870ee5e901e
     "nombre": "Almion de Maiz ",
     "descripcion": "Sin tacc x 1kg - Natuzen",
     "stock": 656,
-    "precio": 228,
-    "descuento": null,
+    "precio": 200,
+    "descuento": 15,
     "recomendado": "vendido",
-    "imagen": "producto-1593832333241.png"
+    "imagen": "producto-1596047285594.png",
+    "categoria": "harinas"
   }
 ]

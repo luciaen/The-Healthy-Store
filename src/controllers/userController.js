@@ -10,56 +10,18 @@ const userController = {
 
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'login'));
     },
-    index: function (req, res) {
-
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'), { usuarios });
-    },
     registro: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'registro'));
     },
-    show: function (req, res) {
-        let usuarioId = req.params.id;
-        const usuarioShow = usuarios.find(u => u.id == usuarioId);
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'detail'), {
-            usuarioShow
-        });
+    index: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
-
-    perfil: function (req, res) {
-        let userId = req.params.id;
-        const usuarioPerfil = usuarios.find(u => u.id == userId);
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {
-            usuarioPerfil
-        });
+    index2: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index2'),{usuarios});
     },
-    editperfil: function (req, res) {
-        let usuarioId = req.params.id;
-        const editPerfil = usuarios.find(u => u.id == usuarioId);
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {
-            editPerfil
-        });
+    index3: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index3'),{usuarios});
     },
-    updateperfil: function (req, res) {
-
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-        req.body.id = req.params.id;
-        let usuariosUpdate = usuarios.map(u => {
-            if (u.id == req.body.id) {
-
-                u.nombre = req.body.nombre,
-                    u.apellido = req.body.lastname,
-                    u.email = req.body.email,
-                    u.telefono = Number(req.body.telefono),
-                    u.contraseña = req.body.contraseña,
-                    u.imagen = req.file ? req.file.filename : ""
-            }
-            return u;
-        });
-        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
-        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-        res.redirect('/');
-    },
-
     create: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -83,44 +45,48 @@ const userController = {
             res.redirect('/login');
         } else {
             res.render(path.resolve(__dirname, '../views/user/registro'), { errors: errors.mapped(), old: req.body });
-            /*return res.render(path.resolve(__dirname, '../views/user/registro'), {
-                errors: errors.errors, old: req.body
-            });*/
         }
+    },
+    show: function (req, res) {
+        let usuarioId = req.params.id;
+        const usuarioShow = usuarios.find(u => u.id == usuarioId);
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'detail'),{usuarioShow});
     },
     edit: function (req, res) {
         let usuarioId = req.params.id;
         const usuarioEdit = usuarios.find(u => u.id == usuarioId);
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), {
-            usuarioEdit
-        });
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'),{usuarioEdit});
     },
     update: function (req, res) {
-
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
         let usuariosUpdate = usuarios.map(u => {
             if (u.id == req.body.id) {
-
-                u.nombre = req.body.nombre,
-                    u.apellido = req.body.lastname,
+                    u.nombre = req.body.nombre,
+                    u.apellido = req.body.apellido,
                     u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
-                    u.contraseña = req.body.contraseña,
-                    u.imagen = req.file ? req.file.filename : ""
+                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
+                    u.imagen = req.file ? req.file.filename : req.body.image_old
             }
             return u;
         });
-        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+        usuariosJSON = JSON.stringify(usuarios, null, 2);
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
         res.redirect('/usuarios');
+    }
+    else {
+        let usuarioId = req.params.id;
+            const usuarioEdit = usuarios.find(u => u.id == usuarioId);
+            return res.render(path.resolve(__dirname, '../views/user/edit'), {errors: errors.mapped(),usuarioEdit : usuarioEdit});
+        }
     },
     delete: function (req, res) {
         let usuarioId = req.params.id;
         const usuarioDelete = usuarios.find(u => u.id == usuarioId);
-        res.render(path.resolve(__dirname, '..', 'views', 'user', 'delete'), {
-            usuarioDelete
-        });
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'delete'),{usuarioDelete});
     },
     destroy: function (req, res) {
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
@@ -130,7 +96,7 @@ const userController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
         res.redirect('/usuarios');
     },
-    ingresar: function (req, res) {
+    getIn: function (req, res) {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
@@ -149,6 +115,36 @@ const userController = {
         req.session.destroy();
         res.cookie('email', null, { maxAge: -1 });
         res.redirect('/')
+    },
+    perfil: function (req, res) {
+        let userId = req.params.id;
+        const usuarioPerfil = usuarios.find(u => u.id == userId);
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'),{usuarioPerfil});
+    },
+    editperfil: function (req, res) {
+        let usuarioId = req.params.id;
+        const editPerfil = usuarios.find(u => u.id == usuarioId);
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'),{editPerfil});
+    },
+    updateperfil: function (req, res) {
+        //Requerir los errores de las ruta
+        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+        req.body.id = req.params.id;
+        let usuariosUpdate = usuarios.map(u => {
+            if (u.id == req.body.id) {
+
+                    u.nombre = req.body.nombre,
+                    u.apellido = req.body.lastname,
+                    u.email = req.body.email,
+                    u.telefono = Number(req.body.telefono),
+                   // u.contraseña = req.body.contraseña,
+                    u.imagen = req.file ? req.file.filename : ""
+            }
+            return u;
+        });
+        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
+        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
+        res.redirect('/');
     }
 }
 

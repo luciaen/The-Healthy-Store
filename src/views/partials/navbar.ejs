@@ -1,6 +1,6 @@
 <!-----------------COMIENZA HEADER------------------------------------------->
 
-<header class="row">
+<header id="cabecera" class="row">
     <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
         <figure>
             <a href="/"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
@@ -8,56 +8,39 @@
     </section>
     <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5  p-0">
-        <figure class="form-group"></figure>
-        <a class="saludouser " href="perfil/<%=usuario.id%>">
-
+        <a class="saludouser " href="/perfil/<%=usuario.id%>">
             <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
             Bienvenido (a)
             <%= locals.usuario.nombre %> </a>
-
-        </figure>
-        <button type="button" class="btn btn-light index-login"><a href="/logout"><i
-                    class="fas fa-sign-out-alt"></i>
-                Cerrar sesión</a></button>
+        <button type="button" class="btn btn-light index-login">
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></button>
     </section>
-
     <%} else {%>
     <section class="col-sm-12 col-md-5 col-lg-5 index-login p-0">
-        <button type="button" class="btn btn-light"><a href="/registro"><i class="fas fa-user-plus"></i>
-                Crear
-                cuenta</a></button>
-        <button type="button" class="btn btn-light"><a href="/login"><i class="fas fa-sign-in-alt"></i>
-                Iniciar
-                Sesion</a></button>
+        <button type="button" class="btn btn-light">
+            <a href="/registro"><i class="fas fa-user-plus"></i>Crear cuenta</a>
+        </button>
+        <button type="button" class="btn btn-light">
+            <a href="/login"><i class="fas fa-sign-in-alt"></i>Iniciar Sesion</a>
+        </button>
     </section>
     <%}%> 
      <section class="col-sm-12 col-md-4 col-lg-4 index-social-cart">
          <section class="social">
-             <a target="__blank" href="https://www.facebook.com/">
-                 <i class="fab fa-facebook"></i>
-             </a>
-             <a target="__blank" href="https://www.instagram.com/">
-                 <i class="fab fa-instagram"></i>
-             </a>
-             <a target="__blank" href="https://twitter.com/login">
-                 <i class="fab fa-twitter"></i>
-             </a>
-             <a target="__blank" href="https://www.google.com.co/">
-                 <i class="fab fa-google-plus-g"></i>
-             </a>
-             <a target="__blank" href="https://www.youtube.com/">
-                 <i class="fab fa-youtube"></i>
-             </a>
+             <a target="__blank" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+             <a target="__blank" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+             <a target="__blank" href="https://twitter.com/login"><i class="fab fa-twitter"></i></a>
+             <a target="__blank" href="https://www.google.com.co/"><i class="fab fa-google-plus-g"></i></a>
+             <a target="__blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
          </section>
          <% if(locals.usuario) { %>
-         <section class="shopping">
-             <a href="/carrito"><i class="fas fa-cart-arrow-down"></i></a>
-             <a href="/carrito">Productos: 2</a>
-             <a href="/carrito">Total: $640</a>
-         </section>
-         <%} else {%><%}%> 
-     </section>
- </header>
+    <section class="shopping">
+        <a href="/carrito"><i class="fas fa-cart-arrow-down"></i></a>
+        <a href="/carrito">Productos: 2</a>
+        <a href="/carrito">Total: $640</a>
+    </section>
+    <%} else {%><%}%>    
+</header>
 
  <div class="row">
      <div class="col p-0">
@@ -117,4 +100,57 @@
              </div>
          </nav>
      </div>
+ </div>
+
+
+ <div class="row">
+    <div class="col p-0">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      <div class="carousel-item active">
+          <figure>
+              <img width="100%" src="/img/carrosel/slide1.jpg" alt="">
+          </figure>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">First Slide</h2>
+          <p class="lead">This is a description for the first slide.</p>
+        </div>
+      </div>
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item">
+          <figure>
+            <img width="100%" src="/img/carrosel/slide2.jpg" alt="">
+          </figure>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Second Slide</h2>
+          <p class="lead">This is a description for the second slide.</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item">
+          <figure>
+            <img width="100%" src="/img/carrosel/slide3.jpg" alt="">
+          </figure>
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="display-4">Third Slide</h2>
+          <p class="lead">This is a description for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+  </div>
+    </div>
  </div>

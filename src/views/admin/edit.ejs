@@ -26,16 +26,25 @@
                             <form action="/admin/edit/ <%=productoEdit.id%> ?_method=PUT" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="">Categoria Del Producto</label>
-                                    <input type="text" class="form-control" name="categoria"
-                                        placeholder="Categoria del producto" required="required"
-                                        value="<%= productoEdit.categoria%>">
+                                    <select name="categoria" class="form-control" id="">
+                                        <option value=<%= productoEdit.categoria%>><%= productoEdit.categoria%></option>
+                                        <option value="0">-</option>
+                                        <option value="leche">Leches</option>
+                                        <option value="aceites">Aceites</option>
+                                        <option value="endulzantes">Endulzantes</option>
+                                        <option value="harinas">Harinas</option>
+                                        <option value="pastasyArroz">Pastas y Arroz</option>
+                                        <option value="postresySnacks">Postres y Snacks</option>
+                                        <option value="frutosSecos">Frutos Secos</option>
+                                        <option value="granolas">Granolas</option>
+                                        <option value="viandas">Viandas</option>>
+                                        <option value="bebidas">Bebidas</option>>
+                                    </select>
                                         
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre Del Producto</label>
-                                    <input type="text" class="form-control" name="nombre"
-                                        placeholder="Nombre del producto" required="required"
-                                        value="<%= productoEdit.nombre%>">
+                                    <input type="text" class="form-control" name="nombre"placeholder="Nombre del producto" required="required"value="<%= productoEdit.nombre%>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Descripción Del Producto</label>
@@ -57,9 +66,8 @@
                                 </div>
                         </div>
                     </div>
-                    <div class="col-6 mx-auto bg-light ">
+                    <div class="col-6 mx-auto bg-light "><br>
                         <div class="signup-form">
-
                             <div class="form-group">
                                 <select  name="descuento" class="custom-select"  required>
                                   <option disabled value="#">Seleccione un descuento"</option>
@@ -78,11 +86,17 @@
                                   <option value="vendido" <%= productoEdit.recomendado == "vendido" ? "selected" : null %>>Mas Vendidos</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="">Imagen del producto</label>
+                                <figure class="form-group">
+                                    <img class="w-50 " src="/images/productos/<%=  productoEdit.imagen %>"
+                                        alt="Imagen del del plato">
+                                </figure>
+                            </div>
                             <div class="custom-file">
-
                                 <input type="file" class="custom-file-input" name="imagen"
                                     placeholder="Seleccione una imagen">
-                                <label class="custom-file-label" for="">Eligir la imagen...</label>
+                                <label class="custom-file-label" for="">Eligir nueva imagen...</label>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn btn-primary">Actualizar</button>
