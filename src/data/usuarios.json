@@ -108,7 +108,7 @@
     "imagen": "usuario-1596128758784.JPG"
   },
   {
-    "id": 14,
+    "id": 13,
     "nombre": "Ronnie",
     "apellido": "Quinn",
     "email": "ronnie@gmail.com",
@@ -117,12 +117,21 @@
     "imagen": "usuario-1596126187555.png"
   },
   {
-    "id": 15,
-    "nombre": "Claudia",
-    "apellido": "Cuello",
+    "id": 14,
+    "nombre": "Clau",
+    "apellido": "Martinez",
     "email": "clau@gmail.com",
     "telefono": 1565465456,
-    "contraseña": "$2a$10$QBfHFNuwOTJ0YMPLiPsZneqC5FEQTEApy92BZzLOvhhbR0ujAlXLG",
-    "imagen": "usuario-1596126542000.png"
+    "contraseña": "$2a$10$mw/sTc7MjOFiCSGNfrpe0.a5m.5NxSTXhzEy2RLY70fHvRMjwtfJG",
+    "imagen": "usuario-1596130352129.JPG"
+  },
+  {
+    "id": 15,
+    "nombre": "Luli",
+    "apellido": "Enriquez",
+    "email": "luli@gmail.com",
+    "telefono": 1531456788,
+    "contraseña": "$2a$10$KUTqw7ArfCGFfeGq1ZtfOuII4ky.RuGzuJZrxFmhH41ENxcXayoma",
+    "imagen": "usuario-1596133078787.JPG"
   }
 ]
