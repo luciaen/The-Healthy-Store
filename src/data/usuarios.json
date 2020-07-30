@@ -115,5 +115,14 @@
     "telefono": 151516546546,
     "contraseña": "$2a$10$ccdlKx8PXPWCK8.6kKkRy.zKRJIKPuxsHGY6QE.Yt5suYblEwjX32",
     "imagen": "usuario-1596125555756.png"
+  },
+  {
+    "id": 14,
+    "nombre": "Ronnie",
+    "apellido": "Quinn",
+    "email": "ronnie@gmail.com",
+    "telefono": 156546546,
+    "contraseña": "$2a$10$V86bII4Ne2qko4jJ7L/VsOh8PJr87Dl2tE9JWT3ldMWBYP3nzSv5S",
+    "imagen": "usuario-1596126187555.png"
   }
 ]
