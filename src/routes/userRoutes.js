@@ -61,8 +61,8 @@ router.get('/perfil/:id', userController.perfil);
 router.get('/user/editperfil/:id', upload.single('imagen'), userController.editperfil);
 router.put('/user/editperfil/:id', upload.single('imagen'), 
 [
-    check('nombre').isLength({min: 3, max: 15}).withMessage('Campo nombre obligatorio'),
-    check('lastname').isLength({min: 3, max: 15}).withMessage('Campo apellido obligatorio'),
+    check('nombre').isLength({min: 3, max: 25}).withMessage('Campo nombre obligatorio'),
+    check('lastname').isLength({min: 3, max: 25}).withMessage('Campo apellido obligatorio'),
     check('email').isEmail({min: 1}).withMessage('el formato del mail es erroneo'),
     check('telefono').isLength({min: 6, max: 15}).withMessage('el telefono no puede quedar vacío'),
     check('password').isLength({min: 6, max: 15}).withMessage('la clave debe ser entre 6 y 15 caracteres'),
