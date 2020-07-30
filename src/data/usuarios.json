@@ -106,5 +106,14 @@
     "telefono": 1654879843216,
     "contraseña": "$2a$10$9g1olU6QeBdGpM2CLyKGbu7H3DihBkhTvbGxRq.yLfcpawvhP4tfG",
     "imagen": "usuario-1596052392898.png"
+  },
+  {
+    "id": 13,
+    "nombre": "Lucia",
+    "apellido": "Enriquez",
+    "email": "luli@gmail.com",
+    "telefono": 151516546546,
+    "contraseña": "$2a$10$ccdlKx8PXPWCK8.6kKkRy.zKRJIKPuxsHGY6QE.Yt5suYblEwjX32",
+    "imagen": "usuario-1596125555756.png"
   }
 ]
