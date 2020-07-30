@@ -23,28 +23,36 @@
                 <div class="row">
                     <div class="col-6 mx-auto bg-light ">
                         <div class="signup-form">
-                            <form action="/user/editperfil/<%=editPerfil.id%> ?_method=PUT" method="POST"
+                            <div class="errores">
+                                <ul>
+                                    
+
+
+                                    
+                                </ul>
+                            </div>
+                            <form id="formEditPerfil" action="/user/editperfil/<%=editPerfil.id%> ?_method=PUT" method="POST"
                                 enctype="multipart/form-data">
 
                                 <div class="form-group">
                                     <label for="">Nombre Del Usuario</label>
-                                    <input type="text" class="form-control" name="nombre"
+                                    <input type="text" class="form-control input-nombre" name="nombre"
                                         value="<%= editPerfil.nombre%>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Apellido Del Usuario</label>
-                                    <input type="text" class="form-control" name="lastname"
+                                    <input type="text" class="form-control input-lastName" name="lastname"
                                         value="<%= editPerfil.apellido%>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">E-mail del usuario</label>
-                                    <input type="email" class="form-control" name="email"
+                                    <input type="email" class="form-control input-email" name="email"
                                         value="<%= editPerfil.email%>">
 
                                 </div>
-                                <div class="form-group">
-                                    <label for="">Teléfono</label>
-                                    <input type="number" class="form-control" name="telefono"
+                                <div class="form-group">                    
+                                    <label for="">Teléfono</label>              
+                                    <input type="number" class="form-control input-phone" name="telefono"
                                         value="<%= editPerfil.telefono%>">
                                 </div>
                                 <div class="form-group">
@@ -84,10 +92,10 @@
         <!-------------Comienza el footer---------------------->
         <%- include('../partials/footer') %>
         <!--LIBRERIAS-->
-        <script src="bootstrap/js/jquery-3.5.1.js"></script>
-        <script src="bootstrap/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js">
-        </script>
+        <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="/bootstrap/js/popper.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+        <script src="/js/jsfront.js"></script>
 </body>
 
 </html>

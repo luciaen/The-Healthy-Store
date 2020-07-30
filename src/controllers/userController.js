@@ -62,17 +62,26 @@ const userController = {
         req.body.id = req.params.id;
         let usuariosUpdate = usuarios.map(u => {
             if (u.id == req.body.id) {
-                u.nombre = req.body.nombre,
+                    u.nombre = req.body.nombre,
                     u.apellido = req.body.apellido,
                     u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
-                    u.imagen = req.file ? req.file.filename : ""
+                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
+                    u.imagen = req.file ? req.file.filename : req.body.image_old
             }
             return u;
         });
-        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+        usuariosJSON = JSON.stringify(usuarios, null, 2);
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
         res.redirect('/usuarios');
+    }
+    else {
+        let usuarioId = req.params.id;
+            const usuarioEdit = usuarios.find(u => u.id == usuarioId);
+            return res.render(path.resolve(__dirname, '../views/user/edit'), {errors: errors.mapped(),usuarioEdit : usuarioEdit});
+        }
     },
     delete: function (req, res) {
         let usuarioId = req.params.id;

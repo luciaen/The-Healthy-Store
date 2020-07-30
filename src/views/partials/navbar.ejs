@@ -8,7 +8,7 @@
     </section>
     <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5  p-0">
-        <a class="saludouser " href="perfil/<%=usuario.id%>">
+        <a class="saludouser " href="/perfil/<%=usuario.id%>">
             <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
             Bienvenido (a)
             <%= locals.usuario.nombre %> </a>

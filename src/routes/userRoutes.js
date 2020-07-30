@@ -34,7 +34,26 @@ router.get('/usuarios/page/3', userController.index3);
 router.get('/registro', userController.registro);
 router.get('/user/detail/:id', userController.show);
 router.get('/user/edit/:id', upload.single('imagen'), userController.edit);
-router.put('/user/edit/:id', upload.single('imagen'), userController.update);
+router.put('/user/edit/:id', upload.single('imagen'),
+[
+    check('nombre').isLength({ min:3, max: 15 }).withMessage('Campo nombre obligatorio'),
+    check('apellido').isLength({ min:3, max: 15 }).withMessage('Campo apellido obligatorio'),
+    check('email').isEmail({ min: 1 }).withMessage('el formato del mail es erroneo'),
+    check('telefono').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
+    check('password').isLength({ min: 6, max: 15 }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
+    body('password').custom(function (value, { req }) {
+    if (req.body.confirmpassword == value) {
+        return true
+    }
+    return false
+    }).withMessage('Las contraseñas no coinciden'), 
+    body('imagen').custom((value, {req}) =>{
+        if(req.file != undefined){
+            return true
+        }
+        return false;
+    }).withMessage('Debe elegir un avatar')
+], userController.update);
 router.get('/user/delete/:id', userController.delete);
 router.delete('/user/delete/:id', upload.single('imagen'), userController.destroy);
 router.get('/logout',userController.logout);
