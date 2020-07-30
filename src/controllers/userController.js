@@ -16,6 +16,12 @@ const userController = {
     index: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
+    index2: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index2'),{usuarios});
+    },
+    index3: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views', 'user', 'index3'),{usuarios});
+    },
     create: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
@@ -108,11 +114,28 @@ const userController = {
     },
     editperfil: function (req, res) {
         let usuarioId = req.params.id;
-        const editPerfil = usuarios.find(u => u.id == usuarioId);
+        let editPerfil = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'),{editPerfil});
     },
     updateperfil: function (req, res) {
+            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+            req.body.id = req.params.id;
+            let editPerfil = usuarios.map(u => {
+                if (u.id == req.body.id) {
+                    u.nombre = req.body.nombre,
+                        u.apellido = req.body.apellido,
+                        u.email = req.body.email,
+                        u.telefono = Number(req.body.telefono),
+                        u.contraseña = bcrypt.hashSync(req.body.password, 10),
+                        u.imagen = req.file ? req.file.filename : ""
+                }
+                return u;
+            });
+            usuariosJSON = JSON.stringify(editPerfil, null, 2);
+            fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
+            res.redirect('/'); /*
      let errors = validationResult(req);
+    
      if (errors.isEmpty()) {
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
@@ -121,24 +144,23 @@ const userController = {
 
                     u.nombre = req.body.nombre,
                     u.apellido = req.body.lastname,
-                    u.email = req.body.email,
+                   // u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
-                   // u.contraseña = req.body.contraseña,
+                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
                     u.imagen = req.file ? req.file.filename : ""
             }
             return u;
         });
         usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
-        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
+        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON, );
         res.redirect('/');
     }
     else {
         res.render(path.resolve(__dirname, '../views/user/editperfil'), {
             errors: errors.mapped(),
-            old: req.body
-        });
+            old: req.body});
     
-}
+}*/
 }} 
     
 

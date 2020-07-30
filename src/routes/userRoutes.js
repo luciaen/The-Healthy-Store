@@ -29,6 +29,8 @@ const upload = multer({
 // Métodos en nuestros controladores: index - show - edit - delete 
 router.get('/login', userController.login);
 router.get('/usuarios', userController.index);
+router.get('/usuarios/page/2', userController.index2);
+router.get('/usuarios/page/3', userController.index3);
 router.get('/registro', userController.registro);
 router.get('/user/detail/:id', userController.show);
 router.get('/user/edit/:id', upload.single('imagen'), userController.edit);
@@ -38,6 +40,7 @@ router.delete('/user/delete/:id', upload.single('imagen'), userController.destro
 router.get('/logout',userController.logout);
 router.get('/perfil/:id', userController.perfil);
 router.get('/user/editperfil/:id', upload.single('imagen'), userController.editperfil);
+router.put('/user/editperfil/:id', upload.single('imagen'), userController.updateperfil);
 
 //VIENEN LAS RUTAS POR POST DE LOGIN Y REGISTRO
 router.post('/login',[
@@ -100,7 +103,7 @@ router.post('/registro', upload.single('imagen'),
     }).withMessage('Debe elegir un avatar')
 ], userController.create);
 
-router.put('/user/editperfil/:id', upload.single('imagen'),
+/*router.put('/user/editperfil/:id', upload.single('imagen'),
     [
         check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
         check('lastname').isLength({min: 1}).withMessage('Campo apellido obligatorio'),
@@ -116,17 +119,7 @@ router.put('/user/editperfil/:id', upload.single('imagen'),
             min: 6,
             max: 15
         }).withMessage('La confirmación de la contraseña debe tener entre 6 y 15 caracteres'),
-        body('email').custom(function (value) {
-            //requiero mi archivo Json Usuario
-            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-            for (let i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].email == value) {
-                    return false;
-                }
-            }
-            return true;
-        }).withMessage('Usuario ya se encuentra registrado'),
-        body('confirmpassword').custom((value, {
+         body('confirmpassword').custom((value, {
             req
         }) => {
             if (req.body.password == value) {
@@ -143,7 +136,7 @@ router.put('/user/editperfil/:id', upload.single('imagen'),
             }
             return false;
         }).withMessage('Debe elegir un avatar')
-    ], userController.updateperfil);
+    ], userController.updateperfil);*/
 
 
 module.exports = router;
