@@ -34,5 +34,14 @@
     "telefono": 16546546554,
     "contraseña": "$2a$10$Cczvw6oIbTjVKY56uiaMIu0EHtnNTfzwo9MI/ZXQN7y/vldJwdDiK",
     "imagen": "usuario-1595805671419.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Ronnie",
+    "apellido": "Quinn",
+    "email": "ronacho07@gmail.com",
+    "telefono": 3058747044,
+    "contraseña": "$2a$10$wQibCIBN/JgNUAE/hNHX6.tEELGJvmFmh0rhZZH0ev0EYzirdyJaK",
+    "imagen": "usuario-1595880961209.PNG"
   }
 ]
