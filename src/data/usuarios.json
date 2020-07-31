@@ -6,6 +6,7 @@
     "email": "cuellofederico94@gmail.com",
     "telefono": 1160534153,
     "contraseña": "$2a$10$CMSAPmYNA0zlc5VDfQHdVerysEbNAsYBmGLxQUziQ/2N87p0vL9SO",
+    "administra": true,
     "imagen": "usuario-1596128347990.jpg"
   },
   {
@@ -131,7 +132,8 @@
     "apellido": "Enriquez",
     "email": "luli@gmail.com",
     "telefono": 1531456788,
-    "contraseña": "$2a$10$KUTqw7ArfCGFfeGq1ZtfOuII4ky.RuGzuJZrxFmhH41ENxcXayoma",
-    "imagen": "usuario-1596133078787.JPG"
+    "contraseña": "$2a$10$DwNsmOfjdp9zb7DFtuTPSufmakiTDgXIsOtjeioMXYoXCAavUuaeS",
+    "imagen": "usuario-1596133078787.JPG",
+    "administra": false
   }
 ]
