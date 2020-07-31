@@ -3,7 +3,7 @@
     "id": 1,
     "nombre": "Federico  ",
     "apellido": "Cuello",
-    "email": "cuellofederico94@gmail.com",
+    "email": "fede@gmail.com",
     "telefono": 1160534153,
     "contraseña": "$2a$10$CMSAPmYNA0zlc5VDfQHdVerysEbNAsYBmGLxQUziQ/2N87p0vL9SO",
     "administra": true,
@@ -13,9 +13,10 @@
     "id": 2,
     "nombre": "Milagros",
     "apellido": "zacariaz",
-    "email": "Mili@gmail.com",
+    "email": "mili@gmail.com",
     "telefono": 1160534153,
     "contraseña": "$2a$10$ZEvk4sZW61TBybnIMJlMpOTSeKlK1snL0tHxH0H77QtTkGrjZD2CG",
+    "administra": false,
     "imagen": "usuario-1595723314735.jpg"
   },
   {
@@ -134,6 +135,6 @@
     "telefono": 1531456788,
     "contraseña": "$2a$10$DwNsmOfjdp9zb7DFtuTPSufmakiTDgXIsOtjeioMXYoXCAavUuaeS",
     "imagen": "usuario-1596133078787.JPG",
-    "administra": false
+    "administra": true
   }
 ]

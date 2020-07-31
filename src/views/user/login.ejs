@@ -9,33 +9,47 @@
         <!---------Comienza el nav--------------------->
         <%- include('../partials/navbar') %>
         <!---------Comienza el main------------------------>
-        <h1 class="h3login main-titulo">Iniciar Sesión</h1>
-        <form class="form-login" action="/login" method="POST">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" name="email"placeholder="Email" value="<%=typeof old == 'undefined' ? '':old.email %>">
-                <% if(typeof errors != 'undefined' && errors.email){%>
-                    <span class="text-danger" > <%= errors.email.msg %></span>
-                  <%}%>
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Contraseña</label>
-                <input type="password" class="form-control" name="password" placeholder="Contraseña" >
-                <% if(typeof errors != 'undefined' && errors.password){%>
-                    <span class="text-danger" > <%=errors.password.msg %></span>
-                   <%}%>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" name="recordarme" checked>
-                <label class="form-check-label" for="exampleCheck1">Recordame</label>
-            </div>
-            <button type="submit" class="btn btn-secondary botonlogin">Iniciar Sesión</button>
-        </form>
+        <section class="row">
+            <article class="col-12  ">
+                <div class="card-body">
+                    <h1 class="h3login main-titulo ">Iniciar Sesión</h1>
 
-        <h3 class="h3login">¿Todavía no tenés cuenta?</h3>
+                </div>
+            </article>
+        </section>
+        <section class="bg-home pt-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 mx-auto ">
+                        <div class="signup-form">
+                            <form class="form-login" action="/login" method="POST">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" class="form-control" name="email"placeholder="Email" value="<%=typeof old == 'undefined' ? '':old.email %>">
+                                    <% if(typeof errors != 'undefined' && errors.email){%>
+                                        <span class="text-danger" > <%= errors.email.msg %></span>
+                                      <%}%>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Contraseña</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Contraseña" >
+                                    <% if(typeof errors != 'undefined' && errors.password){%>
+                                        <span class="text-danger" > <%=errors.password.msg %></span>
+                                       <%}%>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" name="recordarme" checked>
+                                    <label class="form-check-label" for="exampleCheck1">Recordame</label>
+                                </div>
+                                <button type="submit" class="btn btn-secondary botonlogin">Iniciar Sesión</button>
+                            </form>
+                       </div>
+                    </div>
+                </div>
+            </div>
 
-        <a href="/registro"><button type="submit" class="btn btn-secondary botonlogin"> Crear
-                cuenta</button></a>
+        </section>
+
         <!-------------Comienza el footer---------------------->
         <%- include('../partials/footer') %>
         <!--LIBRERIAS-->

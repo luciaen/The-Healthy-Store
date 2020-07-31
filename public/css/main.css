@@ -115,7 +115,10 @@ header{
  .lupa{
      color: white;
  }
- 
+ .admin-create a{
+    color: #F5803E;
+    font-size: 15px;
+}
 /*---------main css--------------*/
 
 .main-titulo{
@@ -212,7 +215,16 @@ main article a{
     .carousel-item {
         height: 50vh;
         min-height: 350px;
-       }
+    }
+    .admin-create{
+        margin-top: 41%;
+        margin-left: 60%
+
+    }
+    .admin-create a{
+        color: #F5803E;
+        font-size: 15px;
+    }
 
   /*CSS MAIN----------------*/
   .main-titulo{
@@ -290,6 +302,11 @@ main article a{
         height: 50vh;
         min-height: 350px;
        }
+       .admin-create{
+        margin-top: 54%;
+        margin-left: 67%;
+
+    }
  /*CSS FOOTER-------------*/   
     .index-footer{
         height: 20vh;

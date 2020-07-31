@@ -13,7 +13,7 @@
         <section class="row">
             <article class="col-12  ">
                 <div class="card-body">
-                    <h1 class="h3login main-titulo">Crear Cuenta</h1>
+                    <h1 class="card-title text-center main-titulo">Agregar Usuario</h1>
 
                 </div>
             </article>
@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-8 mx-auto ">
                         <div class="signup-form">
-                            <form class="form-login" action="/usuarios/create" method="POST" enctype="multipart/form-data">
+                            <form class="form-login m-0" action="/usuarios/create" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control" name="nombre"  value="<%= typeof old != 'undefined' ? old.nombre : '' %>">
