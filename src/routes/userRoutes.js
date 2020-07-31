@@ -47,13 +47,14 @@ router.put('/user/edit/:id', upload.single('imagen'),
     }
     return false
     }).withMessage('Las contraseñas no coinciden'), 
-    body('imagen').custom((value, {req}) =>{
+    /*body('imagen').custom((value, {req}) =>{
         if(req.file != undefined){
             return true
         }
         return false;
-    }).withMessage('Debe elegir un avatar')
+    }).withMessage('Debe elegir un avatar')*/
 ], userController.update);
+
 router.get('/user/delete/:id', userController.delete);
 router.delete('/user/delete/:id', upload.single('imagen'), userController.destroy);
 router.get('/logout',userController.logout);

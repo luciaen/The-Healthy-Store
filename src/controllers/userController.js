@@ -67,7 +67,7 @@ const userController = {
                     u.email = req.body.email,
                     u.telefono = Number(req.body.telefono),
                     u.contraseña = bcrypt.hashSync(req.body.password, 10),
-                    u.imagen = req.file ? req.file.filename : req.body.image_old
+                    u.imagen = req.file ? req.file.filename : req.body.oldImagen
             }
             return u;
         });
@@ -137,7 +137,7 @@ const userController = {
                    u.email = req.body.email,
                    u.telefono = Number(req.body.telefono),
                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
-                   u.imagen = req.file ? req.file.filename : req.body.image_old
+                   u.imagen = req.file ? req.file.filename : req.body.oldImagen
            }
            return u;
        });
