@@ -8,10 +8,9 @@
     </section>
     <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5  p-0">
-        <a class="saludouser " href="/perfil/<%=usuario.id%>">
-            <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
-            Bienvenido (a)
-            <%= locals.usuario.nombre %> </a>
+        <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
+        <button type="button" class="btn btn-light index-login">
+            <a href="/perfil/<%=usuario.id%>"><i class="fas fa-sign-out-alt"></i>Mi Perfil</a></button>
         <button type="button" class="btn btn-light index-login">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></button>
     </section>
@@ -84,12 +83,16 @@
                      <li class="nav-item">
                          <a class="nav-link" href="/about">Nosotros</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/administrar">Administrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/usuarios">Usuarios</a>
-                    </li>
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Administrar
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/administrar">Productos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/usuarios">Usuarios</a>
+                        </div>
                  </ul>
                  <form class="form-inline my-2 my-lg-0">
                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
