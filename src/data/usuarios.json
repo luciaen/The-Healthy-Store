@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "nombre": "Federico  ",
-    "apellido": "Cuello",
+    "nombre": " federico",
+    "apellido": "cuello",
     "email": "fede@gmail.com",
     "telefono": 1160534153,
-    "contraseña": "$2a$10$CMSAPmYNA0zlc5VDfQHdVerysEbNAsYBmGLxQUziQ/2N87p0vL9SO",
+    "contraseña": "$2a$10$I.6lO.UAIU1aEYw0u4Lb9eE7aYti7AlCW/AwTvyS7bxx/wh1aESh2",
     "administra": true,
     "imagen": "usuario-1596128347990.jpg"
   },
@@ -26,6 +26,7 @@
     "email": "nico@gmail.com",
     "telefono": 515151515151,
     "contraseña": "$2a$10$3koFYAAx0be0NnY5OqzxVO3pA4kKjs/Iw90mZlWyM7kXQWB05DRzG",
+    "administra": false,
     "imagen": "usuario-1595723394932.jpg"
   },
   {
@@ -76,11 +77,12 @@
   {
     "id": 9,
     "nombre": "Maximiliano",
-    "apellido": "Ranitti",
+    "apellido": "Raniti",
     "email": "maxi@gmail.com",
     "telefono": 1465498794321,
-    "contraseña": "$2a$10$Duwp9nieNPwZ4r6dy7cchO99d4ZArFrQiihoXtUhfvp3vMr7d4CVG",
-    "imagen": "usuario-1596052207241.png"
+    "contraseña": "$2a$10$Ac1pFlmDjFhGdYCNtYRtDu3yLvSVVoTBEvBy6iZyiLVp47wWzU0Y2",
+    "imagen": "usuario-1596052207241.png",
+    "administra": false
   },
   {
     "id": 10,

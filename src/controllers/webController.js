@@ -4,6 +4,9 @@ const fs = require('fs');
 let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
 
 const webController = {
+    home: function (req, res) {
+        res.render(path.resolve(__dirname, '..', 'views','web','home'))
+    },
     index: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views','web','index'),{productos});
     },

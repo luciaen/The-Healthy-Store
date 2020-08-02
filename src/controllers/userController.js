@@ -137,7 +137,7 @@ const userController = {
             if (req.body.recordarme) {
                 res.cookie('email', usuarioLogueado.email, { maxAge: 1000 * 60 * 60 * 24 })
             }
-            return res.redirect('/');
+            return res.redirect('/index');
         } else {
             res.render(path.resolve(__dirname, '../views/user/login'), { errors: errors.mapped(), old: req.body });
         }
@@ -145,7 +145,7 @@ const userController = {
     logout: function (req, res) {
         req.session.destroy();
         res.cookie('email', null, { maxAge: -1 });
-        res.redirect('/')
+        res.redirect('/index')
     },
     perfil: function (req, res) {
         let userId = req.params.id;
@@ -176,7 +176,7 @@ const userController = {
        if (errors.isEmpty()) {
            usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
            fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-           res.redirect('/');
+           res.redirect('/index');
        } else {
            let usuarioId = req.params.id;
            const editPerfil = usuarios.find(u => u.id == usuarioId);

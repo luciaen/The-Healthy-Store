@@ -62,6 +62,9 @@
                                 <div class="form-group">
                                     <label for="password">Confirmar contraseña</label>
                                     <input type="password" class="form-control" name="confirmpassword" >
+                                    <% if(typeof errors != 'undefined' && errors.confirmpassword){%>
+                                        <span class="text-danger" > <%= errors.confirmpassword.msg %></span>
+                                      <%}%>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="imagen">

@@ -27,7 +27,7 @@ header{
     background-color: #F5803E;
 }
 .index-logo figure img{
-    width: 100% ;
+    width: 50% ;
     margin-top: 10px;
 }
 
@@ -58,7 +58,8 @@ header{
     font-size: 30px;
 }
 .shopping{
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 0;
 }
 .shopping i{
     font-size: 25px;
@@ -135,7 +136,7 @@ header{
 }
 main article{
     text-align: center;
-    border:solid;
+    
     border-width: 1px;
     color:grey;
 }
@@ -153,6 +154,9 @@ main article a{
 }
 .btn-primary a{
     color: white;
+}
+.efecto:hover{
+    opacity: 0.7;
 }
 /*---------css footer---------*/
 .index-footer{
@@ -206,19 +210,21 @@ main article a{
     }
     .social{
         text-align: end;
+        margin: 0;
     }
     .shopping{
-
-        margin-top: 110px;
-        text-align: end;
+     text-align: end;
     }
     .carousel-item {
         height: 50vh;
         min-height: 350px;
     }
     .admin-create{
-        margin-top: 41%;
-        margin-left: 60%
+        margin-left: 60%;
+
+    }
+    .admin-create button{
+        margin-bottom: 1px;
 
     }
     .admin-create a{
@@ -230,16 +236,7 @@ main article a{
   .main-titulo{
       text-align: left;
     }
-    main article a{
-    color: white;
-    font-size: 20px;
-    margin: 0 15px;
-    }
-    .main-tercer-titulo{
-        text-align: left;
-        border-bottom: solid;
-        margin-bottom: 20px;
-    }
+
     /*CSS FOOTER--------------*/
     .contacto{
     text-align: center;
@@ -261,7 +258,7 @@ main article a{
 
     /*css header------------*/
     .shopping{
-    margin-top: 180px;
+        margin-top: 20%;
     }
     .shopping a{
     margin-left: 20px;
@@ -271,9 +268,7 @@ main article a{
         min-height: 350px;
        }
     /*-css main----------*/
-     main article img{
-        width: 100%;
-    }
+
     main article ul a{
         font-size: 17px;
         margin: 0;
@@ -287,9 +282,9 @@ main article a{
 /*--------------css 1200px-----------*/
 
 @media(min-width:1200px){
- /*css header------------*/   
+ /*css header------------*/  
     .shopping{
-        margin-top: 230px;
+        margin-top: 22%;
     }
     .shopping i{
         font-size: 30px;
@@ -303,7 +298,7 @@ main article a{
         min-height: 350px;
        }
        .admin-create{
-        margin-top: 54%;
+        margin-top: 15%;
         margin-left: 67%;
 
     }

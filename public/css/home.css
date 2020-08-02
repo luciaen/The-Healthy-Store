@@ -1,0 +1,91 @@
+body{
+  background-image: url(/img/Background/food.png);
+}
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url(/img/carrosel/Logo_THS_2019.png);
+    background-size: 100%;
+    background-color: #F5803E;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  .masterH1{
+    margin-top: 50%;
+  }
+  .masterp{
+    width: 100%;
+    font-size: 25px;
+    font-weight: 10;
+    font-style: italic;
+  }
+  .botonprueba{
+    color: white;
+    font-size: 20px;
+    width: 40%;
+}
+  .botonprueba a{
+    color:#F5803E ;
+  }
+  .icono{
+    color: #F5803E;
+  }
+  /*----------CSS 425PX---------------*/
+
+@media(min-width: 425px){
+  .masthead{
+    background-size: 100% 60vh;
+  }
+  .masterH1{
+    margin-top: 70%;   
+  }
+  
+}
+ /*----------CSS 768PX---------------*/
+  @media(min-width: 768px){
+    .masthead{
+      background-size: 55% 100vh;
+      background-position: right;
+    }
+    .masterH1{
+      margin-top: 0%; 
+      text-align: left;
+      font-size: 35px;
+      padding: 15px;
+    }
+    .masterp{
+      text-align:left;
+      font-size: 25px;
+      padding: 15px;
+    }
+    .botonprueba{
+      margin-right:78%;
+      width: 20%;
+    }
+  }
+  @media(min-width: 1400px){
+    .masthead{
+      background-size: 55% 100vh;
+      background-position: right;
+    }
+    .masterH1{
+      margin-top: 0%; 
+      padding: 15px;
+      font-size: 60px;
+      margin-right:80%;
+    }
+    .masterp{
+      width: 100%;
+      font-size: 40px;
+      font-weight: 10;
+      font-style: italic ;
+      margin-right:90%;
+      margin-right:89%;
+      padding: 15px;
+    }
+    .botonprueba{
+      margin-right:89%;
+      width: 15%;
+      
+    }
+  }

@@ -133,7 +133,7 @@ router.put('/user/edit/:id', upload.single('imagen'),
 
 router.put('/user/editperfil/:id', upload.single('imagen'), 
 [
-    check('nombre').isLength({min: 3, max: 25}).withMessage('Campo nombre obligatorio'),
+    check('nombre').isLength({min: 1, max: 25}).withMessage('Campo nombre obligatorio'),
     check('lastname').isLength({min: 3, max: 25}).withMessage('Campo apellido obligatorio'),
     check('email').isEmail({min: 1}).withMessage('el formato del mail es erroneo'),
     check('telefono').isLength({min: 6, max: 15}).withMessage('el telefono no puede quedar vacío'),
