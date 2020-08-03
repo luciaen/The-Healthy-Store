@@ -4,10 +4,21 @@ window.onload= function(){
         let errores =[];
         let campoNombre= document.querySelector(".input-nombre");
         if(campoNombre.value == " "){
-            errores.push("El campo nombre esta vacio");
+            errores.push("El campo nombre esta vacio")
         }
         if(errores.length > 0){
-            event.preventDefault();
+            event.preventDefault()
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No se pudo actualizar',
+                
+              })
+        }else{
+            Swal.fire({
+                icon: 'ssuccess',
+                title: 'Genial!',
+                text: 'Usuario Editado',})
         }
         let ulErrores = document.querySelector("div.errores ul");
         for(let i = 0; i< errores.length; i++){

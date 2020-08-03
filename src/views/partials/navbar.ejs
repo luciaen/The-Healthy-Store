@@ -3,15 +3,14 @@
 <header id="cabecera" class="row">
     <section class="col-sm-12 col-md-3 col-lg-3 index-logo">
         <figure>
-            <a href="/"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
+            <a href="/index"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
         </figure>
     </section>
     <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5  p-0">
-        <a class="saludouser " href="/perfil/<%=usuario.id%>">
-            <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
-            Bienvenido (a)
-            <%= locals.usuario.nombre %> </a>
+        <img class="imguser" src="/images/usuarios/<%= locals.usuario.imagen %>" alt="Imagen del usuario">
+        <button type="button" class="btn btn-light index-login">
+            <a href="/perfil/<%=usuario.id%>"><i class="fas fa-sign-out-alt"></i>Mi Perfil</a></button>
         <button type="button" class="btn btn-light index-login">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></button>
     </section>
@@ -33,13 +32,25 @@
              <a target="__blank" href="https://www.google.com.co/"><i class="fab fa-google-plus-g"></i></a>
              <a target="__blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
          </section>
-         <% if(locals.usuario) { %>
+         <% if(locals.usuario && locals.usuario.administra == true) { %>
+    <section class="col-sm-12 col-md-5 col-lg-5 admin-create  p-0">
+        <button type="button" class="btn btn-light p-0 ">
+            <a href="/usuarios/create"><i class="fas fa-user-plus"></i>Agregar Usuario</a>
+        </button>
+        <button type="button" class="btn btn-light p-0 ">
+            <a href="/admin/create"><i class="fas fa-plus-square"></i>Agregar Producto</a>
+        </button>
+    </section>
+    <%} else {%>
+    <%}%>
+    <% if(locals.usuario && locals.usuario.administra == false) { %>
     <section class="shopping">
         <a href="/carrito"><i class="fas fa-cart-arrow-down"></i></a>
         <a href="/carrito">Productos: 2</a>
         <a href="/carrito">Total: $640</a>
     </section>
-    <%} else {%><%}%>    
+    <%} else {%>
+    <%}%>    
 </header>
 
  <div class="row">
@@ -84,12 +95,19 @@
                      <li class="nav-item">
                          <a class="nav-link" href="/about">Nosotros</a>
                      </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="/administrar">Administrar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/usuarios">Usuarios</a>
-                    </li>
+                     <% if(locals.usuario.administra == true) { %>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Administrar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/administrar">Productos</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/usuarios">Usuarios</a>
+        </div>
+    </li>
+    <%}%> 
                  </ul>
                  <form class="form-inline my-2 my-lg-0">
                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -115,11 +133,16 @@
       <!-- Slide One - Set the background image for this slide in the line below -->
       <div class="carousel-item active">
           <figure>
-              <img width="100%" src="/img/carrosel/slide1.jpg" alt="">
+              <img width="100%" src="/img/carrosel/cropped-GettyImages-643764514.jpg" alt="">
           </figure>
         <div class="carousel-caption d-none d-md-block">
+<<<<<<< HEAD
           <h2 class="display-4 lead">3 cuotas sin interés</h2>
           <p class="lead">y envíos a todo el país</p>
+=======
+          <h2 class="display-4 carroselT1">3 cuotas sin interés</h2>
+          <p class="lead carroselp1"> envíos a todo el país</p>
+>>>>>>> 030c221573679f8972b6e68c25e3eeab35943886
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
@@ -128,18 +151,28 @@
             <img width="100%" src="/img/carrosel/slide2.jpg" alt="">
           </figure>
         <div class="carousel-caption d-none d-md-block">
+<<<<<<< HEAD
           <h2 class="display-4 lead">¡Envío Gratis!</h2>
           <p class="lead">Para CABA y GBA con tu compra superior a $2000</p>
+=======
+          <h2 class="display-4 carroselT2">¡Envío Gratis!</h2>
+          <p class="lead carroselp2">Para CABA y GBA con tu compra superior a $2000</p>
+>>>>>>> 030c221573679f8972b6e68c25e3eeab35943886
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
       <div class="carousel-item">
           <figure>
-            <img width="100%" src="/img/carrosel/slide3.jpg" alt="">
+            <video width="100%" src="/img/carrosel/video.mp4"></video>
           </figure>
         <div class="carousel-caption d-none d-md-block">
+<<<<<<< HEAD
           <h2 class="display-4 lead">Suscribite al newsletter</h2>
           <p class="lead">y enterate de todas nuestras novedades.</p>
+=======
+          <h2 class="display-4 carroselT3">Suscribite al newsletter</h2>
+          <p class="lead carroselp3"> enterate de todas nuestras novedades.</p>
+>>>>>>> 030c221573679f8972b6e68c25e3eeab35943886
         </div>
       </div>
     </div>

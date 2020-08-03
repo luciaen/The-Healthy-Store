@@ -62,6 +62,9 @@
                                 <div class="form-group">
                                     <label for="password">Confirmar contraseña</label>
                                     <input type="password" class="form-control" name="confirmpassword" >
+                                    <% if(typeof errors != 'undefined' && errors.confirmpassword){%>
+                                        <span class="text-danger" > <%= errors.confirmpassword.msg %></span>
+                                      <%}%>
                                 </div>
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="imagen">
@@ -69,12 +72,6 @@
                                         <span class="text-danger" > <%= errors.imagen.msg %></span>
                                       <%}%>
                                     <label class="custom-file-label" for="">Eligir la imagen...</label>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="checkbox-inline"><input type="checkbox" > Acepto
-                                        los <a href="#">Términos y condiciones</a> y las <a href="#">Políticas de
-                                            Privacidad</a></label>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-secondary botonlogin">Crear cuenta</button>
