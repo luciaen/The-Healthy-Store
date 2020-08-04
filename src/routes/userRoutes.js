@@ -4,7 +4,6 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 const {check,validationResult,body} = require("express-validator");
-const bcrypt = require('bcryptjs');
 //Requerir el modulo de los controladores
 const userController = require(path.resolve(__dirname, '../controllers/userController'));
 // tratamiento de guardado imagenes
@@ -19,6 +18,9 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage
 })
+
+//requiero las validaciones
+const validaciones = require(path.resolve(__dirname,"../middlewares/validacionesBack"));
 
 // METODOS POR GET -----------------------> 
 router.get('/login', userController.login);
@@ -35,121 +37,19 @@ router.get('/user/editperfil/:id', upload.single('imagen'), userController.editp
 router.get('/usuarios/create',userController.create)
 
 //METODOS POR POST------------------------>
-router.post('/login',[
-    check('email').isEmail().withMessage('Email invalido'),
-    check('password').isLength({min: 6 }).withMessage('La contraseña debe tener minimo 6 caracteres'),
-    body('email').custom(function(value){
-        //requiero mi archivo JSon de Usuarios
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for(let i =0;i<usuarios.length;i++){
-            if (usuarios[i].email == value) {
-                return true    
-            }
-        }
-        return false
-    }).withMessage('Usuario no Registrado'),
-    body('password').custom( (value, {req}) =>{
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email == req.body.email) {
-                if(bcrypt.compareSync(value, usuarios[i].contraseña)){
-                  return true;
-                }else{
-                  return false;
-                }
-            }
-        }
-        
-    }).withMessage('Usuario o contraseña no coinciden'),
-],userController.getIn);
+router.post('/login',validaciones.getIn,userController.getIn);
 
-router.post('/registro', upload.single('imagen'),
-[
-    check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
-    check('lastname').isLength({min: 1}).withMessage('Campo apellido obligatorio'),
-    check('email').isEmail().withMessage('Mail invalido'),
-    check('telefono').isLength({ min: 1 }).withMessage('El campo telefono no puede estar vacio'),
-    check('password').isLength({ min: 6, max: 15 }).withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
-    check('confirmpassword').isLength({min: 6, max: 15 }).withMessage('La confirmación de la contraseña debe tener entre 6 y 15 caracteres'),
-    body('email').custom(function (value){
-        //requiero mi archivo Json Usuario
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email == value) {
-                return false;
-            }
-        }
-        return true;
-    }).withMessage('Usuario ya se encuentra registrado'),
-    body('confirmpassword').custom((value, {req}) =>{
-        if(req.body.password == value ){
-            return true     
-        }else{
-            return false
-        }    
-    }).withMessage('Las contraseñas deben ser iguales'),
-], userController.newRegister);
+router.post('/registro', upload.single('imagen'),validaciones.newRegister,userController.newRegister);
 
-router.post('/usuarios/create',upload.single('imagen'),
-[
-    check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
-    check('lastname').isLength({min: 1}).withMessage('Campo apellido obligatorio'),
-    check('email').isEmail().withMessage('Mail invalido'),
-    check('telefono').isLength({ min: 1 }).withMessage('El campo telefono no puede estar vacio'),
-    check('password').isLength({ min: 6, max: 15 }).withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
-    check('confirmpassword').isLength({min: 6, max: 15 }).withMessage('La confirmación de la contraseña debe tener entre 6 y 15 caracteres'),
-    body('email').custom(function (value){
-        //requiero mi archivo Json Usuario
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email == value) {
-                return false;
-            }
-        }
-        return true;
-    }).withMessage('Usuario ya se encuentra registrado'),
-    body('confirmpassword').custom((value, {req}) =>{
-        if(req.body.password == value ){
-            return true     
-        }else{
-            return false
-        }    
-    }).withMessage('Las contraseñas deben ser iguales'),
-],userController.newCreate)
+router.post('/usuarios/create',upload.single('imagen'),validaciones.newCreate,userController.newCreate)
 //METODOS POR PUT ------------------------------->
 
-router.put('/user/edit/:id', upload.single('imagen'),
-[
-    check('nombre').isLength({ min:3, max: 25 }).withMessage('Campo nombre obligatorio'),
-    check('apellido').isLength({ min:3, max: 25 }).withMessage('Campo apellido obligatorio'),
-    check('email').isEmail({ min: 1 }).withMessage('el formato del mail es erroneo'),
-    check('telefono').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
-    check('password').isLength({ min: 6, max: 15 }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
-    body('password').custom(function (value, { req }) {
-    if (req.body.confirmpassword == value) {
-        return true
-    }
-    return false
-    }).withMessage('Las contraseñas no coinciden') 
-], userController.update);
+router.put('/user/edit/:id', upload.single('imagen'),validaciones.update,userController.update);
 
-router.put('/user/editperfil/:id', upload.single('imagen'), 
-[
-    check('nombre').isLength({min: 1, max: 25}).withMessage('Campo nombre obligatorio'),
-    check('lastname').isLength({min: 3, max: 25}).withMessage('Campo apellido obligatorio'),
-    check('email').isEmail({min: 1}).withMessage('el formato del mail es erroneo'),
-    check('telefono').isLength({min: 6, max: 15}).withMessage('el telefono no puede quedar vacío'),
-    check('password').isLength({min: 6, max: 15}).withMessage('la clave debe ser entre 6 y 15 caracteres'),
-    body('password').custom(function (value, { req}) {
-    if (req.body.confirmpassword == value) {
-        return true
-    }
-    return false
-}).withMessage('Las contraseñas no coinciden'),
-], userController.updateperfil);
+router.put('/user/editperfil/:id', upload.single('imagen'),validaciones.updatePerfil,userController.updateperfil);
 
 //METODOS POR DELETE ------------------------>
-router.delete('/user/delete/:id', upload.single('imagen'), userController.destroy);
+router.delete('/user/delete/:id', upload.single('imagen'),userController.destroy);
 
 
 module.exports = router;

@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "nombre": " federico",
+    "nombre": "fede",
     "apellido": "cuello",
     "email": "fede@gmail.com",
     "telefono": 1160534153,
-    "contraseña": "$2a$10$I.6lO.UAIU1aEYw0u4Lb9eE7aYti7AlCW/AwTvyS7bxx/wh1aESh2",
+    "contraseña": "$2a$10$Zmoz/G1l5bOFpRpIVx0Ss.cwy4l95eM6RNKg9wZal0xU1Z/NdMm2a",
     "administra": true,
     "imagen": "usuario-1596128347990.jpg"
   },
@@ -138,5 +138,15 @@
     "contraseña": "$2a$10$DwNsmOfjdp9zb7DFtuTPSufmakiTDgXIsOtjeioMXYoXCAavUuaeS",
     "imagen": "usuario-1596133078787.JPG",
     "administra": true
+  },
+  {
+    "id": 16,
+    "nombre": "ronnie",
+    "apellido": "quiinn",
+    "email": "ronald@gmail.com",
+    "telefono": 165546516,
+    "contraseña": "$2a$10$UBIkzZmBgNovT1hFzn0Yu.9MVLlo7PKmQGvPGDD.MfxWWHoEGde8i",
+    "administra": true,
+    "imagen": "userUndefined.jpg"
   }
 ]
