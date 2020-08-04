@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
 let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
-
+ 
+const {category,product,user} = require ("../database/models/")
 
 const adminController = {
         index: function (req, res) {
@@ -17,8 +18,12 @@ const adminController = {
             res.render(path.resolve(__dirname, '..', 'views','admin', 'index3'),{productos});
         },
         create: function (req, res) {
-            res.render(path.resolve(__dirname, '..', 'views','admin', 'create'));
-        },
+            category.findAll()
+                .then (function (category){
+                 return res.render(path.resolve(__dirname, '..', 'views','admin', 'create'),{category});
+                })
+                .catch(error => res.send(error))
+             },
         show: function(req,res){
             let productoId = req.params.id;
         const productoShow = productos.find( p=> p.id == productoId);

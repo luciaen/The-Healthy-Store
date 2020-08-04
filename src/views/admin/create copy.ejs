@@ -26,22 +26,26 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="signup-form">
                             <form action="/admin/create" method="POST" enctype="multipart/form-data">
-                                <div class="form-group">     
-                                <select name="category" class="form-control" >
-                           <%for (let i = 0; i < category.length; i++) { %>
-                            <input type="text">
-                             <option value="<%= category[i].id %> ">
-                                <%= category[i].category %> 
-                                   </option>
-                             <%}%>       
-                                </select> 
-                                </div>
+                                <select name="categoria" class="form-control" id="">
+                                    <option selected disabled value="#">Elegir Categoria</option>
+                                    <option value="0">-</option>
+                                    <option value="leche">Leches</option>
+                                    <option value="aceites">Aceites</option>
+                                    <option value="endulzantes">Endulzantes</option>
+                                    <option value="harinas">Harinas</option>
+                                    <option value="pastasyArroz">Pastas y Arroz</option>
+                                    <option value="postresySnacks">Postres y Snacks</option>
+                                    <option value="frutosSecos">Frutos Secos</option>
+                                    <option value="granolas">Granolas</option>
+                                    <option value="viandas">Viandas</option>>
+                                    <option value="bebidas">Bebidas</option>>
+                                </select> <br>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name"
+                                    <input type="text" class="form-control" name="nombre"
                                         placeholder="Nombre del producto" required="required">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="description"
+                                    <input type="text" class="form-control" name="descripcion"
                                         placeholder="Descripción del producto" required="required">
                                 </div>
                                 <div class="form-group">
@@ -53,18 +57,18 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="signup-form">
                             <div class="form-group">
-                                <input type="number" class="form-control" name="price" placeholder="Indique el precio"
+                                <input type="number" class="form-control" name="precio" placeholder="Indique el precio"
                                     required="required">
                             </div>
                             <div class="form-group">
-                                <select name="discount" class="custom-select" required>
+                                <select name="descuento" class="custom-select" required>
                                     <option selected disabled value="#">Elegir Descuento</option>
                                     <option value="0">Sin descuento</option>
                                     <option value="15">15%</option>
                                     <option value="30">30%</option>
                                 </select>
                             </div>
-                            <select name="recomended" class="form-control" id="">
+                            <select name="recomendado" class="form-control" id="">
                                 <option selected disabled value="#">Elegir Recomendacion</option>
                                 <option value="noRecomendado">No Recomendado</option>
                                 <option value="recomendado">Productos Recomendados</option>
@@ -72,7 +76,7 @@
                             </select> <br>
 
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" name="image" required>
+                                <input type="file" class="custom-file-input" name="imagen" required>
                                 <label class="custom-file-label" for="">Eligir la imagen...</label>
                             </div>
                             <div class="form-group"> <br>

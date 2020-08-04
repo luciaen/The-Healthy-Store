@@ -1,6 +1,6 @@
 'user strict';
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Product';
+    let alias = 'product';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -15,19 +15,16 @@ module.exports = (sequelize, dataTypes) => {
         recommended: dataTypes.STRING,
         image: dataTypes.STRING
     };
-   
+    const product = sequelize.define(alias, cols)
     
-    const Product = sequelize.define(alias, cols)
-    
-    Product.associate = function(models) {
-        Product.belongsTo(
-            models.Category,
+    product.associate = function(models) {
+        product.belongsTo(
+            models.category,
             {
-                as : 'Categories',
+                as : 'product',
                 foreignKey: 'categoryId'
             }
         )
     };
-
-    return Product
-}
+    return product
+} 

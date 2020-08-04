@@ -4,8 +4,8 @@ module.exports = {
     "password": null,
     "database": "the_healthy_store",
     "host": "127.0.0.1",
-    "dialect": "mysql",
-    "port" : 4000
+    "dialect": "mysql"
+    
   },
   "test": {
     "username": "root",
