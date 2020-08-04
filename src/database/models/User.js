@@ -1,6 +1,6 @@
 'use strict';
 module.exports = (sequelize, dataTypes) => {
-  let alias = 'user';
+  let alias = 'User';
   let cols = {
     id: {
       type: dataTypes.INTEGER,
@@ -15,6 +15,6 @@ module.exports = (sequelize, dataTypes) => {
   image: dataTypes.STRING,
   admin: dataTypes.INTEGER
 };
-const user = sequelize.define(alias, cols)
-return user
+const User = sequelize.define(alias, cols)
+return User
 }
