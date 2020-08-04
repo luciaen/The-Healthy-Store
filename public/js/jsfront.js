@@ -1,4 +1,4 @@
-window.onload= function(){
+/*window.onload= function(){
     let formulario = document.querySelector("#formEditPerfil")
     formulario.addEventListener("submit",function(){
         let errores =[];
@@ -75,4 +75,4 @@ window.onload= function(){
 
 
     });
-}
+}*/
