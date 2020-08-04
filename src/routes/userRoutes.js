@@ -48,17 +48,19 @@ router.post('/login',[
         }
         return false
     }).withMessage('Usuario no Registrado'),
-    body('password').custom(function(value){
-        //requiero mi archivo JSon de Usuarios
+    body('password').custom( (value, {req}) =>{
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for(let i =0;i<usuarios.length;i++){
-            let passwordC= bcrypt.compareSync(value,usuarios[i].contraseña)
-            if (passwordC==true) {
-                return true    
+        for (let i = 0; i < usuarios.length; i++) {
+            if (usuarios[i].email == req.body.email) {
+                if(bcrypt.compareSync(value, usuarios[i].contraseña)){
+                  return true;
+                }else{
+                  return false;
+                }
             }
         }
-        return false
-    }).withMessage('Contraseña Incorrecta'),
+        
+    }).withMessage('Usuario o contraseña no coinciden'),
 ],userController.getIn);
 
 router.post('/registro', upload.single('imagen'),
