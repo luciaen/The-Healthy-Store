@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
     //Capturar el formulario 
-    let formulario = document.querySelector('.form-register');
+    let formulario = document.querySelector('.form-createUser');
     //console.log(formulario.elements.email.value);
     formulario.addEventListener('submit', function (evento) {
         if (!validaciones(evento)) {

@@ -27,7 +27,7 @@ router.get('/login', userController.login);
 router.get('/usuarios', userController.index);
 router.get('/registro', userController.registro);
 router.get('/user/detail/:id', userController.show);
-router.get('/user/edit/:id', upload.single('imagen'), userController.edit);
+router.get('/user/edit/:id', upload.single('imagen'),userController.edit);
 router.get('/user/delete/:id', userController.delete);
 router.get('/logout',userController.logout);
 router.get('/perfil/:id', userController.perfil);

@@ -22,8 +22,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8 mx-auto ">
+                        <div>
+                            <ul class="errores">
+
+                            </ul>
+                        </div>
                         <div class="signup-form">
-                            <form class="form-login m-0" action="/usuarios/create" method="POST" enctype="multipart/form-data">
+                            <form class="form-createUser m-0" action="/usuarios/create" method="POST" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label for="name">Nombre</label>
                                     <input type="text" class="form-control" name="nombre"  value="<%= typeof old != 'undefined' ? old.nombre : '' %>">
@@ -92,8 +97,9 @@
         <!--LIBRERIAS-->
         <script src="bootstrap/js/jquery-3.5.1.js"></script>
         <script src="bootstrap/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js">
-        </script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="/js/createUserValitionFront.js"></script>
 </body>
 
 </html>

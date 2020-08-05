@@ -53,7 +53,7 @@ const adminController = {
                 _body.price = req.body.precio,
                 _body.discount = req.body.descuento,
                 _body.recomended = req.body.recomendado
-                _body.image = req.file ? req.file.filename : '' // if ternario       
+                _body.image = req.file ? req.file.filename : 'userUndefined.jpg' // if ternario       
 
             Product
                 .create(_body)
