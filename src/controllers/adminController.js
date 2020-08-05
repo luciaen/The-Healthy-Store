@@ -25,15 +25,6 @@ const adminController = {
             res.render(path.resolve(__dirname, '..', 'views','admin', 'index'),{productos});
         },
 */
-
-        index2: function (req, res) {
-
-            res.render(path.resolve(__dirname, '..', 'views','admin', 'index2'),{productos});
-        },
-        index3: function (req, res) {
-
-            res.render(path.resolve(__dirname, '..', 'views','admin', 'index3'),{productos});
-        },
         create: function (req, res) {
             res.render(path.resolve(__dirname, '..', 'views','admin', 'create'));
         },

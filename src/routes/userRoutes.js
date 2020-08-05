@@ -25,8 +25,6 @@ const validaciones = require(path.resolve(__dirname,"../middlewares/validaciones
 // METODOS POR GET -----------------------> 
 router.get('/login', userController.login);
 router.get('/usuarios', userController.index);
-router.get('/usuarios/page/2', userController.index2);
-router.get('/usuarios/page/3', userController.index3);
 router.get('/registro', userController.registro);
 router.get('/user/detail/:id', userController.show);
 router.get('/user/edit/:id', upload.single('imagen'), userController.edit);
