@@ -6,18 +6,18 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        category: dataTypes.STRING,
-        };
-        const Category = sequelize.define(alias, cols)
+        name: dataTypes.STRING,
+    };
     
-       Category.associate = function(models) {
-            Category.hasMany(
-                models.Product,
-                {
-                    as : 'Category',
-                    foreignKey: 'categoryId'
-                }
-            )
-       }
-       return Category
-    } 
+    const Category = sequelize.define(alias, cols)
+    //Aqu´creo la relación con la tabla Products  - OJo: Relación de 1 a muchos
+    Category.associate = function (models) {
+        Category.hasMany(
+            models.Product, {
+                as: 'products',
+                foreignKey: 'categoryId'
+            }
+        )
+    }
+    return Category
+}

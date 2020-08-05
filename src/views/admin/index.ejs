@@ -33,13 +33,15 @@
                     </tr>
                 </thead>
                 <tbody>
+
+                    
                     <% for (let i= 0; i<5; i++){ %>
                     <tr>
                         <th scope="row"><%=productos[i].id%></th>
-                        <td><%=productos[i].nombre%></td>
-                        <td><%=productos[i].categoria%></td>
+                        <td><%=productos[i].name%></td>
+                        <td><%=productos[i].categoryId%></td>
                         <td><%=productos[i].stock%></td>
-                        <td><%=productos[i].precio%></td>
+                        <td><%=productos[i].price%></td>
                         <td><a href="/admin/detail/<%=productos[i].id%>"><i class="far fa-eye"></i></a></td>
                         <td><a href="/admin/edit/<%=productos[i].id%>"><i class="fas fa-pencil-alt"></i></a></td>
                         <td><a href="/admin/delete/<%=productos[i].id%>"><i class="fas fa-trash"></i></a></td>

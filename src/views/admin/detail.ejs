@@ -25,19 +25,19 @@
                           <div class="card">
                               <ul class="list-group">
                                   <li class="list-group-item">ID: <%= productoShow.id %> </li>
-                                  <li class="list-group-item">Nombre: <%= productoShow.nombre %>  </li>
-                                  <li class="list-group-item">Descripción: <%= productoShow.descripcion %> </li>
-                                  <li class="list-group-item">Categoria: <%= productoShow.categoria %>  </li>
+                                  <li class="list-group-item">Nombre: <%= productoShow.name %>  </li>
+                                  <li class="list-group-item">Descripción: <%= productoShow.description %> </li>
+                                  <li class="list-group-item">Categoria: <%= productoShow.categoryId %>  </li>
                                   <li class="list-group-item">Stock: <%= productoShow.stock %> </li>
-                                  <li class="list-group-item">Precio: <%= productoShow.precio %>  </li>
-                                  <li class="list-group-item">Descuento: <%= productoShow.descuento %>  </li>
+                                  <li class="list-group-item">Precio: <%= productoShow.price %>  </li>
+                                  <li class="list-group-item">Descuento: <%= productoShow.discount %>  </li>
                               </ul>
                           </div>
                         </div>
                         <div class="col-6 mx-auto bg-light ">
                           <div class="card">
                               <figure class="form-group">
-                                <img class="w-50 " src="/images/productos/<%= productoShow.imagen %>" alt="Imagen del producto">
+                                <img class="w-50 " src="/images/productos/<%= productoShow.image %>" alt="Imagen del producto">
                             </figure>
                           </div> 
                           <a class="btn btn-primary" href="/administrar">Volver</a>

@@ -40,14 +40,6 @@
   },
   {
     "id": 5,
-    "nombre": "Ronnie",
-    "apellido": "Quinn",
-    "email": "ronacho07@gmail.com",
-    "telefono": 3058747044,
-    "contraseña": "$2a$10$wQibCIBN/JgNUAE/hNHX6.tEELGJvmFmh0rhZZH0ev0EYzirdyJaK",
-    "imagen": "usuario-1595880961209.PNG"
-  },
-  {
     "nombre": "Enzo",
     "apellido": "dominguez",
     "email": "enzo@gmail.com",
@@ -126,8 +118,7 @@
     "email": "ronnie@gmail.com",
     "telefono": 156546546,
     "contraseña": "$2a$10$V86bII4Ne2qko4jJ7L/VsOh8PJr87Dl2tE9JWT3ldMWBYP3nzSv5S",
-    "imagen": "usuario-1596126187555.png",
-    "administra": true
+    "imagen": "usuario-1596126187555.png"
   },
   {
     "id": 14,

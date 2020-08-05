@@ -22,12 +22,7 @@ body{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-}
-.lead{
-    color: #F5803E;
-    font-weight: 900;
-}    
-  
+  }
 header{
     background-color: #F5803E;
 }

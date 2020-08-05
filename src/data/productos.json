@@ -13,8 +13,8 @@
   {
     "id": 2,
     "categoria": "aceites",
-    "nombre": "Aceite de Coco Neutro" ,
-     "descripcion": "Producto Brazil",
+    "nombre": "Aceite de Coco Neutro",
+    "descripcion": "Producto Brazil",
     "stock": 465,
     "precio": 733,
     "descuento": 0,
@@ -110,16 +110,15 @@
     "imagen": "producto-1593832296136.png"
   },
   {
-    "id": 12,
-    "categoria": "harinas",
+    "id": 11,
     "nombre": "Almion de Maiz ",
     "descripcion": "Sin tacc x 1kg - Natuzen",
     "stock": 656,
     "precio": 200,
     "descuento": 15,
     "recomendado": "vendido",
-    "imagen": "producto-1596047285594.png"
-    
+    "imagen": "producto-1596047285594.png",
+    "categoria": "harinas"
   }
   
 ]

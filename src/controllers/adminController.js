@@ -1,14 +1,31 @@
 const path = require('path');
 const fs = require('fs');
 let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
- 
-const {Category,Product,User} = require ("../database/models/")
+//requiero la base de datos
+const db = require('../database/models/');
+const Op = db.Sequelize.Op;
+
+const Product = db.Product;
 
 const adminController = {
-        index: function (req, res) {
+
+   index: (req, res) => {
+        Product
+            .findAll()
+            .then(productos => {
+                //return res.send(productos)
+                res.render(path.resolve(__dirname, '..', 'views', 'admin', 'index'), {
+                    productos
+                });
+            })
+            .catch(error => res.send(error))
+    },
+        /*index:  function (req, res) {
 
             res.render(path.resolve(__dirname, '..', 'views','admin', 'index'),{productos});
         },
+*/
+
         index2: function (req, res) {
 
             res.render(path.resolve(__dirname, '..', 'views','admin', 'index2'),{productos});
@@ -18,18 +35,43 @@ const adminController = {
             res.render(path.resolve(__dirname, '..', 'views','admin', 'index3'),{productos});
         },
         create: function (req, res) {
-            Category.findAll()
-                .then (function (category){
-                 return res.render(path.resolve(__dirname, '..', 'views','admin', 'create'),{category});
+            res.render(path.resolve(__dirname, '..', 'views','admin', 'create'));
+        },
+        show: (req, res) => {
+            Product
+                .findByPk(req.params.id)
+                .then(productoShow => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'admin', 'detail'), {
+                        productoShow
+                    });
                 })
-                .catch(error => res.send(error))
-             },
-        show: function(req,res){
+        }, /*function(req,res){
             let productoId = req.params.id;
         const productoShow = productos.find( p=> p.id == productoId);
             res.render(path.resolve(__dirname, '..','views','admin','detail'),{productoShow});
-        },
-        save: function(req,res){
+        },*/
+        save: 
+        
+        (req, res) => {
+            const _body = req.body;
+            //return res.send(_body);
+                _body.name = req.body.nombre,
+                _body.description = req.body.descripcion,
+                _body.category = req.body.categoria,
+                _body.stock = Number(req.body.stock),
+                _body.price = req.body.precio,
+                _body.discount = req.body.descuento,
+                _body.recomended = req.body.recomendado
+                _body.image = req.file ? req.file.filename : '' // if ternario       
+
+            Product
+                .create(_body)
+                .then(producto => {
+                    res.redirect('/administrar');
+                })
+
+        }, 
+        /*function(req,res){
             let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json'))); 
             let productosTotales  = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));  
             let ultimoProducto = productosTotales.pop();
@@ -49,13 +91,48 @@ const adminController = {
             productosJSON=JSON.stringify(productos,null,2);
             fs.writeFileSync(path.resolve(__dirname, '../data/productos.json'),productosJSON);
             res.redirect('/administrar');
-        },
-        edit: function(req,res){
+        },*/
+        edit: (req, res) => {
+                Product
+                    .findByPk(req.params.id)
+                    .then(productoEdit => {
+                        res.render(path.resolve(__dirname, '..', 'views', 'admin', 'edit'), {
+                            productoEdit
+                        });
+                    })
+                    },
+        
+        /*function(req,res){
         let productoId = req.params.id;
         const productoEdit = productos.find( p=> p.id == productoId);
         res.render(path.resolve(__dirname, '..','views','admin','edit'),{productoEdit});  
+        },*/
+        update:
+        (req, res) => {
+            const _body = req.body;
+            //return res.send(_body);
+            _body.name = req.body.nombre,
+                _body.description = req.body.descripcion,
+                _body.category = req.body.categoria,
+                _body.stock = Number(req.body.stock),
+                _body.price = req.body.precio,
+                _body.discount = req.body.descuento,
+                _body.recomended = req.body.recomendado
+                _body.image = req.file ? req.file.filename : req.body.oldImagen // if ternario       
+
+            Product
+                .update(_body, {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then( p => {
+                    res.redirect('/administrar')
+                })
+                .catch(error => res.send(error)); //error de Base de Datos
         },
-        update: function(req,res){
+        
+        /* function(req,res){
 
             let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
             req.body.id = req.params.id;
@@ -76,19 +153,42 @@ const adminController = {
             productosJSON=JSON.stringify(productosUpdate,null,2);
             fs.writeFileSync(path.resolve(__dirname, '../data/productos.json'),productosJSON);
             res.redirect('/administrar'); 
+        }, */
+        delete: 
+        (req, res) => {
+            Product
+                .findByPk(req.params.id)
+                .then(productoDelete => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'admin', 'delete'), {
+                        productoDelete
+                    });
+                })
         },
-        delete: function(req,res){
+        
+        /*function(req,res){
             let productoId = req.params.id;
             const productoDelete= productos.find( p=> p.id == productoId);
                 res.render(path.resolve(__dirname, '..','views','admin','delete'),{productoDelete});
-        },
-        destroy: function(req,res){
+        },*/
+        destroy: (req, res) => {
+            Product
+                .destroy({
+                    where: {
+                        id: req.params.id
+                    },
+                    force: true
+                })
+                .then(confirm => {
+                    res.redirect('/administrar');
+                })
+        }, /*function(req,res){
             let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
             const productoId = req.params.id;
         const productoDestroy = productos.filter(p => p.id != productoId);
         productosJSON = JSON.stringify(productoDestroy,null,2);
         fs.writeFileSync(path.resolve(__dirname, '../data/productos.json'),productosJSON);
-            res.redirect('/administrar'); 
-        }
+            res.redirect('/administrar');
+            }*/
+        
     }
 module.exports = adminController;

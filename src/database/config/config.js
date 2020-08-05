@@ -5,7 +5,6 @@ module.exports = {
     "database": "the_healthy_store",
     "host": "127.0.0.1",
     "dialect": "mysql"
-    
   },
   "test": {
     "username": "root",

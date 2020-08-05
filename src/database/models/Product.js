@@ -1,4 +1,3 @@
-'user strict';
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Product';
     let cols = {
@@ -11,20 +10,24 @@ module.exports = (sequelize, dataTypes) => {
         description: dataTypes.STRING,
         stock: dataTypes.INTEGER,
         price: dataTypes.DECIMAL,
+        categoryId: dataTypes.INTEGER,
         discount: dataTypes.INTEGER,
-        recommended: dataTypes.STRING,
+        recomended: dataTypes.STRING,
         image: dataTypes.STRING
     };
+
+
+
     const Product = sequelize.define(alias, cols)
-    
-    Product.associate = function(models) {
+    //Aquí creo mi relación entre Platos (Diskes) y Categorias (Categories)
+    Product.associate = function (models) {
         Product.belongsTo(
-            models.Category,
-            {
-                as : 'Product',
+            models.Category, {
+                as: 'category',
                 foreignKey: 'categoryId'
             }
         )
     };
+
     return Product
-} 
+}
