@@ -52,7 +52,5 @@ window.addEventListener('load', function () {
         }
 
     })
-
-
-
-})
+    
+});
