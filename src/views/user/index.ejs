@@ -32,18 +32,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% for (let i= 0; i<5; i++){ %>
+                    <% usuarios.forEach(usuario => { %>
                     <tr>
-                        <th scope="row"><%=usuarios[i].id%></th>
-                        <td><%=usuarios[i].nombre%></td>
-                        <td><%=usuarios[i].apellido%></td>
-                        <td><%=usuarios[i].email%></td>
-                        <td><%=usuarios[i].telefono%></td>
-                        <td><a href="/user/detail/<%=usuarios[i].id%>"><i class="far fa-eye"></i></a></td>
-                        <td><a href="/user/edit/<%=usuarios[i].id%>"><i class="fas fa-pencil-alt"></i></a></td>
-                        <td><a href="/user/delete/<%=usuarios[i].id%>"><i class="fas fa-trash"></i></a></td>
+                        <th scope="row"><%=usuario.id%></th>
+                        <td><%=usuario.nombre%></td>
+                        <td><%=usuario.apellido%></td>
+                        <td><%=usuario.email%></td>
+                        <td><%=usuario.telefono%></td>
+                        <td><a href="/user/detail/<%=usuario.id%>"><i class="far fa-eye"></i></a></td>
+                        <td><a href="/user/edit/<%=usuario.id%>"><i class="fas fa-pencil-alt"></i></a></td>
+                        <td><a href="/user/delete/<%=usuario.id%>"><i class="fas fa-trash"></i></a></td>
                     </tr>
-                    <%} %>
+                    <% }) ; %>
                 </tbody>
             </table>
             <ul class="pagination justify-content-center">
@@ -57,13 +57,13 @@
                     <a class="page-link" href="/usuarios">1</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="/usuarios/page/2">2</a>
+                    <a class="page-link" href="#">2</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="/usuarios/page/3">3</a>
+                    <a class="page-link" href="#">3</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="/usuarios/page/2" aria-label="Next">
+                    <a class="page-link" href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Next</span>
                     </a>

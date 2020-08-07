@@ -21,6 +21,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-8 mx-auto ">
+                        <div>
+                            <ul class="errores">
+                                
+                            </ul>
+                        </div>
                         <div class="signup-form">
                             <form class="form-login" action="/login" method="POST">
                                 <div class="form-group">
@@ -31,8 +36,8 @@
                                       <%}%>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Contraseña</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Contraseña" >
+                                    <label for="exampleInputPassword1">Contraseña: </label><i class="fa fa-eye" id="show"></i>
+                                    <input id="pass" type="password" class="form-control" name="password" placeholder="Contraseña" >
                                     <% if(typeof errors != 'undefined' && errors.password){%>
                                         <span class="text-danger" > <%=errors.password.msg %></span>
                                        <%}%>
@@ -42,6 +47,7 @@
                                     <label class="form-check-label" for="exampleCheck1">Recordame</label>
                                 </div>
                                 <button type="submit" class="btn btn-secondary botonlogin">Iniciar Sesión</button>
+                        
                             </form>
                        </div>
                     </div>
@@ -55,8 +61,10 @@
         <!--LIBRERIAS-->
         <script src="bootstrap/js/jquery-3.5.1.js"></script>
         <script src="bootstrap/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js">
-        </script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <script src="/js/loginValidatorFront.js"></script>
+        <script src="/js/ojito.js"></script>
 </body>
 
 </html>

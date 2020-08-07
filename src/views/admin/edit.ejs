@@ -92,6 +92,8 @@
                                     <img class="w-50 " src="/images/productos/<%=  productoEdit.image %>"
                                         alt="Imagen del del plato">
                                 </figure>
+                                <input type="hidden"  name="oldImagen"  value="<%= productoEdit.image%>">
+                                <input type="file"   name="imagen"  placeholder="Eligir la imagen...">
                             </div>
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="imagen"
