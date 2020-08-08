@@ -4,6 +4,13 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
+const db = require('../database/models/');
+const Op = db.Sequelize.Op;
+
+//const {Product, Category} = require('../database/models/');
+
+const User = db.User;
+
 const userController = {
 
     login: function (req, res) {
