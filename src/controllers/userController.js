@@ -24,6 +24,35 @@ const userController = {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
     },
     newRegister: function (req, res) {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
+                let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+                let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+                let ultimoUsuario = usuariosTotales.pop();
+
+                let nuevoUsuario = {
+                    id: ultimoUsuario.id + 1,
+                    nombre: req.body.nombre,
+                    apellido: req.body.lastname,
+                    email: req.body.email,
+                    telefono: Number(req.body.telefono),
+                    contraseña: bcrypt.hashSync(req.body.password, 10),
+                    administra: req.body.admin ? true : false,
+                    imagen: req.file ? req.file.filename : "userUndefined.jpg"
+
+                }
+                usuarios.push(nuevoUsuario);
+                usuariosJSON = JSON.stringify(usuarios, null, 2);
+                fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
+                res.redirect('/login');
+            } else {
+                res.render(path.resolve(__dirname, '../views/user/registro'), {
+                    errors: errors.mapped(),
+                    old: req.body
+                });
+            }
+    
+    /*function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
@@ -47,7 +76,7 @@ const userController = {
             res.redirect('/login');
         } else {
             res.render(path.resolve(__dirname, '../views/user/registro'), { errors: errors.mapped(), old: req.body });
-        }
+        } */
     },
     create:function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'create'));
