@@ -4,15 +4,15 @@ window.addEventListener('load', function () {
     show.addEventListener("mousedown",function(){
         let pass = document.getElementById("pass");
         pass.removeAttribute('type');
-        show.classList.remove('fas fa-eye-slash')
-        show.classList.add('fas fa-eye')
+        show.classList.remove('fa-eye-slash')
+        show.classList.add('fa-eye')
         
     })
     show.addEventListener("mouseup",function(){
         let pass = document.getElementById("pass");
         pass.setAttribute('type','password');
-        show.classList.remove('fas fa-eye')
-        show.classList.add('fas fa-eye-slash')
+        show.classList.remove('fa-eye')
+        show.classList.add('fa-eye-slash')
         
     })
 })
