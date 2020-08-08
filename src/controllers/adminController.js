@@ -48,7 +48,7 @@ const adminController = {
             //return res.send(_body);
                 _body.name = req.body.nombre,
                 _body.description = req.body.descripcion,
-                _body.category = req.body.categoria,
+                _body.categoryId = req.body.categoria,
                 _body.stock = Number(req.body.stock),
                 _body.price = req.body.precio,
                 _body.discount = req.body.descuento,
@@ -104,7 +104,7 @@ const adminController = {
             //return res.send(_body);
             _body.name = req.body.nombre,
                 _body.description = req.body.descripcion,
-                _body.category = req.body.categoria,
+                _body.categoryId = req.body.categoria,
                 _body.stock = Number(req.body.stock),
                 _body.price = req.body.precio,
                 _body.discount = req.body.descuento,
