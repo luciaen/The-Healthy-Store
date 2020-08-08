@@ -2,16 +2,20 @@ const path = require('path');
 const fs = require('fs');
 let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
 //requiero la base de datos
-const db = require('../database/models/');
+ const db = require('../database/models/');
 const Op = db.Sequelize.Op;
 
+//const {Product, Category} = require('../database/models/');
+
 const Product = db.Product;
+const Category = db.Category;
 
 const adminController = {
 
    index: (req, res) => {
-        Product
-            .findAll()
+
+         Product.findAll()
+            
             .then(productos => {
                 //return res.send(productos)
                 res.render(path.resolve(__dirname, '..', 'views', 'admin', 'index'), {
@@ -48,7 +52,7 @@ const adminController = {
             //return res.send(_body);
                 _body.name = req.body.nombre,
                 _body.description = req.body.descripcion,
-                _body.category = req.body.categoria,
+                _body.categoryId = Number(req.body.categoria),
                 _body.stock = Number(req.body.stock),
                 _body.price = req.body.precio,
                 _body.discount = req.body.descuento,

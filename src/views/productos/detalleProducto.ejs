@@ -11,18 +11,18 @@
         <%- include('../partials/navbar') %>
         <!---------Comienza el main------------------------>
         <div class="container">
-            <h1 class="my-4 main-titulo "><%= productoDetalle.nombre %></h1>
+            <h1 class="my-4 main-titulo "><%= productoDetalle.name %></h1>
             <div class="row">
                 <div class="col-md-8">
-                    <img class="img-fluid" src="/images/productos/<%= productoDetalle.imagen%>" alt="Foto del producto">
+                    <img class="img-fluid" src="/images/productos/<%= productoDetalle.image%>" alt="Foto del producto">
                 </div>
 
                 <div class="col-md-4">
                     <h3 class="my-3 main-titulo">Descripción</h3>
-                    <p><%= productoDetalle.descripcion %></p>
+                    <p><%= productoDetalle.description %></p>
                     <h3 class="my-3 main-titulo">Stock</h3>
                     <p>Stock disponible: <%= productoDetalle.stock%></p>
-                    <h4 class="main-titulo">Precio: $<%= productoDetalle.precio %></h4>
+                    <h4 class="main-titulo">Precio: $<%= productoDetalle.price %></h4>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
                             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Cantidad</button>
