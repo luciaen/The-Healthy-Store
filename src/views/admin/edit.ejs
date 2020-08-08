@@ -28,17 +28,16 @@
                                     <label for="">Categoria Del Producto</label>
                                     <select name="categoria" class="form-control" id="">
                                         <option value=<%= productoEdit.categoryId%>><%= productoEdit.categoryId%></option>
-                                        <option value="0">-</option>
-                                        <option value="leche">Leches</option>
-                                        <option value="aceites">Aceites</option>
-                                        <option value="endulzantes">Endulzantes</option>
-                                        <option value="harinas">Harinas</option>
-                                        <option value="pastasyArroz">Pastas y Arroz</option>
-                                        <option value="postresySnacks">Postres y Snacks</option>
-                                        <option value="frutosSecos">Frutos Secos</option>
-                                        <option value="granolas">Granolas</option>
-                                        <option value="viandas">Viandas</option>>
-                                        <option value="bebidas">Bebidas</option>>
+                                        <option value="1">Leches</option>
+                                        <option value="2">Aceites</option>
+                                        <option value="3">Endulzantes</option>
+                                        <option value="4">Harinas</option>
+                                        <option value="5">Pastas y Arroz</option>
+                                        <option value="6">Frutos Secos</option>
+                                        <option value="7">Granolas</option>
+                                        <option value="8">Viandas</option>
+                                        <option value="9">Bebidas</option>
+                                        <option value="10">Postres y Snacks</option>
                                     </select>
                                         
                                 </div>
@@ -89,7 +88,7 @@
                             <div class="form-group">
                                 <label for="">Imagen del producto</label>
                                 <figure class="form-group">
-                                    <img class="w-50 " src="/images/productos/<%=  productoEdit.image %>"
+                                    <img class="w-50 " src="/images/productos/<%=productoEdit.image%>"
                                         alt="Imagen del del plato">
                                 </figure>
                                 <input type="hidden"  name="oldImagen"  value="<%= productoEdit.image%>">
