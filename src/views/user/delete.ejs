@@ -23,45 +23,45 @@
                 <div class="row">
                     <div class="col-6 mx-auto bg-light ">
                         <div class="signup-form">
-                            <form action="/user/delete/ <%=usuarioDelete.id%> ?_method=DELETE" method="POST"
+                            <form action="/user/delete/ <%=userDelete.id%> ?_method=DELETE" method="POST"
                                 enctype="multipart/form-data">
                                 
                                 <div class="form-group">
                                     <label for="">Nombre Del Usuario</label>
                                     <input type="text" class="form-control" name="nombre"
                                          required="required"
-                                        value="<%= usuarioDelete.nombre%>">
+                                        value="<%= userDelete.name%>">
                                 </div>
                                  <div class="form-group">
                                      <label for="">Apellido Del Usuario</label>
                                      <input type="text" class="form-control" name="apellido" required="required"
-                                         value="<%= usuarioDelete.apellido%>">
+                                         value="<%= userDelete.lastName%>">
                                  </div>
                                 <div class="form-group">
                                     <label for="">E-mail</label>
                                     <input type="text" class="form-control" name="email"
                                         required="required"
-                                        value="<%= usuarioDelete.email%>">
+                                        value="<%= userDelete.email%>">
 
                                 </div>
                                 <div class="form-group">
                                     <label for="">Teléfono</label>
                                     <input type="text" class="form-control" name="telefono"
                                          required="required"
-                                        value="<%= usuarioDelete.telefono%>">
+                                        value="<%= userDelete.phone%>">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Contraseña</label>
                                     <input type="password" class="form-control" name="contraseña"
                                         required="required"
-                                        value="<%= usuarioDelete.contraseña%>">
+                                        value="<%= userDelete.password%>">
                                 </div>
                                 
                     <div class="col-6 mx-auto bg-light ">
                         <div class="signup-form">
                             <div class="custom-file">
                                 <figure class="form-group">
-                                    <img class="w-50 " src="/images/usuarios/<%= usuarioDelete.imagen%>"
+                                    <img class="w-50 " src="/images/usuarios/<%= userDelete.image%>"
                                         alt="usuario">
                                 </figure>
                                 <button type="submit" class="btn btn btn-danger">Borrar El usuario</button>

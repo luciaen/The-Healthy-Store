@@ -20,9 +20,22 @@ const userController = {
     registro: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'registro'));
     },
-    index: function (req, res) {
+    /*index: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{usuarios});
-    },
+        
+    },*/
+    index: (req, res) => {
+
+        User.findAll()
+           
+           .then(user => {
+               //return res.send(productos)
+               res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'), {
+                   user
+               });
+           })
+           .catch(error => res.send(error))
+   },
     newRegister: function (req, res) {
             let errors = validationResult(req);
             if (errors.isEmpty()) {
@@ -107,16 +120,34 @@ const userController = {
             res.render(path.resolve(__dirname, '../views/user/create'), { errors: errors.mapped(), old: req.body });
         }
     },
-    show: function (req, res) {
+    show: (req, res) => {
+        User
+            .findByPk(req.params.id)
+            .then(userShow => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'detail'), {
+                    userShow
+                });
+            })
+    },
+    /*show: function (req, res) {
         let usuarioId = req.params.id;
         const usuarioShow = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'detail'),{usuarioShow});
-    },
-    edit: function (req, res) {
+    },*/
+    edit: (req, res) => {
+        User
+            .findByPk(req.params.id)
+            .then(userEdit => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), {
+                    userEdit
+                });
+            })
+            },
+    /*edit: function (req, res) {
         let usuarioId = req.params.id;
         const usuarioEdit = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'),{usuarioEdit});
-    },
+    },*/
     update: function (req, res) {
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
@@ -144,19 +175,41 @@ const userController = {
             return res.render(path.resolve(__dirname, '../views/user/edit'), {errors: errors.mapped(),usuarioEdit : usuarioEdit});
         }
     },
-    delete: function (req, res) {
+    delete: 
+        (req, res) => {
+            User
+                .findByPk(req.params.id)
+                .then(userDelete => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'delete'), {
+                        userDelete
+                    });
+                })
+        },
+    /*delete: function (req, res) {
         let usuarioId = req.params.id;
         const usuarioDelete = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'delete'),{usuarioDelete});
-    },
-    destroy: function (req, res) {
+    },*/
+    destroy: (req, res) => {
+        User
+            .destroy({
+                where: {
+                    id: req.params.id
+                },
+                force: true
+            })
+            .then(confirm => {
+                res.redirect('/usuarios');
+            })
+        },
+    /*destroy: function (req, res) {
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         const usuarioId = req.params.id;
         const usuarioDestroy = usuarios.filter(u => u.id != usuarioId);
         usuariosJSON = JSON.stringify(usuarioDestroy, null, 2);
         fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
         res.redirect('/usuarios');
-    },
+    },*/
     getIn: function (req, res) {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
