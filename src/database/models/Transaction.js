@@ -15,5 +15,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Transaction = sequelize.define(alias, cols);
     
+ Transaction.associate = function (models) {
+     Transaction.hasMany(
+         models.ShoppingCart, {
+             as: 'shoppingcart',
+             foreignKey: 'transactionId'
+         }
+     )
+ }
+
    return Transaction
 }

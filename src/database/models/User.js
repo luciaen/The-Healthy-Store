@@ -15,5 +15,14 @@ module.exports = (sequelize, dataTypes) => {
         };
 
         const User = sequelize.define(alias, cols);
+
+          User.associate = function (models) {
+              User.hasMany(
+                  models.ShoppingCart, {
+                      as: 'shoppingcart',
+                      foreignKey: 'userId'
+                  }
+              )
+          }
          return User
 }   

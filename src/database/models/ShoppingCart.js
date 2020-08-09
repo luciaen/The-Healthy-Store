@@ -16,7 +16,33 @@
 
          
              const ShoppingCart = sequelize.define(alias, cols);
-             
+              ShoppingCart.associate = function (models) {
+                  ShoppingCart.belongsTo(
+                      models.User, {
+                          as: 'user',
+                          foreignKey: 'userId'
+                      }
+                  )
+              };
+
+               ShoppingCart.associate = function (models) {
+                  ShoppingCart.belongsTo(
+                      models.Transaction, {
+                          as: 'transaction',
+                          foreignKey: 'transactionId'
+                      }
+                  )
+              };
+
+              ShoppingCart.associate = function (models) {
+                  ShoppingCart.belongsTo(
+                      models.Product, {
+                          as: 'product',
+                          foreignKey: 'productId'
+                      }
+                  )
+              };
+
 
              return ShoppingCart 
          } 
