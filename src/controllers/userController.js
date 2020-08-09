@@ -37,64 +37,61 @@ const userController = {
            .catch(error => res.send(error))
    },
     newRegister: function (req, res) {
-            let errors = validationResult(req);
-            if (errors.isEmpty()) {
-                let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-                let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-                let ultimoUsuario = usuariosTotales.pop();
-
-                let nuevoUsuario = {
-                    id: ultimoUsuario.id + 1,
-                    nombre: req.body.nombre,
-                    apellido: req.body.lastname,
-                    email: req.body.email,
-                    telefono: Number(req.body.telefono),
-                    contraseña: bcrypt.hashSync(req.body.password, 10),
-                    administra: req.body.admin ? true : false,
-                    imagen: req.file ? req.file.filename : "userUndefined.jpg"
-
-                }
-                usuarios.push(nuevoUsuario);
-                usuariosJSON = JSON.stringify(usuarios, null, 2);
-                fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-                res.redirect('/login');
-            } else {
-                res.render(path.resolve(__dirname, '../views/user/registro'), {
-                    errors: errors.mapped(),
-                    old: req.body
-                });
-            }
-    
-    /*function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-            let usuariosTotales = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-            let ultimoUsuario = usuariosTotales.pop();
+            const _body = req.body
+            _body.name = req.body.nombre
+            _body.lastName=req.body.lastname,
+            _body.email=req.body.email,
+            _body.phone=req.body.telefono,
+            _body.password = bcrypt.hashSync(req.body.password, 10),
+            _body.admin = 0
+            _body.image = req.file ? req.file.filename : 'userUndefined.jpg'
+            User
+                .create(_body)
+                .then(usuario =>{
+                    res.redirect('/login');
+                })
 
-            let nuevoUsuario = {
-                id: ultimoUsuario.id + 1,
-                nombre: req.body.nombre,
-                apellido: req.body.lastname,
-                email: req.body.email,
-                telefono: Number(req.body.telefono),
-                contraseña: bcrypt.hashSync(req.body.password, 10),
-                administra: req.body.admin ? true : false,
-                imagen: req.file ? req.file.filename : "userUndefined.jpg"
+        }
+        else {
 
-            }
-            usuarios.push(nuevoUsuario);
-            usuariosJSON = JSON.stringify(usuarios, null, 2);
-            fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-            res.redirect('/login');
-        } else {
-            res.render(path.resolve(__dirname, '../views/user/registro'), { errors: errors.mapped(), old: req.body });
-        } */
+            return res.render(path.resolve(__dirname, '../views/user/registro'),
+                {errors: errors.mapped(),old: req.body});
+
+        }
     },
     create:function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'create'));
     },
-    newCreate:function (req, res) {
+    newCreate: function (req, res) {
+
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.name = req.body.nombre
+            _body.lastName=req.body.lastname,
+            _body.email=req.body.email,
+            _body.phone=req.body.telefono,
+            _body.password = bcrypt.hashSync(req.body.password, 10),
+            _body.admin = req.body.admin
+            _body.image = req.file ? req.file.filename : 'userUndefined.jpg'
+            User
+                .create(_body)
+                .then(usuario =>{
+                    res.redirect('/usuarios');
+                })
+
+        }
+        else {
+
+            return res.render(path.resolve(__dirname, '../views/user/create'),
+                {errors: errors.mapped(),old: req.body});
+
+        }
+
+    },
+    /*newCreate:function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
@@ -119,7 +116,7 @@ const userController = {
         } else {
             res.render(path.resolve(__dirname, '../views/user/create'), { errors: errors.mapped(), old: req.body });
         }
-    },
+    },*/
     show: (req, res) => {
         User
             .findByPk(req.params.id)
@@ -138,9 +135,7 @@ const userController = {
         User
             .findByPk(req.params.id)
             .then(userEdit => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), {
-                    userEdit
-                });
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), {userEdit});
             })
             },
     /*edit: function (req, res) {
@@ -148,33 +143,38 @@ const userController = {
         const usuarioEdit = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'),{usuarioEdit});
     },*/
+
     update: function (req, res) {
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-        req.body.id = req.params.id;
-        let usuariosUpdate = usuarios.map(u => {
-            if (u.id == req.body.id) {
-                    u.nombre = req.body.nombre,
-                    u.apellido = req.body.apellido,
-                    u.email = req.body.email,
-                    u.telefono = Number(req.body.telefono),
-                    u.contraseña = bcrypt.hashSync(req.body.password, 10),
-                    u.administra= req.body.admin ? true : false,
-                    u.imagen = req.file ? req.file.filename : req.body.oldImagen
-            }
-            return u;
-        });
         let errors = validationResult(req);
         if (errors.isEmpty()) {
-        usuariosJSON = JSON.stringify(usuariosUpdate, null, 2);
-        fs.writeFileSync(path.resolve(__dirname, '../data/usuarios.json'), usuariosJSON);
-        res.redirect('/usuarios');
+            const _body = req.body
+            _body.name = req.body.nombre
+            _body.lastName=req.body.lastname,
+            _body.email=req.body.email,
+            _body.phone=req.body.telefono,
+            _body.password = bcrypt.hashSync(req.body.password, 10),
+            _body.roleId = _body.roleId ? 3 : 1,
+            _body.image = req.file ? req.file.filename : req.body.oldImagen 
+            User
+            .update(_body,{
+                where:{
+                    id:req.params.id
+                }
+            })
+            .then(usuario =>{
+                res.redirect('/usuarios');
+            })
+            .catch(error=>res.send(error));
+
     }
     else {
-        let usuarioId = req.params.id;
-            const usuarioEdit = usuarios.find(u => u.id == usuarioId);
-            return res.render(path.resolve(__dirname, '../views/user/edit'), {errors: errors.mapped(),usuarioEdit : usuarioEdit});
-        }
-    },
+
+        return res.render(path.resolve(__dirname, '../views/user/edit'),
+            {errors: errors.mapped(),old: req.body});
+
+    }
+
+},
     delete: 
         (req, res) => {
             User
