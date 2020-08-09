@@ -123,7 +123,7 @@ header{
 /*---------main css--------------*/
 
 .main-titulo{
-    color:#FD9C65;
+    color:#5a4d45;
     text-align: center;
     border-bottom: solid;
     font-weight: 700;
@@ -139,6 +139,13 @@ main article{
     
     border-width: 1px;
     color:grey;
+}
+.card-img-top{
+    max-height: 50px;
+   
+}
+.altura{
+    max-height: 90px;
 }
 main article p{
  font-weight: bold;

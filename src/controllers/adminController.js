@@ -184,6 +184,15 @@ const adminController = {
         fs.writeFileSync(path.resolve(__dirname, '../data/productos.json'),productosJSON);
             res.redirect('/administrar');
             }*/
-        
+            search:(req, res) =>{
+                Product.findAll({
+                    where:{
+                        name: {[Op.like]: `%${req.query.buscar}%`}
+                    }
+                })
+                .then(resultado => {res.render(path.resolve(__dirname, '..', 'views', 'admin', 'index'),{productos:resultado});
+              })
+                .catch(error => res.send(error))
+            }       
     }
 module.exports = adminController;
