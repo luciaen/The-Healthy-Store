@@ -24,12 +24,12 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="card">
                             <ul class="list-group">
-                                <li class="list-group-item">ID: <%= usuarioShow.id %> </li>
-                                <li class="list-group-item">Nombre: <%= usuarioShow.nombre %> </li>
-                                <li class="list-group-item">Apellido: <%= usuarioShow.apellido %> </li>
-                                <li class="list-group-item">E-mail: <%= usuarioShow.email %> </li>
-                                <li class="list-group-item">Teléfono: <%= usuarioShow.telefono %> </li>
-                                <li class="list-group-item">Administra: <%= usuarioShow.administra %> </li>
+                                <li class="list-group-item">ID: <%= userShow.id %> </li>
+                                <li class="list-group-item">Nombre: <%= userShow.name %> </li>
+                                <li class="list-group-item">Apellido: <%= userShow.lastName %> </li>
+                                <li class="list-group-item">E-mail: <%= userShow.email %> </li>
+                                <li class="list-group-item">Teléfono: <%= userShow.phone %> </li>
+                                <li class="list-group-item">Administra: <%= userShow.admin %> </li>
                                                                
                             </ul>
                         </div>
@@ -37,7 +37,7 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="card">
                             <figure class="form-group">
-                                <img class="w-50 " src="/images/usuarios/<%= usuarioShow.imagen %>"
+                                <img class="w-50 " src="/images/usuarios/<%= userShow.image %>"
                                     alt="Imagen del usuario">
                             </figure>
                         </div>

@@ -32,13 +32,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% usuarios.forEach(usuario => { %>
+                    <% user.forEach(usuario => { %>
                     <tr>
                         <th scope="row"><%=usuario.id%></th>
-                        <td><%=usuario.nombre%></td>
-                        <td><%=usuario.apellido%></td>
+                        <td><%=usuario.name%></td>
+                        <td><%=usuario.lastName%></td>
                         <td><%=usuario.email%></td>
-                        <td><%=usuario.telefono%></td>
+                        <td><%=usuario.phone%></td>
                         <td><a href="/user/detail/<%=usuario.id%>"><i class="far fa-eye"></i></a></td>
                         <td><a href="/user/edit/<%=usuario.id%>"><i class="fas fa-pencil-alt"></i></a></td>
                         <td><a href="/user/delete/<%=usuario.id%>"><i class="fas fa-trash"></i></a></td>
