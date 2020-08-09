@@ -63,16 +63,7 @@ newCreate: [
     check('telefono').isLength({ min: 1 }).withMessage('El campo telefono no puede estar vacio'),
     check('password').isLength({ min: 6, max: 15 }).withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
     check('confirmpassword').isLength({min: 6, max: 15 }).withMessage('La confirmación de la contraseña debe tener entre 6 y 15 caracteres'),
-    body('email').custom(function (value){
-        //requiero mi archivo Json Usuario
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email == value) {
-                return false;
-            }
-        }
-        return true;
-    }).withMessage('Usuario ya se encuentra registrado'),
+    body('email').custom(async value => Array.from(await User.findAll()).filter(usuario => usuario.email == value).length > 0 ? Promise.reject("El usuario ya se encuentra registrado") : true),
     body('confirmpassword').custom((value, {req}) =>{
         if(req.body.password == value ){
             return true     
