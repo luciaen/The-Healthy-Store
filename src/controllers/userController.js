@@ -107,7 +107,8 @@ const userController = {
             res.render(path.resolve(__dirname, '../views/user/create'), { errors: errors.mapped(), old: req.body });
         }
     },
-    show: function (req, res) {
+    show: 
+     function (req, res) {
         let usuarioId = req.params.id;
         const usuarioShow = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'detail'),{usuarioShow});
