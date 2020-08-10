@@ -33,7 +33,7 @@ router.get('/logout',userController.logout);
 router.get('/perfil/:id', userController.perfil);
 router.get('/user/editperfil/:id', upload.single('imagen'), userController.editperfil);
 router.get('/usuarios/create',userController.create)
-router.get("/search",userController.search);
+router.get("/search/user",userController.search);
 
 //METODOS POR POST------------------------>
 router.post('/login',validaciones.getIn,userController.getIn);
