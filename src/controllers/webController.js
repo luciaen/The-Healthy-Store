@@ -36,7 +36,17 @@ const webController = {
     },
     preguntasfrec: function (req, res) {
         res.render(path.resolve(__dirname, '..', 'views','web', 'preguntasfrec'));
-    }
+    },
+    search:(req, res) =>{
+        Product.findAll({
+            where:{
+                name: {[Op.like]: `%${req.query.buscar}%`}
+            }
+        })
+        .then(resultado => {res.render(path.resolve(__dirname, '..', 'views', 'web', 'search'),{productos:resultado});
+      })
+        .catch(error => res.send(error))
+    }    
 }
 
 module.exports = webController;

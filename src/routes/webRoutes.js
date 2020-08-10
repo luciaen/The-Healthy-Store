@@ -11,6 +11,7 @@ router.get('/about',webController.about);
 router.get('/promos',webController.promos);
 router.get('/contacto',webController.contacto);
 router.get('/preguntasfrec',webController.preguntasfrec);
+router.get('/index/search',webController.search);
 
 
 module.exports = router;
