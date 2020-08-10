@@ -27,6 +27,7 @@ router.get('/admin/edit/:id',upload.single('imagen'), adminController.edit);
 router.put('/admin/edit/:id',upload.single('imagen'), adminController.update);
 router.get('/admin/delete/:id',adminController.delete);
 router.delete('/admin/delete/:id',upload.single('imagen'), adminController.destroy);
+router.get("/search",adminController.search);
 
 
 module.exports = router;

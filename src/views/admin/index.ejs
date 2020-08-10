@@ -13,14 +13,11 @@
         <h1 class='main-titulo'>Admin De productos</h1>
         <section class="row">
             <article class="col-12">
-                <form class="form-inline" action="/admin/buscar" method="GET" >
-                <button type="button" class="btn btn-secondary justify-content-end botonlogin "><a class="agregar-prod"
-                        href="admin/create">Agregar
-                        Producto <i class="fas fa-plus-circle"></i></a></button>
-                        <div class="input-group-prepend mb-6 ">
-                            <input class="form-control" type="search" placeholder="Buscar producto" name="buscar">
-                            <div class="input-group-text"><i class="fas fa-search"></i></div>
-                 </form>
+                    <button type="button" class="btn btn-secondary justify-content-end botonlogin "><a class="agregar-prod" href="admin/create">Agregar Producto <i class="fas fa-plus-circle"></i></a></button>
+                    <form action="/search" class= "input-group-prepend mb-6 search" method="GET">
+                        <input class="form-control" type="search" placeholder="Buscar producto" name="buscar">
+                        <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                    </form>    
             </article>
         </section>
         <div class="table-responsive">
@@ -39,7 +36,7 @@
                 </thead>
                 <tbody>
 
-                    
+
                     <% productos.forEach(producto => { %>
                     <tr>
                         <th scope="row"><%=producto.id%></th>
@@ -83,9 +80,9 @@
         <!-------------Comienza el footer---------------------->
         <%- include('../partials/footer') %>
         <!--LIBRERIAS-->
-        <script src="bootstrap/js/jquery-3.5.1.js"></script>
-        <script src="bootstrap/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js">
+        <script src="/bootstrap/js/jquery-3.5.1.js"></script>
+        <script src="/bootstrap/js/popper.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.min.js">
         </script>
 </body>
 

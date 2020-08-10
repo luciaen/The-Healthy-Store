@@ -120,10 +120,13 @@ header{
     color: #F5803E;
     font-size: 15px;
 }
+.search{
+    width: 20%;
+}
 /*---------main css--------------*/
 
 .main-titulo{
-    color:#5a4d45;
+    color:#FD9C65;
     text-align: center;
     border-bottom: solid;
     font-weight: 700;

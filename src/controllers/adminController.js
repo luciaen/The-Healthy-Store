@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
+//let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
 //requiero la base de datos
  const db = require('../database/models/');
 const Op = db.Sequelize.Op;
@@ -18,9 +18,7 @@ const adminController = {
             
             .then(productos => {
                 //return res.send(productos)
-                res.render(path.resolve(__dirname, '..', 'views', 'admin', 'index'), {
-                    productos
-                });
+                res.render(path.resolve(__dirname, '..', 'views', 'admin', 'index'), {productos});
             })
             .catch(error => res.send(error))
     },
