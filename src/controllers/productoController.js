@@ -5,7 +5,7 @@ const Op = db.Sequelize.Op;
 const Product = db.Product;
 const Category = db.Category;
  
-let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));
+//let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/productos.json')));
 
 const productoController = {
     detalle: (req, res) => {
@@ -22,10 +22,13 @@ const productoController = {
 */
 
     },
-    categoria: function (req, res) {
-        let productosSeleccionados = productos.filter(p => p.categoria == req.params.categoria);
+    categoria: async function (req, res) {
+        let categoria = await Category.findAll({where:{category: req.params.categoria},include:['products']});
+        //return res.send(categoria[0].products);
         let titulo = String(req.params.categoria).toUpperCase()
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos: productosSeleccionados, titulo,});
+        let productos =categoria[0].products
+        //return res.send(productos);
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'categoria-productos'), { productos,titulo});
     }
 
 

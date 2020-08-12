@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
-let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+//let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
 
 const db = require('../database/models/');
 const Op = db.Sequelize.Op;
@@ -213,31 +213,47 @@ const userController = {
     getIn: function (req, res) {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
-            let usuarioLogueado = usuarios.find(u => u.email == req.body.email)
-            delete usuarioLogueado.contraseña;
-            req.session.usuario = usuarioLogueado;
-            if (req.body.recordarme) {
-                res.cookie('email', usuarioLogueado.email, { maxAge: 1000 * 60 * 60 * 24 })
-            }
-            return res.redirect('/index');
+            var usuarioaLoguearse = [];
+            User
+                .findAll({
+                    where: { email: req.body.email}
+                }).then(usuariosActuales =>{
+
+                    usuarioaLoguearse = usuariosActuales;
+                    delete usuarioaLoguearse[0].password;
+                    req.session.usuarioLogueado = usuarioaLoguearse[0];
+                    if (req.body.recordame != undefined) {
+                       
+                        res.cookie('recordame', usuarioaLoguearse[0].email, { maxAge: 1000 * 60 * 60 * 24 })
+                    } else { res.cookie('recordame', 'vacio', { maxAge: 1000 * 60 * 60 * 24 }) }
+                    res.redirect('/index')
+
+           
+                }).catch(error => res.send(error))
         } else {
             res.render(path.resolve(__dirname, '../views/user/login'), { errors: errors.mapped(), old: req.body });
         }
     },
     logout: function (req, res) {
         req.session.destroy();
-        res.cookie('email', null, { maxAge: -1 });
+        res.cookie('recordame', null, { maxAge: -1 });
         res.redirect('/index')
     },
-    perfil: function (req, res) {
+    perfil: (req, res) => {
+        User
+            .findByPk(req.params.id)
+            .then(userPerfil => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {userPerfil});
+            })
+    },
+    /*perfil: function (req, res) {
         let userId = req.params.id;
         const usuarioPerfil = usuarios.find(u => u.id == userId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), { usuarioPerfil });
-    },
+    },*/
     editperfil: function (req, res) {
         let usuarioId = req.params.id;
-        let editPerfil = usuarios.find(u => u.id == usuarioId);
+        let editPerfil = User.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil });
     },
     updateperfil: function (req, res) {

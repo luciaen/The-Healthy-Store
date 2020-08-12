@@ -1,23 +1,33 @@
 const fs = require('fs');
 const path = require('path');
-let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
+const db = require('../database/models/')
 
-module.exports = (req,res,next) =>{
-    //Variable locals (super global - vive en las vistas )
-    res.locals.usuario = false;
-    if(req.session.usuario){
-        res.locals.usuario = req.session.usuario;
+
+const User = db.User;
+
+module.exports = (req, res, next) => {
+    res.locals.usuarioLogueado = false;
+    if (req.session.usuarioLogueado) {
+        
+        res.locals.usuarioLogueado = req.session.usuarioLogueado;
         return next();
-    }else if(req.cookies.email){
-        let usuario = usuarios.find(u => u.email == req.cookies.email)
-      //  return res.send(usuario);
-       if(usuario.password != "undefined"){
-            delete usuario.password;
+    } else if (req.cookies.recordame) {
+        
+        User.findAll({
+            where: { email: req.cookies.recordame }
+        }).then(usuarioLogueado => {
+            
+            if (usuarioLogueado != undefined) {
+               
+                delete usuarioLogueado[0].password;
+                req.session.usuarioLogueado = usuarioLogueado[0];
+                res.locals.usuarioLogueado = usuarioLogueado[0];
+            }
+            return next();
         }
-        req.session.usuario = usuario;
-        res.locals.usuario = usuario;
-        return next();
-    }else{
+
+        ).catch(error => res.send(error))
+    } else {
         return next();
     }
 }

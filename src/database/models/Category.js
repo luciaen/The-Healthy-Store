@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        name: dataTypes.STRING,
+        category: dataTypes.STRING,
     };
     
     const Category = sequelize.define(alias, cols)

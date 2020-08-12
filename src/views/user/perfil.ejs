@@ -13,7 +13,7 @@
         <section class="row">
             <article class="col-12  card pt-5">
                 <div class="card-body">
-                    <h1 class="card-title text-center main-titulo">¡Hola <%= usuarioPerfil.nombre %>!</h1>
+                    <h1 class="card-title text-center main-titulo">¡Hola <%=userPerfil.name %>!</h1>
                 </div>
             </article>
         </section>
@@ -24,10 +24,10 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="card">
                             <ul class="list-group">
-                                <li class="list-group-item">Nombre: <%= usuarioPerfil.nombre %> </li>
-                                <li class="list-group-item">Apellido: <%= usuarioPerfil.apellido %> </li>
-                                <li class="list-group-item">E-mail: <%= usuarioPerfil.email %> </li>
-                                <li class="list-group-item">Teléfono: <%= usuarioPerfil.telefono %> </li>
+                                <li class="list-group-item">Nombre: <%=userPerfil.name %> </li>
+                                <li class="list-group-item">Apellido: <%=userPerfil.lastName %> </li>
+                                <li class="list-group-item">E-mail: <%=userPerfil.email %> </li>
+                                <li class="list-group-item">Teléfono: <%=userPerfil.phone %> </li>
 
                             </ul>
                         </div>
@@ -35,12 +35,12 @@
                     <div class="col-6 mx-auto bg-light ">
                         <div class="card">
                             <figure class="form-group">
-                                <img class="w-50 " src="/images/usuarios/<%= usuarioPerfil.imagen %>"
+                                <img class="w-50 " src="/images/usuarios/<%=userPerfil.image %>"
                                     alt="Imagen del usuario">
                             </figure>
                         </div>
                         <a class="btn btn-primary" href="/">Volver</a>
-                        <a class="btn btn-primary" href="/user/editperfil/<%= usuarioPerfil.id%>">Editar Perfil</a>
+                        <a class="btn btn-primary" href="/user/editperfil/<%= userPerfil.id%>">Editar Perfil</a>
                      </div>
                 </div>
             </div>
