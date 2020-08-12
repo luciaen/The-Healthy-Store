@@ -149,7 +149,7 @@ const userController = {
         if (errors.isEmpty()) {
             const _body = req.body
             _body.name = req.body.nombre
-            _body.lastName = req.body.lastname,
+            _body.lastName = req.body.apellido,
                 _body.email = req.body.email,
                 _body.phone = req.body.telefono,
                 _body.password = bcrypt.hashSync(req.body.password, 10),
@@ -222,10 +222,10 @@ const userController = {
                     usuarioaLoguearse = usuariosActuales;
                     delete usuarioaLoguearse[0].password;
                     req.session.usuarioLogueado = usuarioaLoguearse[0];
-                    if (req.body.recordame != undefined) {
+                    if (req.body.recordarme != undefined) {
                        
-                        res.cookie('recordame', usuarioaLoguearse[0].email, { maxAge: 1000 * 60 * 60 * 24 })
-                    } else { res.cookie('recordame', 'vacio', { maxAge: 1000 * 60 * 60 * 24 }) }
+                        res.cookie('recordarme', usuarioaLoguearse[0].email, { maxAge: 1000 * 60 * 60 * 24 })
+                    } else { res.cookie('recordarme', 'vacio', { maxAge: 1000 * 60 * 60 * 24 }) }
                     res.redirect('/index')
 
            
@@ -236,7 +236,7 @@ const userController = {
     },
     logout: function (req, res) {
         req.session.destroy();
-        res.cookie('recordame', null, { maxAge: -1 });
+        res.cookie('recordarme', null, { maxAge: -1 });
         res.redirect('/index')
     },
     perfil: (req, res) => {

@@ -11,10 +11,10 @@ module.exports = (req, res, next) => {
         
         res.locals.usuarioLogueado = req.session.usuarioLogueado;
         return next();
-    } else if (req.cookies.recordame) {
+    } else if (req.cookies.recordarme) {
         
         User.findAll({
-            where: { email: req.cookies.recordame }
+            where: { email: req.cookies.recordarme }
         }).then(usuarioLogueado => {
             
             if (usuarioLogueado != undefined) {

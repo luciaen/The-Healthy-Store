@@ -32,7 +32,7 @@
              <a target="__blank" href="https://www.google.com.co/"><i class="fab fa-google-plus-g"></i></a>
              <a target="__blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
          </section>
-         <% if(locals.usuario && locals.usuarioLogueado.admin == 1) { %>
+         <% if(locals.usuarioLogueado && locals.usuarioLogueado.admin == 1) { %>
     <section class="col-sm-12 col-md-5 col-lg-5 admin-create  p-0">
         <button type="button" class="btn btn-light p-0 ">
             <a href="/usuarios/create"><i class="fas fa-user-plus"></i>Agregar Usuario</a>
