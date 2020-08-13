@@ -265,6 +265,40 @@ const userController = {
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil });
     },*/
     updateperfil: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.name = req.body.nombre
+            _body.lastName = req.body.lastname,
+                _body.email = req.body.email,
+                _body.phone = req.body.telefono,
+                _body.password = bcrypt.hashSync(req.body.password, 10),
+                _body.admin = req.body.admin,
+                _body.image = req.file ? req.file.filename : req.body.oldImagen
+            User
+                .update(_body, {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(usuario => {
+                    res.redirect('/index');
+                })
+                .catch(error => res.send(error));
+
+        } else {
+
+            return res.render(path.resolve(__dirname, '../views/user/editperfil'), {
+                errors: errors.mapped(),
+                old: req.body
+            });
+
+        }
+
+    },
+    /*
+    
+    function (req, res) {
         //Requerir los errores de las ruta
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
         req.body.id = req.params.id;
@@ -293,7 +327,7 @@ const userController = {
             });
 
         }
-    },
+    },*/
     search:(req, res) =>{
         User.findAll({
             where:{
