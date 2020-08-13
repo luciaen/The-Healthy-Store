@@ -88,7 +88,7 @@
                                         <img class="w-50 " src="/images/usuarios/<%= editPerfil.image %>" alt="Imagen del usuario" name="imagen">
                                     </figure>
                                       <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                                      <input type="hidden"  name="oldImagen"  value="<%= editPerfil.imagen%>">
+                                      <input type="hidden"  name="oldImagen"  value="<%= editPerfil.image%>">
                                       <input type="file"   name="imagen"  placeholder="Eligir la imagen...">
                                    
                                     <% if(typeof errors != 'undefined' && errors.imagen){%>

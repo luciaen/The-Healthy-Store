@@ -28,19 +28,7 @@ getIn : [
         return bcrypt.compareSync(req.body.password, usuario.password) ? Promise.reject("Usuario o contraseña no coinciden") : true
     })
 
-    //Validacion con el JSON 
-    /*body('password').custom( (value, {req}) =>{
-        let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-        for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email == req.body.email) {
-                if(bcrypt.compareSync(value, usuarios[i].contraseña)){
-                  return true;
-                }else{
-                  return false;
-                }
-            }
-        }
-     }).withMessage('Usuario o contraseña no coinciden')*/
+ 
 ],
 newRegister: [
     check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
