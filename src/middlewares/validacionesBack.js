@@ -77,6 +77,7 @@ newCreate: [
         }    
     }).withMessage('Las contraseñas deben ser iguales')
 ],
+//PROBLEMA
 update : [
     check('nombre').isLength({ min:3, max: 25 }).withMessage('Campo nombre obligatorio'),
     check('apellido').isLength({ min:3, max: 25 }).withMessage('Campo apellido obligatorio'),

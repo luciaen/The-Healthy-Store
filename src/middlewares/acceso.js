@@ -4,6 +4,14 @@ const db = require('../database/models/')
 
 
 const User = db.User;
+/*db.users.findAll({
+    where: {
+        email: req.body.email
+    }
+})
+    .then(user => {
+        //acá tu código
+    });*/
 
 module.exports = (req, res, next) => {
     res.locals.usuarioLogueado = false;

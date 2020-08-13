@@ -4,6 +4,7 @@ const path = require('path');
 const multer = require('multer');
 const fs = require('fs');
 const {check,validationResult,body} = require("express-validator");
+
 //Requerir el modulo de los controladores
 const userController = require(path.resolve(__dirname, '../controllers/userController'));
 // tratamiento de guardado imagenes

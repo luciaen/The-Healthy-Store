@@ -251,11 +251,19 @@ const userController = {
         const usuarioPerfil = usuarios.find(u => u.id == userId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), { usuarioPerfil });
     },*/
-    editperfil: function (req, res) {
+
+    editperfil: (req, res) => {
+        User
+            .findByPk(req.params.id)
+            .then(editPerfil => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {editPerfil});
+            })
+    },
+    /*editperfil: function (req, res) {
         let usuarioId = req.params.id;
         let editPerfil = User.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil });
-    },
+    },*/
     updateperfil: function (req, res) {
         //Requerir los errores de las ruta
         let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')));
