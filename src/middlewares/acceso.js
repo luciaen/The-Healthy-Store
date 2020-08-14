@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models/')
 
-
+//acceso con base de datos
 const User = db.User;
 
 module.exports = (req, res, next) => {
