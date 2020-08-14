@@ -4,38 +4,24 @@ const db = require('../database/models/')
 
 
 const User = db.User;
-/*db.users.findAll({
-    where: {
-        email: req.body.email
-    }
-})
-    .then(user => {
-        //acá tu código
-    });*/
 
 module.exports = (req, res, next) => {
-    res.locals.usuarioLogueado = false;
-    if (req.session.usuarioLogueado) {
+    res.locals.usuario = false;
+    if (req.session.usuario) {
         
-        res.locals.usuarioLogueado = req.session.usuarioLogueado;
+        res.locals.usuario = req.session.usuario;
         return next();
-    } else if (req.cookies.recordarme) {
+    } else if (req.cookies.email) {
         
-        User.findAll({
-            where: { email: req.cookies.recordarme }
-        }).then(usuarioLogueado => {
-            
-            if (usuarioLogueado != undefined) {
-               
-                delete usuarioLogueado[0].password;
-                req.session.usuarioLogueado = usuarioLogueado[0];
-                res.locals.usuarioLogueado = usuarioLogueado[0];
-            }
+        User.findOne({
+            where: { email: req.cookies.email }
+        }).then(user => {
+            req.session.usuario = user;
+            res.locals.usuario = user;
             return next();
-        }
-
-        ).catch(error => res.send(error))
-    } else {
+    
+        })
+    }else{
         return next();
     }
 }

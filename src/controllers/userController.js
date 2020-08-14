@@ -214,29 +214,25 @@ const userController = {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
             var usuarioaLoguearse = [];
-            User
-                .findAll({
-                    where: { email: req.body.email}
-                }).then(usuariosActuales =>{
-
-                    usuarioaLoguearse = usuariosActuales;
-                    delete usuarioaLoguearse[0].password;
-                    req.session.usuarioLogueado = usuarioaLoguearse[0];
-                    if (req.body.recordarme != undefined) {
-                       
-                        res.cookie('recordarme', usuarioaLoguearse[0].email, { maxAge: 1000 * 60 * 60 * 24 })
-                    } else { res.cookie('recordarme', 'vacio', { maxAge: 1000 * 60 * 60 * 24 }) }
-                    res.redirect('/index')
-
-           
-                }).catch(error => res.send(error))
+            User.findOne({
+                where: {
+                   email: req.body.email
+                }
+              }).then(usuarioLogueado =>{
+                delete usuarioLogueado.password;  
+                req.session.usuario = usuarioLogueado;  
+                if(req.body.recordarme){
+                    res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
+                  }
+                  return res.redirect('/index');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home)
+              }) 
         } else {
             res.render(path.resolve(__dirname, '../views/user/login'), { errors: errors.mapped(), old: req.body });
         }
     },
     logout: function (req, res) {
         req.session.destroy();
-        res.cookie('recordarme', null, { maxAge: -1 });
+        res.cookie('email', null, { maxAge: -1 });
         res.redirect('/index')
     },
     perfil: (req, res) => {

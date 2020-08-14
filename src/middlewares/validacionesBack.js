@@ -25,7 +25,7 @@ getIn : [
         
         let usuario = usuarios.find(usuario => usuario.email == value)
 
-        console.log(bcrypt.compareSync(req.body.password, usuario.password))
+        //console.log(bcrypt.compareSync(req.body.password, usuario.password))
         
         return bcrypt.compareSync(req.body.password, usuario.password) ? true: Promise.reject("Usuario o contraseña no coinciden")
     })

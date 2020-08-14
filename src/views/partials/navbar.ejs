@@ -6,11 +6,11 @@
             <a href="/index"><img src="/img/Logo/LOGO-CORTADO.png" alt="logo"></a>
         </figure>
     </section>
-    <% if(locals.usuarioLogueado) { %>
+    <% if(locals.usuario) { %>
     <section class="col-sm-12 col-md-5 col-lg-5  p-0">
-        <img class="imguser" src="/images/usuarios/<%= locals.usuarioLogueado.image %>" alt="Imagen del usuario">
+        <img class="imguser" src="/images/usuarios/<%= locals.usuario.image %>" alt="Imagen del usuario">
         <button type="button" class="btn btn-light index-login">
-            <a href="/perfil/<%=usuarioLogueado.id%>"><i class="fas fa-sign-out-alt"></i>Mi Perfil</a></button>
+            <a href="/perfil/<%=usuario.id%>"><i class="fas fa-sign-out-alt"></i>Mi Perfil</a></button>
         <button type="button" class="btn btn-light index-login">
             <a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></button>
     </section>
@@ -32,7 +32,7 @@
              <a target="__blank" href="https://www.google.com.co/"><i class="fab fa-google-plus-g"></i></a>
              <a target="__blank" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
          </section>
-         <% if(locals.usuarioLogueado && locals.usuarioLogueado.admin == 1) { %>
+         <% if(locals.usuario && locals.usuario.admin == 1) { %>
     <section class="col-sm-12 col-md-5 col-lg-5 admin-create  p-0">
         <button type="button" class="btn btn-light p-0 ">
             <a href="/usuarios/create"><i class="fas fa-user-plus"></i>Agregar Usuario</a>
@@ -43,7 +43,7 @@
     </section>
     <%} else {%>
     <%}%>
-    <% if(locals.usuarioLogueado && locals.usuarioLogueado.admin == 0) { %>
+    <% if(locals.usuario && locals.usuario.admin == 0) { %>
     <section class="shopping">
         <a href="/carrito"><i class="fas fa-cart-arrow-down"></i></a>
         <a href="/carrito">Productos: 2</a>
@@ -95,7 +95,7 @@
                      <li class="nav-item">
                          <a class="nav-link" href="/about">Nosotros</a>
                      </li>
-                     <% if(locals.usuarioLogueado.admin == 1) { %>
+                     <% if(locals.usuario.admin == 1) { %>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
