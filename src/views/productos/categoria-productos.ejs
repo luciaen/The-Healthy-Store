@@ -15,6 +15,11 @@
                     <div class="card h-100">
                         <a href="#"><img class="card-img-top"><img width="100%"
                                 src="/images/productos/<%= productos[i].image%>" alt=""></a>
+                                <% if (productos[i].discount == 30) { %>
+                                <img class="descuento" src="/img/promo30.png" alt="Descuento 30%">
+                                <% }else if(productos[i].discount == 15 ){ %>
+                                <img class="descuento" src="/img/promo15.png" alt="Descuento 15%">
+                                <% } %>
                         <div class="altura">
                             <h4><%= productos[i].name %></h4>
                             <p>$<%= productos[i].price %></p>

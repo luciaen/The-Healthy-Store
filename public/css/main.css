@@ -381,3 +381,10 @@ margin-left: 10px;
 .agregar-prod{
     color: white;
 }
+
+.descuento {
+    right: 15px;
+    top: 20px;
+    position: absolute;
+    width: 20%;
+}
