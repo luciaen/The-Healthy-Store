@@ -67,31 +67,59 @@ newCreate: [
         }    
     }).withMessage('Las contraseñas deben ser iguales')
 ],
-//PROBLEMA
+
 update : [
-    check('nombre').isLength({ min:3, max: 25 }).withMessage('Campo nombre obligatorio'),
-    check('apellido').isLength({ min:3, max: 25 }).withMessage('Campo apellido obligatorio'),
+    check('name').isLength({ min:3, max: 25 }).withMessage('El nombre debe tener entre 3 y 25 caracteres'),
+    check('lastname').isLength({ min:3, max: 25 }).withMessage('El apellido debe tener entre 3 y 25 caracteres'),
     check('email').isEmail().withMessage('el formato del mail es erroneo'),
-    check('telefono').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
-    check('password').isLength({ min: 6, max: 15 }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
+    check('phone').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
+    body('password').custom(function (value) {
+
+        if (value != '') {
+            if (value.length > 5 && value.length < 16) {
+               
+                return true
+            }
+        }
+        if (value == '') {
+          
+            return true
+        }
+        return false
+    }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
+
     body('password').custom(function (value, { req }) {
-    if (req.body.confirmpassword == value) {
-        return true
-    }
-    return false
-    }).withMessage('Las contraseñas no coinciden')
+        if (req.body.confirmpassword == value) {
+            return true
+        }
+        return false
+        }).withMessage('Las contraseñas no coinciden')
 ],
 updatePerfil : [
-    check('nombre').isLength({min: 1, max: 25}).withMessage('Campo nombre obligatorio'),
-    check('lastname').isLength({min: 3, max: 25}).withMessage('Campo apellido obligatorio'),
+    check('name').isLength({ min:3, max: 25 }).withMessage('El nombre debe tener entre 3 y 25 caracteres'),
+    check('lastname').isLength({ min:3, max: 25 }).withMessage('El apellido debe tener entre 3 y 25 caracteres'),
     check('email').isEmail().withMessage('el formato del mail es erroneo'),
-    check('telefono').isLength({min: 6, max: 15}).withMessage('el telefono no puede quedar vacío'),
-    check('password').isLength({min: 6, max: 15}).withMessage('la clave debe ser entre 6 y 15 caracteres'),
-    body('password').custom(function (value, { req}) {
-    if (req.body.confirmpassword == value) {
-        return true
-    }
-    return false
-}).withMessage('Las contraseñas no coinciden')
+    check('phone').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
+    body('password').custom(function (value) {
+
+        if (value != '') {
+            if (value.length > 5 && value.length < 16) {
+               
+                return true
+            }
+        }
+        if (value == '') {
+          
+            return true
+        }
+        return false
+    }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
+
+    body('password').custom(function (value, { req }) {
+        if (req.body.confirmpassword == value) {
+            return true
+        }
+        return false
+        }).withMessage('Las contraseñas no coinciden')
 ]
 };

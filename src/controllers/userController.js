@@ -143,18 +143,23 @@ const userController = {
         const usuarioEdit = usuarios.find(u => u.id == usuarioId);
         res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'),{usuarioEdit});
     },*/
-
     update: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const _body = req.body
-            _body.name = req.body.nombre
-            _body.lastName = req.body.apellido,
+            _body.name = req.body.name
+            _body.lastName = req.body.lastname,
                 _body.email = req.body.email,
-                _body.phone = req.body.telefono,
-                _body.password = bcrypt.hashSync(req.body.password, 10),
+                _body.phone = req.body.phone,
                 _body.admin = req.body.admin,
                 _body.image = req.file ? req.file.filename : req.body.oldImagen
+                if(_body.password == '') {
+
+                    _body.password = _body.password_old
+                } else {
+                    _body.password = bcrypt.hashSync(req.body.password, 10)
+    
+                }
             User
                 .update(_body, {
                     where: {
@@ -168,10 +173,11 @@ const userController = {
 
         }
         else {
-
-            return res.render(path.resolve(__dirname, '../views/user/edit'),
-                { errors: errors.mapped(), old: req.body });
-
+            User
+            .findByPk(req.params.id)
+            .then(userEdit => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), { userEdit: userEdit, errors: errors.mapped() })
+            })
         }
 
     },
@@ -237,10 +243,12 @@ const userController = {
     },
     perfil: (req, res) => {
         User
-            .findByPk(req.params.id)
-            .then(userPerfil => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {userPerfil});
-            })
+        .findAll({
+            where:{id: req.session.usuario.id}
+        }).then(userPerfil=>{
+            res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {userPerfil : userPerfil[0]})
+        }).catch(error=> res.send(error))
+        
     },
     /*perfil: function (req, res) {
         let userId = req.params.id;
@@ -250,9 +258,9 @@ const userController = {
 
     editperfil: (req, res) => {
         User
-            .findByPk(req.params.id)
+            .findByPk(req.session.usuario.id)
             .then(editPerfil => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {editPerfil});
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {editPerfil:editPerfil});
             })
     },
     /*editperfil: function (req, res) {
@@ -264,13 +272,19 @@ const userController = {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
             const _body = req.body
-            _body.name = req.body.nombre
+            _body.name = req.body.name
             _body.lastName = req.body.lastname,
                 _body.email = req.body.email,
-                _body.phone = req.body.telefono,
-                _body.password = bcrypt.hashSync(req.body.password, 10),
-                _body.admin = req.body.admin,
+                _body.phone = req.body.phone,
+                _body.password =  bcrypt.hashSync(req.body.password, 10),
                 _body.image = req.file ? req.file.filename : req.body.oldImagen
+                if(_body.password == '') {
+
+                    _body.password = _body.password_old
+                } else {
+                    _body.password = bcrypt.hashSync(req.body.password, 10)
+    
+                }
             User
                 .update(_body, {
                     where: {
@@ -283,12 +297,11 @@ const userController = {
                 .catch(error => res.send(error));
 
         } else {
-
-            return res.render(path.resolve(__dirname, '../views/user/editperfil'), {
-                errors: errors.mapped(),
-                old: req.body
-            });
-
+            User
+            .findByPk(req.params.id)
+            .then(editPerfil => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil: editPerfil, errors: errors.mapped() })
+            })
         }
 
     },

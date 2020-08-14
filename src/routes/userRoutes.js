@@ -31,8 +31,8 @@ router.get('/user/detail/:id', userController.show);
 router.get('/user/edit/:id', upload.single('imagen'),userController.edit);
 router.get('/user/delete/:id', userController.delete);
 router.get('/logout',userController.logout);
-router.get('/perfil/:id', userController.perfil);
-router.get('/user/editperfil/:id', upload.single('imagen'), userController.editperfil);
+router.get('/perfil', userController.perfil);
+router.get('/user/editperfil', upload.single('imagen'), userController.editperfil);
 router.get('/usuarios/create',userController.create)
 router.get("/search/user",userController.search);
 
