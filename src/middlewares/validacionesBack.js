@@ -17,15 +17,17 @@ getIn : [
     check('password').isLength({min: 6 }).withMessage('La contraseña debe tener minimo 6 caracteres'),
     //Validacion con la base de datos
 
+    body('email').custom(async value => Array.from(await User.findAll()).filter(usuario => usuario.email == value).length > 0 ? false: Promise.reject("El usuario no se encuentra registrado")),
+
     body('email').custom(async (value, {req}) =>{
 
         let usuarios = Array.from(await User.findAll())
         
         let usuario = usuarios.find(usuario => usuario.email == value)
 
-        //console.log(usuario)
+        console.log(bcrypt.compareSync(req.body.password, usuario.password))
         
-        return bcrypt.compareSync(req.body.password, usuario.password) ? Promise.reject("Usuario o contraseña no coinciden") : true
+        return bcrypt.compareSync(req.body.password, usuario.password) ? true: Promise.reject("Usuario o contraseña no coinciden")
     })
 
  
