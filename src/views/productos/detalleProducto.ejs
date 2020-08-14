@@ -15,15 +15,15 @@
             <div class="row">
                 <div class="col-md-8">
                     <img class="img-fluid" src="/images/productos/<%= productoDetalle.image%>" alt="Foto del producto">
-                                </div>
-                 <% for (let i= 0; i<productoDetalle.length; i++){ %>
-                                                                  
-                <% if (productoDetalle[i].discount == 30) { %>
+                <% if (productoDetalle.discount == 30) { %>
                 <img class="descuento" src="/img/promo30.png" alt="Descuento 30%">
-                <% }else if(productoDetalle[i].discount == 15 ){ %>
+                <% }else if(productoDetalle.discount == 15 ){ %>
                 <img class="descuento" src="/img/promo15.png" alt="Descuento 15%">
                 <% } %>
-                 <% } %>
+                </div>
+                                                                  
+                
+                 
 
 
                 <div class="col-md-4">
