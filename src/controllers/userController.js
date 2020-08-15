@@ -153,13 +153,13 @@ const userController = {
                 _body.phone = req.body.phone,
                 _body.admin = req.body.admin,
                 _body.image = req.file ? req.file.filename : req.body.oldImagen
-                if(_body.password == '') {
+            if (_body.password == '') {
 
-                    _body.password = _body.password_old
-                } else {
-                    _body.password = bcrypt.hashSync(req.body.password, 10)
-    
-                }
+                _body.password = _body.password_old
+            } else {
+                _body.password = bcrypt.hashSync(req.body.password, 10)
+
+            }
             User
                 .update(_body, {
                     where: {
@@ -174,10 +174,10 @@ const userController = {
         }
         else {
             User
-            .findByPk(req.params.id)
-            .then(userEdit => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), { userEdit: userEdit, errors: errors.mapped() })
-            })
+                .findByPk(req.params.id)
+                .then(userEdit => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'edit'), { userEdit: userEdit, errors: errors.mapped() })
+                })
         }
 
     },
@@ -219,19 +219,19 @@ const userController = {
     getIn: function (req, res) {
         const errors = validationResult(req);
         if (errors.isEmpty()) {
-            var usuarioaLoguearse = [];
+            
             User.findOne({
                 where: {
-                   email: req.body.email
+                    email: req.body.email
                 }
-              }).then(usuarioLogueado =>{
-                delete usuarioLogueado.password;  
-                req.session.usuario = usuarioLogueado;  
-                if(req.body.recordarme){
-                    res.cookie('email',usuarioLogueado.email,{maxAge: 1000 * 60 * 60 * 24})
-                  }
-                  return res.redirect('/index');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home)
-              }) 
+            }).then(usuarioLogueado => {
+                delete usuarioLogueado.password;
+                req.session.usuario = usuarioLogueado;
+                if (req.body.recordarme) {
+                    res.cookie('email', usuarioLogueado.email, { maxAge: 1000 * 60 * 60 * 24 })
+                }
+                return res.redirect('/index');   //Aquí ustedes mandan al usuario para donde quieran (Perfil- home)
+            })
         } else {
             res.render(path.resolve(__dirname, '../views/user/login'), { errors: errors.mapped(), old: req.body });
         }
@@ -243,12 +243,12 @@ const userController = {
     },
     perfil: (req, res) => {
         User
-        .findAll({
-            where:{id: req.session.usuario.id}
-        }).then(userPerfil=>{
-            res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), {userPerfil : userPerfil[0]})
-        }).catch(error=> res.send(error))
-        
+            .findAll({
+                where: { id: req.session.usuario.id }
+            }).then(userPerfil => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'perfil'), { userPerfil: userPerfil[0] })
+            }).catch(error => res.send(error))
+
     },
     /*perfil: function (req, res) {
         let userId = req.params.id;
@@ -260,7 +260,7 @@ const userController = {
         User
             .findByPk(req.session.usuario.id)
             .then(editPerfil => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), {editPerfil:editPerfil});
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil: editPerfil });
             })
     },
     /*editperfil: function (req, res) {
@@ -276,15 +276,15 @@ const userController = {
             _body.lastName = req.body.lastname,
                 _body.email = req.body.email,
                 _body.phone = req.body.phone,
-                _body.password =  bcrypt.hashSync(req.body.password, 10),
+                _body.password = bcrypt.hashSync(req.body.password, 10),
                 _body.image = req.file ? req.file.filename : req.body.oldImagen
-                if(_body.password == '') {
+            if (_body.password == '') {
 
-                    _body.password = _body.password_old
-                } else {
-                    _body.password = bcrypt.hashSync(req.body.password, 10)
-    
-                }
+                _body.password = _body.password_old
+            } else {
+                _body.password = bcrypt.hashSync(req.body.password, 10)
+
+            }
             User
                 .update(_body, {
                     where: {
@@ -298,10 +298,10 @@ const userController = {
 
         } else {
             User
-            .findByPk(req.params.id)
-            .then(editPerfil => {
-                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil: editPerfil, errors: errors.mapped() })
-            })
+                .findByPk(req.params.id)
+                .then(editPerfil => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'editperfil'), { editPerfil: editPerfil, errors: errors.mapped() })
+                })
         }
 
     },
@@ -337,16 +337,48 @@ const userController = {
 
         }
     },*/
-    search:(req, res) =>{
+    search: (req, res) => {
         User.findAll({
-            where:{
-                name: {[Op.like]: `%${req.query.buscar}%`}
+            where: {
+                name: { [Op.like]: `%${req.query.buscar}%` }
             }
         })
-        .then(resultado => {res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'),{user:resultado});
-      })
-        .catch(error => res.send(error))
-    }       
+            .then(resultado => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'index'), { user: resultado });
+            })
+            .catch(error => res.send(error))
+    },
+    editPassword: (req, res) => {
+        User
+            .findByPk(req.session.usuario.id)
+            .then(editPassword => {
+                res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPassword'), { editPassword: editPassword });
+            })
+    },
+    updatePassword: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.password = bcrypt.hashSync(req.body.password, 10),
+                User
+                    .update(_body, {
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(usuario => {
+                        res.redirect('/perfil');
+                    })
+                    .catch(error => res.send(error));
+
+        } else {
+            User
+                .findByPk(req.params.id)
+                .then(editPassword => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPassword'), { editPassword: editPassword, errors: errors.mapped() })
+                })
+        }
+    }
 }
 
 module.exports = userController;

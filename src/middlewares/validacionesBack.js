@@ -121,5 +121,24 @@ updatePerfil : [
         }
         return false
         }).withMessage('Las contraseñas no coinciden')
+],
+editPassword:[
+    check('password').isLength({ min: 6, max: 15 }).withMessage('La nueva contraseña debe tener entre 6 y 15 caracteres'),
+    body('oldPassword').custom(async (value, {req}) =>{
+
+        let usuarios=await User.findAll({where:{id: req.session.usuario.id}})
+        let usuarioPassword = usuarios[0].password;
+        //console.log(usuarioPassword);
+        return bcrypt.compareSync(value, usuarioPassword) ? true: Promise.reject("Contraseña incorrecta")
+    }),
+
+        body('password').custom(function (value, { req }) {
+        if (req.body.confirmPassword == value) {
+            return true
+        }
+        return false
+        }).withMessage('Las contraseñas no coinciden')
+        
+
 ]
 };

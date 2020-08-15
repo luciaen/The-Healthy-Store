@@ -35,18 +35,22 @@ router.get('/perfil', userController.perfil);
 router.get('/user/editperfil', upload.single('imagen'), userController.editperfil);
 router.get('/usuarios/create',userController.create)
 router.get("/search/user",userController.search);
-
+router.get("/user/editpassword",userController.editPassword);
+ 
 //METODOS POR POST------------------------>
 router.post('/login',validaciones.getIn,userController.getIn);
 
 router.post('/registro', upload.single('imagen'),validaciones.newRegister,userController.newRegister);
 
 router.post('/usuarios/create',upload.single('imagen'),validaciones.newCreate,userController.newCreate)
+ 
 //METODOS POR PUT ------------------------------->
 
 router.put('/user/edit/:id', upload.single('imagen'),validaciones.update,userController.update);
 
 router.put('/user/editperfil/:id', upload.single('imagen'),validaciones.updatePerfil,userController.updateperfil);
+
+router.put("/user/editpassword/:id",validaciones.editPassword,userController.updatePassword);
 
 //METODOS POR DELETE ------------------------>
 router.delete('/user/delete/:id', upload.single('imagen'),userController.destroy);

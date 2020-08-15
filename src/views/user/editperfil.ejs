@@ -66,18 +66,6 @@
                                     <span class="text-danger"> <%= errors.phone.msg %></span>
                                     <%}%>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="password">Ingrese Nueva contraseña</label>
-                                            <input type="password" class="form-control" name="password">
-                                            <input type="hidden" name="password_old" value=<%=editPerfil.password%>>
-                                                <% if(typeof errors != 'undefined' && errors.password){%>
-                                                <span class="text-danger"> <%= errors.password.msg %></span>
-                                                <%}%>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Confirmar Nueva Contraseña</label>
-                                            <input type="password" class="form-control" name="confirmpassword">
-                                        </div>
 
                                 <div class="form-group">
                                     <label for="">Avatar del usuario</label>
