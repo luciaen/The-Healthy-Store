@@ -1,4 +1,4 @@
-window.addEventListener('load', function () {
+/*window.addEventListener('load', function () {
     //Capturar el formulario 
     let formulario = document.querySelector('.form-product-create');
     //console.log(formulario.elements.email.value);
@@ -107,4 +107,4 @@ window.addEventListener('load', function () {
 
 
 
-})
+})*/
