@@ -276,16 +276,7 @@ const userController = {
             _body.lastName = req.body.lastname,
                 _body.email = req.body.email,
                 _body.phone = req.body.phone,
-                _body.password = bcrypt.hashSync(req.body.password, 10),
-                _body.image = req.file ? req.file.filename : req.body.oldImagen
-            if (_body.password == '') {
-
-                _body.password = _body.password_old
-            } else {
-                _body.password = bcrypt.hashSync(req.body.password, 10)
-
-            }
-            User
+              User
                 .update(_body, {
                     where: {
                         id: req.params.id

@@ -100,27 +100,8 @@ updatePerfil : [
     check('lastname').isLength({ min:3, max: 25 }).withMessage('El apellido debe tener entre 3 y 25 caracteres'),
     check('email').isEmail().withMessage('el formato del mail es erroneo'),
     check('phone').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
-    body('password').custom(function (value) {
+    body('email').custom(async value => Array.from(await User.findAll()).filter(usuario => usuario.email == value).length > 0 ? Promise.reject("El email esta en uso") : true),
 
-        if (value != '') {
-            if (value.length > 5 && value.length < 16) {
-               
-                return true
-            }
-        }
-        if (value == '') {
-          
-            return true
-        }
-        return false
-    }).withMessage('la clave debe ser entre 6 y 15 caracteres'),
-
-    body('password').custom(function (value, { req }) {
-        if (req.body.confirmpassword == value) {
-            return true
-        }
-        return false
-        }).withMessage('Las contraseñas no coinciden')
 ],
 editPassword:[
     check('password').isLength({ min: 6, max: 15 }).withMessage('La nueva contraseña debe tener entre 6 y 15 caracteres'),
