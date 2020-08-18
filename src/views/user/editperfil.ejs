@@ -36,7 +36,8 @@
 
                                 <div class="form-group">
                                     <label for="">Nombre Del Usuario</label>
-                                    <input type="text" class="form-control input-nombre" name="name"value="<%= editPerfil.name%>">
+                                    <input type="text" class="form-control input-nombre" name="name"
+                                        value="<%= editPerfil.name%>">
                                     <% if(typeof errors != 'undefined' && errors.name){%>
                                     <span class="text-danger"> <%= errors.name.msg %></span>
                                     <%}%>     
@@ -52,14 +53,10 @@
                                 <div class="form-group">
                                     <label for="">E-mail del usuario</label>
                                     <input type="email" class="form-control input-email" name="email"
-                                        value="<%= editPerfil.email%>">
-                                    <% if(typeof errors != 'undefined' && errors.email){%>
-                                    <span class="text-danger"> <%= errors.email.msg %></span>
-                                    <%}%>
-
+                                        value="<%= editPerfil.email%>" disabled>
                                 </div>
-                                <div class="form-group">                    
-                                    <label for="">Teléfono</label>              
+                                <div class="form-group">
+                                    <label for="">Teléfono</label>
                                     <input type="number" class="form-control input-phone" name="phone"
                                         value="<%= editPerfil.phone%>">
                                     <% if(typeof errors != 'undefined' && errors.phone){%>
