@@ -33,8 +33,8 @@ module.exports = {
 
     ],
     newRegister: [
-        check('nombre').isLength({ min: 1 }).withMessage('Campo nombre obligatorio'),
-        check('lastname').isLength({ min: 1 }).withMessage('Campo apellido obligatorio'),
+        check('nombre').isLength({ min: 2 }).withMessage('Campo nombre obligatorio'),
+        check('lastname').isLength({ min: 2 }).withMessage('Campo apellido obligatorio'),
         check('email').isEmail().withMessage('Mail invalido'),
         check('telefono').isLength({ min: 1 }).withMessage('El campo telefono no puede estar vacio'),
         check('password').isLength({ min: 6, max: 15 }).withMessage('La contraseña debe tener entre 6 y 15 caracteres'),
