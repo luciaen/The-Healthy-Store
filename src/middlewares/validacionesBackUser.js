@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 //let usuarios = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../data/usuarios.json')))
-const db = require('../database/models/');
+const db = require('../database/models');
 const Op = db.Sequelize.Op;
 
 //const {Product, Category} = require('../database/models/');

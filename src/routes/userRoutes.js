@@ -21,7 +21,7 @@ const upload = multer({
 })
 
 //requiero las validaciones
-const validaciones = require(path.resolve(__dirname,"../middlewares/validacionesBack"));
+const validaciones = require(path.resolve(__dirname,"../middlewares/validacionesBackUser"));
 
 // METODOS POR GET -----------------------> 
 router.get('/login', userController.login);
