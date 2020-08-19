@@ -39,29 +39,43 @@
                                         <option value="9">Bebidas</option>
                                         <option value="10">Postres y Snacks</option>
                                     </select>
-                                        
+                                        <% if(typeof errors != 'undefined' && errors.categoria){%>
+                                        <span class="text-danger"> <%= errors.categoria.msg %></span>
+                                        <%}%>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Nombre Del Producto</label>
                                     <input type="text" class="form-control" name="nombre"placeholder="Nombre del producto" required="required"value="<%= productoEdit.name%>">
+                                <% if(typeof errors != 'undefined' && errors.nombre){%>
+                                <span class="text-danger"> <%= errors.nombre.msg %></span>
+                                <%}%>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Descripción Del Producto</label>
                                     <input type="text" class="form-control" name="descripcion"
                                         placeholder="Descripción del producto" required="required"
                                         value="<%= productoEdit.description%>">
+                                        <% if(typeof errors != 'undefined' && errors.descripcion){%>
+                                        <span class="text-danger"> <%= errors.descripcion.msg %></span>
+                                        <%}%>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Stock Del Producto</label>
                                     <input type="number" class="form-control" name="stock"
                                         placeholder="Stock del producto" required="required"
                                         value="<%= productoEdit.stock%>">
+                                        <% if(typeof errors != 'undefined' && errors.stock){%>
+                                        <span class="text-danger"> <%= errors.stock.msg %></span>
+                                        <%}%>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Precio Del Producto</label>
                                     <input type="number" class="form-control" name="precio"
                                         placeholder="Indique el precio" required="required"
                                         value="<%= productoEdit.price%>">
+                                        <% if(typeof errors != 'undefined' && errors.precio){%>
+                                        <span class="text-danger"> <%= errors.precio.msg %></span>
+                                        <%}%>
                                 </div>
                         </div>
                     </div>
@@ -75,6 +89,9 @@
                                   <option value="15" <%= productoEdit.discount == 15 ? "selected" : null %>>15%</option>
                                   <option value="30" <%= productoEdit.discount == 30 ? "selected" : null %>>30%</option>
                                 </select>
+                                <% if(typeof errors != 'undefined' && errors.descuento){%>
+                                <span class="text-danger"> <%= errors.descuento.msg %></span>
+                                <%}%>
                             </div>
                             <div class="form-group">
                                 <select  name="recomendado" class="custom-select"  required>
@@ -84,6 +101,9 @@
                                   <option value="recomendado" <%= productoEdit.recomended == "recomendado" ? "selected" : null %>>Productos Recomendados</option>
                                   <option value="vendido" <%= productoEdit.recomended == "vendido" ? "selected" : null %>>Mas Vendidos</option>
                                 </select>
+                                <% if(typeof errors != 'undefined' && errors.recomendado){%>
+                                <span class="text-danger"> <%= errors.recomendado.msg %></span>
+                                <%}%>
                             </div>
                             <div class="form-group">
                                 <label for="">Imagen del producto</label>
@@ -98,6 +118,8 @@
                                 <input type="file" class="custom-file-input" name="imagen"
                                     placeholder="Seleccione una imagen">
                                 <label class="custom-file-label" for="">Eligir nueva imagen...</label>
+                            
+                            
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn btn-primary">Actualizar</button>

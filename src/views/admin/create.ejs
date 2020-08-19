@@ -59,10 +59,16 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="descripcion"
                                         placeholder="Descripción del producto" >
+                                        <% if(typeof errors != 'undefined' && errors.descripcion){%>
+                                        <span class="text-danger"> <%= errors.descripcion.msg %></span>
+                                        <%}%>
                                 </div>
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="stock"
                                         placeholder="Stock del producto" >
+                                        <% if(typeof errors != 'undefined' && errors.stock){%>
+                                        <span class="text-danger"> <%= errors.stock.msg %></span>
+                                        <%}%>
                                 </div>
                         </div>
                     </div>
@@ -71,6 +77,9 @@
                             <div class="form-group">
                                 <input type="number" class="form-control" name="precio" placeholder="Indique el precio"
                                     >
+                                    <% if(typeof errors != 'undefined' && errors.precio){%>
+                                    <span class="text-danger"> <%= errors.precio.msg %></span>
+                                    <%}%>
                             </div>
                             <div class="form-group">
                                 <select name="descuento" class="custom-select">
@@ -79,17 +88,28 @@
                                     <option value="15">15%</option>
                                     <option value="30">30%</option>
                                 </select>
+                                <% if(typeof errors != 'undefined' && errors.descuento){%>
+                                <span class="text-danger"> <%= errors.descuento.msg %></span>
+                                <%}%>
                             </div>
+                            <div class="form-group">
                             <select name="recomendado" class="form-control" id="">
                                 <option selected disabled value="">Elegir Recomendacion</option>
                                 <option value="noRecomendado">No Recomendado</option>
                                 <option value="recomendado">Productos Recomendados</option>
                                 <option value="vendido">Mas Vendidos</option>
-                            </select> <br>
+                            </select>
+                             <% if(typeof errors != 'undefined' && errors.recomendado){%>
+                             <span class="text-danger"> <%= errors.recomendado.msg %></span>
+                             <%}%>
+                            </div> <br>
 
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="imagen">
                                 <label class="custom-file-label" for="">Eligir la imagen...</label>
+                                <% if(typeof errors != 'undefined' && errors.imagen){%>
+                                <span class="text-danger"> <%= errors.imagen.msg %></span>
+                                <%}%>
                             </div>
                             <div class="form-group"> <br>
                                 <button type="submit" class="btn btn btn-primary">Guardar</button>

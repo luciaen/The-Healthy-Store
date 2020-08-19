@@ -106,6 +106,8 @@ const adminController = {
         },*/
         update:
         (req, res) => {
+            let errors = validationResult(req);
+            if (errors.isEmpty()) {
             const _body = req.body;
             //return res.send(_body);
             _body.name = req.body.nombre,
@@ -127,7 +129,21 @@ const adminController = {
                     res.redirect('/administrar')
                 })
                 .catch(error => res.send(error)); //error de Base de Datos
-        },
+        }
+        else {
+            Product
+                .findByPk(req.params.id)
+                .then(productoEdit => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'admin', 'edit'), {
+                        productoEdit: productoEdit,
+                        errors: errors.mapped()
+                    })
+                })
+        }
+
+        }
+        
+        ,
         
         /* function(req,res){
 

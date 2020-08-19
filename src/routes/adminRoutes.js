@@ -33,7 +33,7 @@ router.get("/search/product",adminController.search);
 router.post('/admin/create', upload.single('imagen'),validaciones.save, adminController.save);
 
 //por put
-router.put('/admin/edit/:id',upload.single('imagen'), adminController.update);
+router.put('/admin/edit/:id', upload.single('imagen'), validaciones.update, adminController.update);
 //por delete
 router.delete('/admin/delete/:id',upload.single('imagen'), adminController.destroy);
 module.exports = router;
