@@ -18,17 +18,22 @@ const storage = multer.diskStorage({
    
 const upload= multer({ storage })
 
+const validaciones = require(path.resolve(__dirname,"../middlewares/validacionesBackProduct"));
 
+
+//por get
 router.get('/administrar', adminController.index);
 router.get('/admin/create', adminController.create);
 router.get('/admin/detail/:id',adminController.show);
-router.post('/admin/create', upload.single('imagen'), adminController.save);
 router.get('/admin/edit/:id',upload.single('imagen'), adminController.edit);
-router.put('/admin/edit/:id',upload.single('imagen'), adminController.update);
 router.get('/admin/delete/:id',adminController.delete);
-router.delete('/admin/delete/:id',upload.single('imagen'), adminController.destroy);
 router.get("/search/product",adminController.search);
 
+//por post
+router.post('/admin/create', upload.single('imagen'),validaciones.save, adminController.save);
 
-
+//por put
+router.put('/admin/edit/:id',upload.single('imagen'), adminController.update);
+//por delete
+router.delete('/admin/delete/:id',upload.single('imagen'), adminController.destroy);
 module.exports = router;

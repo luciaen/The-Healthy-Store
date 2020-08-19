@@ -3,6 +3,7 @@ const fs = require('fs');
 //let productos =JSON.parse(fs.readFileSync(path.resolve(__dirname,'../data/productos.json')));
 //requiero la base de datos
  const db = require('../database/models/');
+ const { validationResult } = require('express-validator');
 const Op = db.Sequelize.Op;
 
 //const {Product, Category} = require('../database/models/');
@@ -43,9 +44,9 @@ const adminController = {
         const productoShow = productos.find( p=> p.id == productoId);
             res.render(path.resolve(__dirname, '..','views','admin','detail'),{productoShow});
         },*/
-        save: 
-        
-        (req, res) => {
+        save:(req, res) => {
+            let errors = validationResult(req);
+        if (errors.isEmpty()) {
             const _body = req.body;
             //return res.send(_body);
                 _body.name = req.body.nombre,
@@ -62,6 +63,9 @@ const adminController = {
                 .then(producto => {
                     res.redirect('/administrar');
                 })
+            }else{
+                return res.render(path.resolve(__dirname, '../views/admin/create'), { errors: errors.mapped()});
+            }
 
         }, 
         /*function(req,res){
