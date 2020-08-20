@@ -25,8 +25,8 @@ window.addEventListener('load', function () {
             //Destructuring  
             let { nombre, lastname, email, password, confirmpassword, telefono, imagen } = formulario.elements;
             let errores = [];
-            if (nombre.value == '') {
-                errores.push('El campo nombre no puede estar vacio...');
+            if (nombre.value.length < 2) {
+                errores.push('El campo nombre no puede estar vacio ni contener menos de dos caracteres');
                 nombre.classList.add('is-invalid');
             } else {
                 nombre.classList.add('is-valid');
@@ -34,8 +34,8 @@ window.addEventListener('load', function () {
             }
 
             //Validar Apellido
-            if (lastname.value == '') {
-                errores.push('El campo apellido no puede estar vacio...');
+            if (lastname.value.length < 2) {
+                errores.push('El campo apellido no puede estar vacio ni contener menos de 2 caracteres');
                 lastname.classList.add('is-invalid');
 
             } else {
@@ -46,14 +46,14 @@ window.addEventListener('load', function () {
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
             if (!reEmail.test(email.value)) {
-                errores.push('El email es inválido...');
+                errores.push('El email es inválido');
                 email.classList.add('is-invalid');
             } else {
                 email.classList.add('is-valid');
                 email.classList.remove('is-invalid');
             }
             if (telefono.value == '') {
-                errores.push('El campo telefono no puede estar vacio...');
+                errores.push('El campo telefono no puede estar vacio');
                 telefono.classList.add('is-invalid');
 
             } else {
@@ -61,7 +61,7 @@ window.addEventListener('load', function () {
                 telefono.classList.remove('is-invalid');
             }
             if (password.value == '') {
-                errores.push('El campo contraseña no puede estar vacio...');
+                errores.push('El campo contraseña no puede estar vacio');
                 password.classList.add('is-invalid');
 
             } else {
@@ -69,7 +69,7 @@ window.addEventListener('load', function () {
                 password.classList.remove('is-invalid');
             }
             if (confirmpassword.value == '') {
-                errores.push('El campo de confirmacion de contraseña no puede estar vacio...');
+                errores.push('El campo de confirmacion de contraseña no puede estar vacio');
                 confirmpassword.classList.add('is-invalid');
 
             } else {
@@ -217,8 +217,8 @@ window.addEventListener('load', function () {
             //Destructuring  
             let { nombre, lastname, email, password, confirmpassword, telefono } = formulario.elements;
             let errores = [];
-            if (nombre.value == '') {
-                errores.push('El campo nombre no puede estar vacio...');
+            if (nombre.value.length < 2) {
+                errores.push('El campo nombre no puede estar vacio ni contener menos de dos caracteres');
                 nombre.classList.add('is-invalid');
             } else {
                 nombre.classList.add('is-valid');
@@ -226,8 +226,8 @@ window.addEventListener('load', function () {
             }
 
             //Validar Apellido
-            if (lastname.value == '') {
-                errores.push('El campo apellido no puede estar vacio...');
+            if (lastname.value.length < 2) {
+                errores.push('El campo apellido no puede estar vacio ni contener menos de dos caracteres');
                 lastname.classList.add('is-invalid');
 
             } else {
@@ -238,14 +238,14 @@ window.addEventListener('load', function () {
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
             if (!reEmail.test(email.value)) {
-                errores.push('El email es inválido...');
+                errores.push('El email es inválido');
                 email.classList.add('is-invalid');
             } else {
                 email.classList.add('is-valid');
                 email.classList.remove('is-invalid');
             }
             if (telefono.value == '') {
-                errores.push('El campo telefono no puede estar vacio...');
+                errores.push('El campo telefono no puede estar vacio');
                 telefono.classList.add('is-invalid');
 
             } else {
@@ -253,7 +253,7 @@ window.addEventListener('load', function () {
                 telefono.classList.remove('is-invalid');
             }
             if (password.value == '') {
-                errores.push('El campo contraseña no puede estar vacio...');
+                errores.push('El campo contraseña no puede estar vacio');
                 password.classList.add('is-invalid');
 
             } else {
@@ -261,7 +261,7 @@ window.addEventListener('load', function () {
                 password.classList.remove('is-invalid');
             }
             if (confirmpassword.value == '') {
-                errores.push('El campo de confirmacion de contraseña no puede estar vacio...');
+                errores.push('El campo de confirmacion de contraseña no puede estar vacio');
                 confirmpassword.classList.add('is-invalid');
 
             } else {
@@ -316,16 +316,16 @@ window.addEventListener('load', function () {
         function validaciones(evento){
             let {name,lastname,phone}=formulario.elements;
             let errores = [];
-            if (name.value == '') {
-                errores.push('El campo telefono no puede estar vacio.');
+            if (name.value.length < 2) {
+                errores.push('El campo nombre no puede estar vacio ni contener menos de 2 caracteres.');
                 name.classList.add('is-invalid');
 
             } else {
                 name.classList.add('is-valid');
                 name.classList.remove('is-invalid');
             }
-            if (lastname.value == '') {
-                errores.push('El campo telefono no puede estar vacio.');
+            if (lastname.value.length < 2) {
+                errores.push('El campo apellido no puede estar vacio ni contener menos de 2 caracteres.');
                 lastname.classList.add('is-invalid');
 
             } else {
