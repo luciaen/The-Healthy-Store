@@ -10,8 +10,8 @@ module.exports = {
 
     save: [
         check('categoria').isInt().withMessage("categoria obligatoria"),
-        check('nombre').isLength({ min: 5 }).withMessage('Campo nombre obligatorio'),
-        check('descripcion').isLength({ min: 20 }).withMessage('la descripción es obligatoria'),
+        check('nombre').isLength({ min: 5 }).withMessage('Campo nombre obligatorio y debe tener las de 5 caracteres'),
+        check('descripcion').isLength({ min: 20 }).withMessage('la descripción es obligatoria y debe tener mas de 20 caracteres'),
         check('stock').isLength({ min: 1 }).withMessage('Debe indicar el stock'),
         check('precio').isLength({ min: 1 }).withMessage('Debe indicar el precio'),
         check('descuento').isLength({ min: 1}).withMessage('Indique si aplica un descuento'),
@@ -39,8 +39,10 @@ module.exports = {
     //agregar el metodo q le sigue
     update: [
         check('categoria').isInt().withMessage("categoria obligatoria"),
-        check('nombre').isLength({ min: 5 }).withMessage('Campo nombre obligatorio'),
-        check('descripcion').isLength({min: 20 }).withMessage('la descripción es obligatoria'),
+        check('nombre').isLength({
+                min: 5
+            }).withMessage('Campo nombre obligatorio y debe tener las de 5 caracteres'),
+        check('descripcion').isLength({min: 20 }).withMessage('la descripción es obligatoria y debe tener al menos 20 caracteres'),
         check('stock').isLength({ min: 1 }).withMessage('Debe indicar el stock'),
         check('precio').isLength({min: 1 }).withMessage('Debe indicar el precio'),
         check('descuento').isLength({min: 1 }).withMessage('Indique si aplica un descuento'),
