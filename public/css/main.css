@@ -168,6 +168,11 @@ main article a{
 .efecto:hover{
     opacity: 0.7;
 }
+.busqueda{
+    color:#FD9C65;
+    font-size:20px;
+    font-weight: 700;
+}
 /*---------css footer---------*/
 .index-footer{
     margin-top: 20px;
