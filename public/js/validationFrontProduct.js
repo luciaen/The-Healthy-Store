@@ -69,6 +69,27 @@ window.addEventListener('load', function () {
                 recomendado.classList.add('is-valid');
                 recomendado.classList.remove('is-invalid');
             }
+            //IMAGEN
+            let errorImagen = document.getElementById('errorimagen')
+            let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
+                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    imagen.classList.add('is-invalid')
+                    errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
+
+                } else {
+                    imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
+                    imagen.classList.remove('is-invalid')
+                }
+            } else {
+                imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
+                imagen.classList.remove('is-invalid')
+            }
             if (imagen.value == '') {
                 errores.push('El campo imagen no puede estar vacio');
                 imagen.classList.add('is-invalid');
@@ -190,6 +211,28 @@ window.addEventListener('load', function () {
             } else {
                 recomendado.classList.add('is-valid');
                 recomendado.classList.remove('is-invalid');
+            }
+
+            //IMAGEN
+            let errorImagen = document.getElementById('errorimagen')
+            let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
+                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    imagen.classList.add('is-invalid')
+                    errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
+
+                } else {
+                    imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
+                    imagen.classList.remove('is-invalid')
+                }
+            } else {
+                imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
+                imagen.classList.remove('is-invalid')
             }
             
             let ulErrores = document.querySelector('.errores');
