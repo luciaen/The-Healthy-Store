@@ -81,13 +81,35 @@ window.addEventListener('load', function () {
                 confirmpassword.classList.add('is-invalid');
 
             }
-            if (imagen.value == '') {
+            /*if (imagen.value == '') {
                 errores.push('Debe seleccionar su imagen en formato JPG - PNG ó JPEG');
                 imagen.classList.add('is-invalid');
                 //errores['last_name'] = 'El campo nombre no puede estar vacio...';
             } else {
                 imagen.classList.add('is-valid');
                 imagen.classList.remove('is-invalid');
+            }*/
+
+            //IMAGEN
+            let errorImagen = document.getElementById('errorimagen')
+            let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
+                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    imagen.classList.add('is-invalid')
+                    errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
+
+                } else {
+                    imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
+                    imagen.classList.remove('is-invalid')
+                }
+            } else {
+                imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
+                imagen.classList.remove('is-invalid')
             }
 
             let ulErrores = document.querySelector('.errores');
@@ -215,7 +237,7 @@ window.addEventListener('load', function () {
 
         function validaciones(evento) {
             //Destructuring  
-            let { nombre, lastname, email, password, confirmpassword, telefono } = formulario.elements;
+            let { nombre, lastname, email, password, confirmpassword, telefono,imagen } = formulario.elements;
             let errores = [];
             if (nombre.value.length < 2) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de dos caracteres');
@@ -272,6 +294,28 @@ window.addEventListener('load', function () {
                 errores.push('las contraseña tienen que ser iguales.');
                 confirmpassword.classList.add('is-invalid');
 
+            }
+
+            //IMAGEN
+            let errorImagen = document.getElementById('errorimagen')
+            let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
+                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    imagen.classList.add('is-invalid')
+                    errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
+
+                } else {
+                    imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
+                    imagen.classList.remove('is-invalid')
+                }
+            } else {
+                imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
+                imagen.classList.remove('is-invalid')
             }
 
             let ulErrores = document.querySelector('.errores');

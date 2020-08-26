@@ -76,7 +76,7 @@
                                          </select>
                                      </div>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="imagen">
+                                    <input type="file" class="custom-file-input" name="imagen" id="errorimagen">
                                     <% if(typeof errors != 'undefined' && errors.imagen){%>
                                         <span class="text-danger" > <%= errors.imagen.msg %></span>
                                       <%}%>
