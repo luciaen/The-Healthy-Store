@@ -358,7 +358,7 @@ window.addEventListener('load', function () {
             })
         }
         function validaciones(evento){
-            let {name,lastname,phone,imagenNew}=formulario.elements;
+            let {name,lastname,phone,imagen}=formulario.elements;
             let errores = [];
             if (name.value.length < 2) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de 2 caracteres.');
@@ -387,19 +387,19 @@ window.addEventListener('load', function () {
             //IMAGEN
             let errorImagen = document.getElementById('errorimagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
-            if (imagenNew.value != '') {
-                if (!acceptFileTypes.test(imagenNew.value)) {
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
                     errores.push('la imagen debe ser jpg,jepg,gif o png')
-                    imagenNew.classList.add('is-invalid')
+                    imagen.classList.add('is-invalid')
                     errorImagen.classList.add('text-danger')
 
                 } else {
-                    imagenNew.classList.add('is-valid')
-                    imagenNew.classList.remove('is-invalid')
+                    imagen.classList.add('is-valid')
+                    imagen.classList.remove('is-invalid')
                 }
             } else {
-                imagenNew.classList.add('is-valid')
-                imagenNew.classList.remove('is-invalid')
+                imagen.classList.add('is-valid')
+                imagen.classList.remove('is-invalid')
             }
 
 
