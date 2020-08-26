@@ -358,7 +358,7 @@ window.addEventListener('load', function () {
             })
         }
         function validaciones(evento){
-            let {name,lastname,phone}=formulario.elements;
+            let {name,lastname,phone,imagen}=formulario.elements;
             let errores = [];
             if (name.value.length < 2) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de 2 caracteres.');
@@ -384,6 +384,29 @@ window.addEventListener('load', function () {
                 phone.classList.add('is-valid');
                 phone.classList.remove('is-invalid');
             }
+            //IMAGEN
+            let errorImagen = document.getElementById('errorimagen')
+            let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
+            if (imagen.value != '') {
+                if (!acceptFileTypes.test(imagen.value)) {
+                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    imagen.classList.add('is-invalid')
+                    errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
+
+                } else {
+                    imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
+                    imagen.classList.remove('is-invalid')
+                }
+            } else {
+                imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
+                imagen.classList.remove('is-invalid')
+            }
+
+
             let ulErrores = document.querySelector('.errores');
             ulErrores.classList.add('alert-danger')
             if (errores.length > 0) {
