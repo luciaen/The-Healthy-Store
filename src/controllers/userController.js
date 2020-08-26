@@ -223,7 +223,7 @@ const userController = {
                     }
                 })
                 .then(usuario => {
-                    res.redirect('/index');
+                    res.redirect('/perfil');
                 })
                 .catch(error => res.send(error));
 
