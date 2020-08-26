@@ -117,6 +117,23 @@ module.exports = {
             return false
         }).withMessage('Las contraseñas no coinciden')
     ],
+    editPasswordCrud: [
+        check('password').isLength({ min: 6, max: 15 }).withMessage('La nueva contraseña debe tener entre 6 y 15 caracteres'),
+        body('oldPassword').custom(async (value, { req }) => {
+
+            let usuarios = await User.findAll({ where: { id: req.params.id } })
+            let usuarioPassword = usuarios[0].password;
+            //console.log(usuarioPassword);
+            return bcrypt.compareSync(value, usuarioPassword) ? true : Promise.reject("Contraseña incorrecta")
+        }),
+
+        body('password').custom(function (value, { req }) {
+            if (req.body.confirmPassword == value) {
+                return true
+            }
+            return false
+        }).withMessage('Las contraseñas no coinciden')
+    ],
     editEmail:[
         check('email').isEmail().withMessage('el formato del mail es erroneo'),
         body('email').custom(async value => Array.from(await User.findAll()).filter(usuario => usuario.email == value).length > 0 ? Promise.reject("Este E-mail ya esta en uso") : true),

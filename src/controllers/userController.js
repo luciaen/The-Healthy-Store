@@ -308,6 +308,104 @@ const userController = {
                     res.render(path.resolve(__dirname, '..', 'views', 'user', 'editEmail'), {editEmail:editEmail, errors: errors.mapped() })
                 })
         }
+    },
+    editPerfilCrud:(req,res)=>{
+        User
+        .findByPk(req.params.id)
+        .then(editPerfilCrud => {
+            res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPerfilCrud'), {editPerfilCrud: editPerfilCrud });
+        })
+    },
+    updateperfilCrud: function (req, res) {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.name = req.body.name
+            _body.lastName = req.body.lastname,
+                _body.email = req.body.email,
+                _body.phone = req.body.phone,
+                _body.image = req.file ? req.file.filename : req.body.oldImagen
+            User
+                .update(_body, {
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(usuario => {
+                    res.redirect('/usuarios');
+                })
+                .catch(error => res.send(error));
+
+        } else {
+            User
+                .findByPk(req.params.id)
+                .then(editPerfilCrud => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPerfilCrud'), {editPerfilCrud: editPerfilCrud, errors: errors.mapped() })
+                })
+        }
+
+    },
+    editPasswordCrud:(req,res)=>{
+        User
+        .findByPk(req.params.id)
+        .then(editPasswordCrud => {
+            res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPasswordCrud'), {editPasswordCrud: editPasswordCrud });
+        })
+    },
+    updatePasswordCrud: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.password = bcrypt.hashSync(req.body.password, 10),
+                User
+                    .update(_body, {
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(usuario => {
+                        res.redirect('/usuarios');
+                    })
+                    .catch(error => res.send(error));
+
+        } else {
+            User
+                .findByPk(req.params.id)
+                .then(editPasswordCrud => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'editPasswordCrud'), {editPasswordCrud: editPasswordCrud, errors: errors.mapped() })
+                })
+        }
+    },
+    editEmailCrud:(req,res)=>{
+        User
+        .findByPk(req.params.id)
+        .then(editEmailCrud => {
+            res.render(path.resolve(__dirname, '..', 'views', 'user', 'editEmailCrud'), {editEmailCrud: editEmailCrud });
+        })
+    },
+    updateEmailCrud: (req, res) => {
+        let errors = validationResult(req);
+        if (errors.isEmpty()) {
+            const _body = req.body
+            _body.email= req.body.email
+                User
+                    .update(_body, {
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(usuario => {
+                        res.redirect('/usuarios');
+                    })
+                    .catch(error => res.send(error));
+
+        } else {
+            User
+                .findByPk(req.params.id)
+                .then(editEmailCrud => {
+                    res.render(path.resolve(__dirname, '..', 'views', 'user', 'editEmailCrud'), {editEmailCrud:editEmailCrud, errors: errors.mapped() })
+                })
+        }
     }
 }
 

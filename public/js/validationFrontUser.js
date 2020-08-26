@@ -191,23 +191,23 @@ window.onload = function () {
     formulario.addEventListener("submit", function (event) {
         event.preventDefault();
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Estas seguro?',
+            text: "Este cambio es irreversible!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
+            confirmButtonText: 'Sí, borrarlo!'
+          }).then((result) => {
             if (result.value) {
-                Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                )
-                formulario.submit();
+              Swal.fire(
+                'Borrado!',
+                'El archivo ha sido borrado.',
+                'exitosamente'
+              )
+              formulario.submit();
             }
-        })
+          })
 
 
     })
