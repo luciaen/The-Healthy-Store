@@ -50,7 +50,7 @@ module.exports = {
         }).withMessage('Las contraseñas deben ser iguales'),
 
     // ACA ESTAN LAS VALIDACIONES PARA IMAGENES DEL BACK  
-    
+
     //VALIDACION DE QUE EL CAMPO IMAGEN NO ESTE VACIO   
         body('imagen').custom((value, {req}) =>{
             if(req.file != undefined){
@@ -62,13 +62,13 @@ module.exports = {
     //2DA VALIDACION DONDE SE INDICA CUALES SON LAS EXTENCIONES PERMITIDAS    
         body('imagen').custom(function (value, { req }) {
             let ext;
-            //console.log('Foto'+req.file.filename);
+            
             if(req.file.filename == undefined){
                 return false
             }else{
                 ext = path.extname(req.file.filename).toUpperCase();
             }
-            console.log(ext);
+            
             if (
                 ext == ".JPG" ||
                 ext == ".JPEG" ||
