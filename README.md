@@ -64,6 +64,7 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 2. [Tablero de tabajo Trello - Sprint 3](https://trello.com/invite/b/2rz3WLpy/7d1aeb3ea7f12201b478dce3624aac1a/pi-sprint-3)
 3. [Tablero de tabajo Trello - Sprint 4](https://trello.com/b/K62fmLKF/pi-sprint-4)
 4. [Tablero de tabajo Trello - Sprint 5](https://trello.com/invite/b/BlvDZc4k/6f35467fd8ffe3da13d94da9e61e1f5b/sprint-5)
+5. [Tablero de tabajo Trello - Sprint 6](https://trello.com/b/cLhfANMs/pi-sprint-6)
 
 
 ## Retrospectiva Sprint 2:
@@ -93,4 +94,12 @@ El paquete de wireframe actual contiene visualizaciones de las siguientes seccio
 - Continuar haciendo: cumpliendo con los puntos establecidos en la consigna.
 - Hacer menos: comunicación unilateral.
 - Dejar de hacer: tareas sin definir.
+
+## Retrospectiva Sprint 6:
+- Comenzar a hacer: Pautar reuniones para revisar status del proyecto.
+- Hacer más: brainstorming para resolver los issues.
+- Continuar haciendo: cumplir con la consigna de forma adecuada.
+- Hacer menos: tareas cerca de la fecha de entrega.
+- Dejar de hacer: asumir que esta todo completo cuando faltan cosas.
+
 
