@@ -70,7 +70,7 @@ window.addEventListener('load', function () {
                 recomendado.classList.remove('is-invalid');
             }
             //IMAGEN
-            let errorImagen = document.getElementById('errorimagen')
+           let errorImagen = document.getElementById('errorimagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {

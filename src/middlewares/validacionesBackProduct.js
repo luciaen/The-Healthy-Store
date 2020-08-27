@@ -15,28 +15,38 @@ module.exports = {
         check('stock').isLength({ min: 1 }).withMessage('Debe indicar el stock'),
         check('precio').isLength({ min: 1 }).withMessage('Debe indicar el precio'),
         check('descuento').isLength({ min: 1}).withMessage('Indique si aplica un descuento'),
-        check('recomendado').isLength({min: 1}).withMessage('Indique si el producto es recomendado')
-       /*, body('imagen').custom(function (value, {
-            req
-        }) {
-            let ext
-            if (req.file != undefined) {
-                return true
-            } else {
-                ext = "" + path.extname(req.files[0].filename).toLowerCase();
-            }
-            //console.log(ext);
-            if (
-                ext == ".jpg" ||
-                ext == ".jpeg" ||
-                ext == ".png" ||
-                ext == ".gif") {
-                return true;
-            }
-            return false;
-        }).withMessage('Solo debe seleccionar archivos  con extensión JPG, JPEG, PNG o GIF')*/
-    ],
-    //agregar el metodo q le sigue
+        check('recomendado').isLength({min: 1}).withMessage('Indique si el producto es recomendado'),
+        body('imagen').custom((value, {
+                req
+            }) => {
+                if (req.file != undefined) {
+                    return true
+                }
+                return false;
+            }).withMessage('Debe elegir su avatar y debe ser un archivo con formato: .JPG ó JPEG ó PNG'),
+
+            //2DA VALIDACION DONDE SE INDICA CUALES SON LAS EXTENCIONES PERMITIDAS    
+            body('imagen').custom(function (value, {
+                req
+            }) {
+                let ext;
+
+                if (req.file.filename == undefined) {
+                    return false
+                } else {
+                    ext = path.extname(req.file.filename).toUpperCase();
+                }
+
+                if (
+                    ext == ".JPG" ||
+                    ext == ".JPEG" ||
+                    ext == ".PNG" ||
+                    ext == ".GIF") {
+                    return true;
+                }
+                return false;
+            }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
+        ],
     update: [
         check('categoria').isInt().withMessage("categoria obligatoria"),
         check('nombre').isLength({
@@ -46,7 +56,27 @@ module.exports = {
         check('stock').isLength({ min: 1 }).withMessage('Debe indicar el stock'),
         check('precio').isLength({min: 1 }).withMessage('Debe indicar el precio'),
         check('descuento').isLength({min: 1 }).withMessage('Indique si aplica un descuento'),
-        check('recomendado').isLength({ min: 1 }).withMessage('Indique si el producto es recomendado')
+        check('recomendado').isLength({ min: 1 }).withMessage('Indique si el producto es recomendado'),
+         body('imagen').custom(function (value, {
+         req
+         }) {
+         let ext;
+
+         if (req.file.filename == undefined) {
+             return false
+         } else {
+             ext = path.extname(req.file.filename).toUpperCase();
+         }
+
+         if (
+             ext == ".JPG" ||
+             ext == ".JPEG" ||
+             ext == ".PNG" ||
+             ext == ".GIF") {
+             return true;
+         }
+         return false;
+         }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
        
 
 
