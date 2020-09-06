@@ -42,6 +42,7 @@ router.get("/user/editpassword",userController.editPassword);
 router.get("/user/editPasswordCrud/:id",userController.editPasswordCrud);
 router.get("/user/editEmail",userController.editEmail);
 router.get("/user/editEmailCrud/:id",userController.editEmailCrud);
+router.get('/users/registrados', userController.usuariosregistrados);
  
 //METODOS POR POST------------------------>
 router.post('/login',validaciones.getIn,userController.getIn);

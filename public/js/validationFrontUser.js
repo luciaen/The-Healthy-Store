@@ -35,22 +35,36 @@ window.addEventListener('load', function () {
 
             //Validar Apellido
             if (lastname.value.length < 2) {
-                errores.push('El campo apellido no puede estar vacio ni contener menos de 2 caracteres');
+                errores.push('El campo apellido no puede estar vacio ni contener menos de dos caracteres');
                 lastname.classList.add('is-invalid');
 
             } else {
                 lastname.classList.add('is-valid');
                 lastname.classList.remove('is-invalid');
             }
-
+            let errorEmail = document.getElementById('erroremail')
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
             if (!reEmail.test(email.value)) {
                 errores.push('El email es inválido');
                 email.classList.add('is-invalid');
+                errorEmail.classList.add('text-danger')
+                errorEmail.innerHTML = 'el mail tiene un formato incorrecto'
             } else {
-                email.classList.add('is-valid');
-                email.classList.remove('is-invalid');
+                validacionMail(email.value).then(existe => {
+                    if (existe) {
+                        errores.push('el email ya existe')
+                        email.classList.add('is-invalid')
+                        errorEmail.classList.add('text-danger')
+                        errorEmail.innerHTML = 'el mail ya existe'
+        
+                    } else {
+                        email.classList.add('is-valid')
+                        errorEmail.innerHTML = ''
+                        email.classList.remove('is-invalid')
+        
+                    }
+                })
             }
             if (telefono.value == '') {
                 errores.push('El campo telefono no puede estar vacio');
@@ -125,7 +139,13 @@ window.addEventListener('load', function () {
                 return true;
             }
         }
-
+        async function validacionMail(emailbuscado){
+            let request = await fetch('http://localhost:3000/users/registrados')
+            let res = await request.json()
+                return (Array.from(res).find(usuario => usuario.email == emailbuscado) != null)
+            
+            
+        }  
     })
 })
 //VALIDACION DEL LOGIN DE USUARIOS
