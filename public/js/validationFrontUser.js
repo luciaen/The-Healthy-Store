@@ -414,7 +414,7 @@ async function validacionMail(emailbuscado){
 }  
 })
 })
-//VALIDACION DE UPDATE DE USUARIO
+//VALIDACION DE UPDATE DE USUARIO================================>
 window.addEventListener('load', function () {
     let formulario = document.getElementById("formEditPerfil")
     formulario.addEventListener("submit",function(evento){
@@ -437,34 +437,45 @@ window.addEventListener('load', function () {
         function validaciones(evento){
             let {name,lastname,phone,imagen}=formulario.elements;
             let errores = [];
-            if (name.value.length < 2) {
-                errores.push('El campo nombre no puede estar vacio ni contener menos de 2 caracteres.');
-                name.classList.add('is-invalid');
+           //Valido nombre ==============================================>
+           let errorName = document.getElementById('errorName')
+           if (name.value.length < 2) {
+               //errores.push('El campo nombre no puede estar vacio ni contener menos de dos caracteres');
+               name.classList.add('is-invalid');
+               errorName.classList.add('text-danger')
+               errorName.innerHTML = 'El campo nombre no puede estar vacio ni contener menos de dos caracteres'
+           } else {
+               nombre.classList.add('is-valid');
+               nombre.classList.remove('is-invalid');
+           }
+           //VALIDO EL APELLIDO =========================================>
+           let errorlastName = document.getElementById('errorLastName')
+           if (lastname.value.length < 2) {
+              // errores.push('El campo apellido no puede estar vacio ni contener menos de dos caracteres');
+               lastname.classList.add('is-invalid');
+               errorlastName.classList.add('text-danger')
+               errorlastName.innerHTML = 'El campo apellido no puede estar vacio ni contener menos de dos caracteres'
 
-            } else {
-                name.classList.add('is-valid');
-                name.classList.remove('is-invalid');
-            }
-            if (lastname.value.length < 2) {
-                errores.push('El campo apellido no puede estar vacio ni contener menos de 2 caracteres.');
-                lastname.classList.add('is-invalid');
-
-            } else {
-                lastname.classList.add('is-valid');
-                lastname.classList.remove('is-invalid');
-            }
-            if (phone.value == '') {
-                errores.push('El campo telefono no puede estar vacio.');
+           } else {
+               lastname.classList.add('is-valid');
+               lastname.classList.remove('is-invalid');
+           }
+             //VALIDO EL TELEFONO ========================================>
+             let errorPhone = document.getElementById("errorPhone")
+             if (phone.value == '') {
+                // errores.push('El campo telefono no puede estar vacio');
                 phone.classList.add('is-invalid');
-
-            } else {
-                phone.classList.add('is-valid');
-                phone.classList.remove('is-invalid');
-            }
+                 errorPhone.classList.add('text-danger')
+                 errorPhone.innerHTML= "El campo telefono no puede estar vacio";
+ 
+             } else {
+                 telefono.classList.add('is-valid');
+                 telefono.classList.remove('is-invalid');
+             }
             //IMAGEN
-            let errorImagen = document.getElementById('errorimagen')
+            let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
-            if (imagen.value != '') {
+            if (imagen.value == '') {
                 if (!acceptFileTypes.test(imagen.value)) {
                     errores.push('la imagen debe ser jpg,jepg,gif o png')
                     imagen.classList.add('is-invalid')
@@ -480,17 +491,12 @@ window.addEventListener('load', function () {
             }
 
 
-            let ulErrores = document.querySelector('.errores');
-            ulErrores.classList.add('alert-danger')
+            //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-                }
                 errores = [];
-            } else {
-                return true;
+            } else{
+                return true
             }
         }
     })
@@ -518,6 +524,7 @@ window.addEventListener('load', function () {
         function validaciones(evento){
             let{oldPassword,password,confirmPassword}=formulario.elements;
             let errores = [];
+            let errorPassword = document.getElementById("errorOldPassword")
             if (oldPassword.value == '') {
                 errores.push('La antigua contraseña es obligatoria');
                 oldPassword.classList.add('is-invalid');
@@ -526,9 +533,12 @@ window.addEventListener('load', function () {
                 oldPassword.classList.add('is-valid');
                 oldPassword.classList.remove('is-invalid');
             }
+            let errorPassword = document.getElementById("errorPassword")
             if (password.value == '') {
-                errores.push('El campo contraseña no puede estar vacio.');
+               // errores.push('El campo contraseña no puede estar vacio');
                 password.classList.add('is-invalid');
+                errorPassword.classList.add("text-danger")
+                errorPassword.innerHTML="El campo contraseña no puede estar vacio"
 
             } else {
                 password.classList.add('is-valid');
