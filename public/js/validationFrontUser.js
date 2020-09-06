@@ -49,8 +49,17 @@ window.addEventListener('load', function () {
                 errores.push('El email es inválido');
                 email.classList.add('is-invalid');
             } else {
-                email.classList.add('is-valid');
-                email.classList.remove('is-invalid');
+                validacionMail(email.value).then(existe => {
+                    if (existe) {
+                        errores.push('el email ya existe')
+                        email.classList.add('is-invalid')
+                        
+                    } else {
+                        nombre.classList.add('is-valid');
+                        nombre.classList.remove('is-invalid');
+
+                    }
+                })
             }
             if (telefono.value == '') {
                 errores.push('El campo telefono no puede estar vacio');
@@ -124,8 +133,13 @@ window.addEventListener('load', function () {
             } else {
                 return true;
             }
+            async function validacionMail(emailbuscado) {
+                let request = await fetch('http://localhost:3000/registrados')
+                let res = await request.json()
+                return (Array.from(res).find(usuario => usuario.email == emailbuscado) != null)
+            
+                }
         }
-
     })
 })
 //VALIDACION DEL LOGIN DE USUARIOS
@@ -198,16 +212,16 @@ window.onload = function () {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Sí, borrarlo!'
-          }).then((result) => {
+        }).then((result) => {
             if (result.value) {
-              Swal.fire(
-                'Borrado!',
-                'El archivo ha sido borrado.',
-                'exitosamente'
-              )
-              formulario.submit();
+                Swal.fire(
+                    'Borrado!',
+                    'El archivo ha sido borrado.',
+                    'exitosamente'
+                )
+                formulario.submit();
             }
-          })
+        })
 
 
     })
@@ -237,7 +251,7 @@ window.addEventListener('load', function () {
 
         function validaciones(evento) {
             //Destructuring  
-            let { nombre, lastname, email, password, confirmpassword, telefono,imagen } = formulario.elements;
+            let { nombre, lastname, email, password, confirmpassword, telefono, imagen } = formulario.elements;
             let errores = [];
             if (nombre.value.length < 2) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de dos caracteres');
@@ -340,8 +354,8 @@ window.addEventListener('load', function () {
 //VALIDACION DE UPDATE DE USUARIO
 window.addEventListener('load', function () {
     let formulario = document.getElementById("formEditPerfil")
-    formulario.addEventListener("submit",function(evento){
-        if(!validaciones(evento)){
+    formulario.addEventListener("submit", function (evento) {
+        if (!validaciones(evento)) {
             evento.preventDefault();
             Swal.fire({
                 icon: 'error',
@@ -349,7 +363,7 @@ window.addEventListener('load', function () {
                 text: 'Error al editar perfil',
 
             })
-        }else{
+        } else {
             formulario.submit();
             Swal.fire({
                 icon: 'ssuccess',
@@ -357,8 +371,8 @@ window.addEventListener('load', function () {
                 text: 'Perfil editado',
             })
         }
-        function validaciones(evento){
-            let {name,lastname,phone,imagen}=formulario.elements;
+        function validaciones(evento) {
+            let { name, lastname, phone, imagen } = formulario.elements;
             let errores = [];
             if (name.value.length < 2) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de 2 caracteres.');
@@ -420,9 +434,9 @@ window.addEventListener('load', function () {
 })
 //VALIDACION PARA EL UPDATE DE CONTRASEñA DE USUARIO
 window.addEventListener('load', function () {
-    let formulario = document.getElementById("formEditPassword")   
-    formulario.addEventListener("submit",function(evento){
-        if(!validaciones(evento)){
+    let formulario = document.getElementById("formEditPassword")
+    formulario.addEventListener("submit", function (evento) {
+        if (!validaciones(evento)) {
             evento.preventDefault();
             Swal.fire({
                 icon: 'error',
@@ -430,7 +444,7 @@ window.addEventListener('load', function () {
                 text: 'Error al cambiar contraseña',
 
             })
-        }else{
+        } else {
             formulario.submit();
             Swal.fire({
                 icon: 'ssuccess',
@@ -438,8 +452,8 @@ window.addEventListener('load', function () {
                 text: 'Contraseña cambiada!',
             })
         }
-        function validaciones(evento){
-            let{oldPassword,password,confirmPassword}=formulario.elements;
+        function validaciones(evento) {
+            let { oldPassword, password, confirmPassword } = formulario.elements;
             let errores = [];
             if (oldPassword.value == '') {
                 errores.push('La antigua contraseña es obligatoria');
@@ -459,15 +473,15 @@ window.addEventListener('load', function () {
             }
             if (confirmPassword.value == '') {
                 errores.push('El campo de confirmacion de contraseña no puede estar vacio.');
-               confirmPassword.classList.add('is-invalid');
+                confirmPassword.classList.add('is-invalid');
 
             } else {
-               confirmPassword.classList.add('is-valid');
-               confirmPassword.classList.remove('is-invalid');
+                confirmPassword.classList.add('is-valid');
+                confirmPassword.classList.remove('is-invalid');
             }
             if (confirmPassword.value != password.value) {
                 errores.push('las contraseña tienen que ser iguales.');
-               confirmPassword.classList.add('is-invalid');
+                confirmPassword.classList.add('is-invalid');
             }
             let ulErrores = document.querySelector('.errores');
             ulErrores.classList.add('alert-danger')
@@ -482,16 +496,16 @@ window.addEventListener('load', function () {
                 return true;
             }
 
-            
+
         }
     })
 })
 
 //valido el campo editEmail del usuario
 window.addEventListener('load', function () {
-    let formulario = document.getElementById("formEditEmail") 
-    formulario.addEventListener("submit",function(evento){
-        if(!validaciones(evento)){
+    let formulario = document.getElementById("formEditEmail")
+    formulario.addEventListener("submit", function (evento) {
+        if (!validaciones(evento)) {
             evento.preventDefault();
             Swal.fire({
                 icon: 'error',
@@ -499,7 +513,7 @@ window.addEventListener('load', function () {
                 text: 'Error al cambiar E-mail',
 
             })
-        }else{
+        } else {
             formulario.submit();
             Swal.fire({
                 icon: 'ssuccess',
@@ -507,8 +521,8 @@ window.addEventListener('load', function () {
                 text: 'E-mail cambiado!',
             })
         }
-        function validaciones(evento){
-            let{email}=formulario.elements;
+        function validaciones(evento) {
+            let { email } = formulario.elements;
             let errores = [];
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             if (!reEmail.test(email.value)) {

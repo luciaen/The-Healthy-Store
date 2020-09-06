@@ -30,6 +30,19 @@ const userController = {
             })
             .catch(error => res.send(error))
     },
+
+    listarUsers: (req, res) => {
+
+        User.findAll()
+
+            .then(user => {
+                return res.send(user)
+                
+            
+            })
+            .catch(error => res.send(error))
+    },
+
     newRegister: function (req, res) {
         let errors = validationResult(req);
         if (errors.isEmpty()) {
