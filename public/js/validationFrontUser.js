@@ -524,10 +524,12 @@ window.addEventListener('load', function () {
         function validaciones(evento){
             let{oldPassword,password,confirmPassword}=formulario.elements;
             let errores = [];
-            let errorPassword = document.getElementById("errorOldPassword")
+            let errorOldPassword = document.getElementById("errorOldPassword")
             if (oldPassword.value == '') {
                 errores.push('La antigua contraseña es obligatoria');
                 oldPassword.classList.add('is-invalid');
+                errorOldPassword.classList.add("text-danger");
+                errorOldPassword.innerHTML="La antigua contraseña es obligatoria"
 
             } else {
                 oldPassword.classList.add('is-valid');
@@ -544,9 +546,12 @@ window.addEventListener('load', function () {
                 password.classList.add('is-valid');
                 password.classList.remove('is-invalid');
             }
+            let errorConfirmPassword = document.getElementById("errorConfirmPassword")
             if (confirmPassword.value == '') {
                 errores.push('El campo de confirmacion de contraseña no puede estar vacio.');
                confirmPassword.classList.add('is-invalid');
+               errorConfirmPassword.classList.add("text-danger")
+                errorConfirmPassword.innerHTML="El campo contraseña no puede estar vacio"
 
             } else {
                confirmPassword.classList.add('is-valid');
@@ -555,21 +560,17 @@ window.addEventListener('load', function () {
             if (confirmPassword.value != password.value) {
                 errores.push('las contraseña tienen que ser iguales.');
                confirmPassword.classList.add('is-invalid');
+               errorPassword.classList.add("text-danger")
+               errorPassword.innerHTML="Las contraseña tienen que ser iguales."
+
             }
-            let ulErrores = document.querySelector('.errores');
-            ulErrores.classList.add('alert-danger')
+            //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-                }
                 errores = [];
-            } else {
-                return true;
+            } else{
+                return true
             }
-
-            
         }
     })
 })
@@ -588,35 +589,51 @@ window.addEventListener('load', function () {
             })
         }else{
             formulario.submit();
-            Swal.fire({
-                icon: 'ssuccess',
-                title: 'Genial!',
-                text: 'E-mail cambiado!',
-            })
+           
         }
         function validaciones(evento){
             let{email}=formulario.elements;
             let errores = [];
+            //VALIDO EL E-MAIL=============================================>
+            let errorEmail = document.getElementById('errorEmail')
             let reEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
             if (!reEmail.test(email.value)) {
                 errores.push('El email es inválido');
                 email.classList.add('is-invalid');
+                errorEmail.classList.add('text-danger')
+                errorEmail.innerHTML = 'El mail tiene un formato incorrecto'
             } else {
-                email.classList.add('is-valid');
-                email.classList.remove('is-invalid');
+                validacionMail(email.value).then(existe => {
+                    if (existe) {
+                        errores.push('Email ya registrado')
+                        email.classList.add('is-invalid')
+                        errorEmail.classList.add('text-danger')
+                        errorEmail.innerHTML = 'Email ya registrado'
+        
+                    } else {
+                        email.classList.add('is-valid')
+                        errorEmail.innerHTML = ''
+                        email.classList.remove('is-invalid')
+        
+                    }
+                })
             }
-            let ulErrores = document.querySelector('.errores');
-            ulErrores.classList.add('alert-danger')
-            if (errores.length > 0) {
-                evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-                }
-                errores = [];
-            } else {
-                return true;
-            }
-        }
-    })
+       //SE VALIDAN LOS ERRORES =============>         
+       if (errores.length > 0) {
+        evento.preventDefault();
+        errores = [];
+    } else{
+        return true
+    }
+}
+//SE VALIDA SI EL MAIL YA EXISTE EN LA BASE DE DATOS====================>
+async function validacionMail(emailbuscado){
+    let request = await fetch('http://localhost:3000/users/registrados')
+    let res = await request.json()
+        return (Array.from(res).find(usuario => usuario.email == emailbuscado) != null)
+    
+    
+}  
+})
 })

@@ -173,7 +173,7 @@ module.exports = {
         
     ],
     editPassword: [
-        check('password').isLength({ min: 6, max: 15 }).withMessage('La nueva contraseña debe tener entre 6 y 15 caracteres'),
+        check('password').isLength({ min: 8, max: 15 }).withMessage('La nueva contraseña debe tener entre 8 y 15 caracteres'),
         body('oldPassword').custom(async (value, { req }) => {
 
             let usuarios = await User.findAll({ where: { id: req.session.usuario.id } })
