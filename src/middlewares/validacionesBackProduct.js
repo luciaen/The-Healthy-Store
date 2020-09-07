@@ -57,7 +57,7 @@ module.exports = {
         check('precio').isLength({min: 1 }).withMessage('Debe indicar el precio'),
         check('descuento').isLength({min: 1 }).withMessage('Indique si aplica un descuento'),
         check('recomendado').isLength({ min: 1 }).withMessage('Indique si el producto es recomendado'),
-         body('imagen').custom(function (value, {
+         /*body('imagen').custom(function (value, {
          req
          }) {
          let ext;
@@ -76,7 +76,7 @@ module.exports = {
              return true;
          }
          return false;
-         }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
+         }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')*/
        
 
 

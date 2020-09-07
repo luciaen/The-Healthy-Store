@@ -144,7 +144,7 @@ module.exports = {
             }
             return false
         }).withMessage('Las contraseñas no coinciden'),
-        body('imagen').custom(function (value, {
+        /*body('imagen').custom(function (value, {
             req
         }) {
             let ext;
@@ -163,36 +163,17 @@ module.exports = {
                 return true;
             }
             return false;
-        }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
+        }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')*/
     ]
     ,
     updatePerfil: [
         check('name').isLength({ min: 3, max: 25 }).withMessage('El nombre debe tener entre 3 y 25 caracteres'),
         check('lastname').isLength({ min: 3, max: 25 }).withMessage('El apellido debe tener entre 3 y 25 caracteres'),
         check('phone').isLength({ min: 6, max: 15 }).withMessage('el telefono no puede quedar vacío'),
-        body('imagen').custom(function (value, {
-            req
-        }) {
-            let ext;
-
-            if (req.file.filename == undefined) {
-                return false
-            } else {
-                ext = path.extname(req.file.filename).toUpperCase();
-            }
-
-            if (
-                ext == ".JPG" ||
-                ext == ".JPEG" ||
-                ext == ".PNG" ||
-                ext == ".GIF") {
-                return true;
-            }
-            return false;
-        }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
+        
     ],
     editPassword: [
-        check('password').isLength({ min: 6, max: 15 }).withMessage('La nueva contraseña debe tener entre 6 y 15 caracteres'),
+        check('password').isLength({ min: 8, max: 15 }).withMessage('La nueva contraseña debe tener entre 8 y 15 caracteres'),
         body('oldPassword').custom(async (value, { req }) => {
 
             let usuarios = await User.findAll({ where: { id: req.session.usuario.id } })
