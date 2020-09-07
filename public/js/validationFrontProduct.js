@@ -113,10 +113,11 @@ window.addEventListener('load', function () {
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {
-                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                    errores.push('')
                     imagen.classList.add('is-invalid')
                     errorImagen.classList.add('text-danger')
                     errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
 
 
                 } else {
@@ -130,8 +131,10 @@ window.addEventListener('load', function () {
                 imagen.classList.remove('is-invalid')
             }
             if (imagen.value == '') {
-                errores.push('El campo imagen no puede estar vacio');
-                imagen.classList.add('is-invalid');
+                 errores.push('')
+                 imagen.classList.add('is-invalid')
+                 errorImagen.classList.add('text-danger')
+                 errorImagen.innerHTML = 'El campo imagen no puede estar vacio'
             } else {
                 imagen.classList.add('is-valid');
                 imagen.classList.remove('is-invalid');
@@ -184,7 +187,7 @@ window.addEventListener('load', function () {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Error al crear Producto',
+                text: 'Error al editar Producto',
 
             })
         } else {
@@ -192,7 +195,7 @@ window.addEventListener('load', function () {
             Swal.fire({
                 icon: 'ssuccess',
                 title: 'Genial!',
-                text: 'Producto Creado',
+                text: 'Producto editado',
             })
         }
 
@@ -251,14 +254,14 @@ window.addEventListener('load', function () {
             }
 
             //IMAGEN
-            let errorImagen = document.getElementById('errorImagen')
+           let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
-                if (!acceptFileTypes.test(imagen.value)) {
-                    errores.push('la imagen debe ser jpg,jepg,gif o png')
-                    imagen.classList.add('is-invalid')
-                    errorImagen.classList.add('text-danger')
-                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+               if (!acceptFileTypes.test(imagen.value)) {
+                   errores.push('')
+                   imagen.classList.add('is-invalid')
+                   errorImagen.classList.add('text-danger')
+                   errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
 
 
                 } else {
@@ -271,13 +274,7 @@ window.addEventListener('load', function () {
                 errorImagen.innerHTML = ''
                 imagen.classList.remove('is-invalid')
             }
-            if (imagen.value == '') {
-                errores.push('El campo imagen no puede estar vacio');
-                imagen.classList.add('is-invalid');
-            } else {
-                imagen.classList.add('is-valid');
-                imagen.classList.remove('is-invalid');
-            }
+           
             //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();
