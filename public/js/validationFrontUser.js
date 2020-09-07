@@ -344,11 +344,11 @@ window.addEventListener('load', function () {
              }
             //VALIDO EL PASSWORD==========================================>
             let errorPassword = document.getElementById("errorPassword")
-            if (password.value == '') {
+            if (password.value.length < 8) {
                // errores.push('El campo contraseña no puede estar vacio');
                 password.classList.add('is-invalid');
                 errorPassword.classList.add("text-danger")
-                errorPassword.innerHTML="El campo contraseña no puede estar vacio"
+                errorPassword.innerHTML="El campo contraseña no puede estar vacio ni contener menos de 8 caracteres"
 
             } else {
                 password.classList.add('is-valid');
@@ -472,21 +472,25 @@ window.addEventListener('load', function () {
                  telefono.classList.add('is-valid');
                  telefono.classList.remove('is-invalid');
              }
-            //IMAGEN
+            //VALIDO LA IMAGEN ========================================>
             let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value == '') {
                 if (!acceptFileTypes.test(imagen.value)) {
-                    errores.push('la imagen debe ser jpg,jepg,gif o png')
+                   errores.push('')
                     imagen.classList.add('is-invalid')
                     errorImagen.classList.add('text-danger')
+                    errorImagen.innerHTML = 'la imagen debe ser jpg,jepg,gif o png'
+
 
                 } else {
                     imagen.classList.add('is-valid')
+                    errorImagen.innerHTML = ''
                     imagen.classList.remove('is-invalid')
                 }
             } else {
                 imagen.classList.add('is-valid')
+                errorImagen.innerHTML = ''
                 imagen.classList.remove('is-invalid')
             }
 
@@ -536,11 +540,11 @@ window.addEventListener('load', function () {
                 oldPassword.classList.remove('is-invalid');
             }
             let errorPassword = document.getElementById("errorPassword")
-            if (password.value == '') {
+            if (password.value.length < 8) {
                // errores.push('El campo contraseña no puede estar vacio');
                 password.classList.add('is-invalid');
                 errorPassword.classList.add("text-danger")
-                errorPassword.innerHTML="El campo contraseña no puede estar vacio"
+                errorPassword.innerHTML="El campo contraseña no puede estar vacio ni contener menos de 8 caracteres"
 
             } else {
                 password.classList.add('is-valid');

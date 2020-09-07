@@ -40,7 +40,8 @@
                                         value="<%= editPerfilCrud.name%>">
                                     <% if(typeof errors != 'undefined' && errors.name){%>
                                     <span class="text-danger"> <%= errors.name.msg %></span>
-                                    <%}%>     
+                                    <%}%>  
+                                    <span id="errorName"></span>   
                                 </div>
                                 <div class="form-group">
                                     <label for="">Apellido Del Usuario</label>
@@ -49,6 +50,7 @@
                                     <% if(typeof errors != 'undefined' && errors.lastname){%>
                                     <span class="text-danger"> <%= errors.lastname.msg %></span>
                                     <%}%>
+                                    <span id="errorLastName"></span> 
                                 </div>
                                 <div class="form-group">
                                     <label for="">E-mail del usuario</label>
@@ -62,6 +64,7 @@
                                     <% if(typeof errors != 'undefined' && errors.phone){%>
                                     <span class="text-danger"> <%= errors.phone.msg %></span>
                                     <%}%>
+                                    <span id="errorPhone"></span> 
                                         </div>
 
                                 <div class="form-group">
@@ -78,10 +81,11 @@
                                 </div>
 
                                 <div class="custom-file" id="errorimagen">
-                                    <input type="file" class="custom-file-input" name="imagen" id="errorimagen"
+                                    <input type="file" class="custom-file-input" name="imagen"
                                         placeholder="Seleccione una imagen">
-                                    <label class="custom-file-label" for="" id="errorimagen">Eligir Nuevo
+                                    <label class="custom-file-label" for="">Eligir Nuevo
                                         avatar..</label>
+                                        <span id="errorImagen"></span> 
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn btn-primary">Actualizar</button>

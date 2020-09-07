@@ -34,23 +34,24 @@
                             <form id="formEditEmail" action="/user/editEmailCrud/<%=editEmailCrud.id%> ?_method=PUT"
                                 method="POST">
                                 
-                                      <div class="form-group">
-                                            <label for="Email">Ingrese su nuevo correo</label>
-                                            <input type="email" class="form-control" name="email">
-                                                <% if(typeof errors != 'undefined' && errors.email){%>
-                                    <span class="text-danger"> <%= errors.email.msg %></span>
-                                    <%}%>
-                                        </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn btn-primary">Continuar</button>
-                                    <a class="btn btn-danger" href="/user/edit/<%=editEmailCrud.id%>">Volver</a>
+                                    <label for="Email">Ingrese su nuevo correo</label>
+                                    <input type="email" class="form-control" name="email">
+                                        <% if(typeof errors != 'undefined' && errors.email){%>
+                            <span class="text-danger"> <%= errors.email.msg %></span>
+                            <%}%>
+                            <span id="errorEmail"></span>
                                 </div>
-                            </form>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn btn-primary">Continuar</button>
+                            <a class="btn btn-danger" href="/perfil">Volver</a>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
         <!-------------Comienza el footer---------------------->
         <%- include('../partials/footer') %>
                                     <!--LIBRERIAS-->
