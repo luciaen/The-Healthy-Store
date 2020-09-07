@@ -161,7 +161,7 @@ window.addEventListener('load', function () {
         }
 
         function validaciones(evento) {
-            let {categoria, nombre, descripcion, precio, stock,descuento,recomendado} = formulario.elements;
+            let {categoria, nombre, descripcion, precio, stock,descuento,recomendado,imagen} = formulario.elements;
             let errores = [];
             if (nombre.value.length < 5 ) {
                 errores.push('El campo nombre no puede estar vacio ni tener menos de 5 caracteres');
@@ -177,7 +177,7 @@ window.addEventListener('load', function () {
                 categoria.classList.add('is-valid');
                 categoria.classList.remove('is-invalid');
             }
-            if (descripcion.value.length < 2) {
+            if (descripcion.value.length < 20) {
                 errores.push('El campo descripcion no puede estar vacio ni contener menos de 20 caracteres');
                 descripcion.classList.add('is-invalid');
             } else {

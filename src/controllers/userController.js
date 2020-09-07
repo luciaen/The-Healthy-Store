@@ -31,17 +31,7 @@ const userController = {
             .catch(error => res.send(error))
     },
 
-    listarUsers: (req, res) => {
-
-        User.findAll()
-
-            .then(user => {
-                return res.send(user)
-                
-            
-            })
-            .catch(error => res.send(error))
-    },
+   
 
     newRegister: function (req, res) {
         let errors = validationResult(req);
@@ -419,6 +409,13 @@ const userController = {
                     res.render(path.resolve(__dirname, '..', 'views', 'user', 'editEmailCrud'), {editEmailCrud:editEmailCrud, errors: errors.mapped() })
                 })
         }
+    },
+    usuariosregistrados: function(req,res){
+        User.findAll()
+                .then(usuarios => {
+                return res.send (usuarios)
+            })
+            .catch(error => res.send(error))
     }
 }
 

@@ -27,7 +27,6 @@ const validaciones = require(path.resolve(__dirname,"../middlewares/validaciones
 
 // METODOS POR GET -----------------------> 
 router.get('/login', userController.login);
-router.get('/registrados', userController.listarUsers);
 router.get('/usuarios', userController.index);
 router.get('/registro', userController.registro);
 router.get('/user/detail/:id', userController.show);
@@ -43,6 +42,7 @@ router.get("/user/editpassword",userController.editPassword);
 router.get("/user/editPasswordCrud/:id",userController.editPasswordCrud);
 router.get("/user/editEmail",userController.editEmail);
 router.get("/user/editEmailCrud/:id",userController.editEmailCrud);
+router.get('/users/registrados', userController.usuariosregistrados);
  
 //METODOS POR POST------------------------>
 router.post('/login',validaciones.getIn,userController.getIn);
