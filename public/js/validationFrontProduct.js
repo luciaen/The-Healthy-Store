@@ -233,7 +233,7 @@ window.addEventListener('load', function () {
             }
             
             //IMAGEN
-           let errorImagen = document.getElementById('errorImagen')
+           /*let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {
@@ -259,7 +259,7 @@ window.addEventListener('load', function () {
             } else {
                 imagen.classList.add('is-valid');
                 imagen.classList.remove('is-invalid');
-            }
+            }*/
             //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();

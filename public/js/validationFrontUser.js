@@ -475,7 +475,7 @@ window.addEventListener('load', function () {
             //VALIDO LA IMAGEN ========================================>
             let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
-            if (imagen.value == '') {
+            if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {
                    errores.push('')
                     imagen.classList.add('is-invalid')
