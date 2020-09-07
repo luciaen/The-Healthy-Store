@@ -144,7 +144,7 @@ module.exports = {
             }
             return false
         }).withMessage('Las contraseñas no coinciden'),
-        body('imagen').custom(function (value, {
+        /*body('imagen').custom(function (value, {
             req
         }) {
             let ext;
@@ -163,7 +163,7 @@ module.exports = {
                 return true;
             }
             return false;
-        }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')
+        }).withMessage('Imágen obligatoria - Solo archivos JPG, JPEG, PNG o GIF')*/
     ]
     ,
     updatePerfil: [

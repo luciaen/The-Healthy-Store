@@ -20,57 +20,86 @@ window.addEventListener('load', function () {
         function validaciones(evento){
             let {categoria,nombre,descripcion,precio,stock,descuento,recomendado,imagen } = formulario.elements; 
             let errores=[];
+            //VALIDO EL NOMBRE=========================================================================>
+            let errorName = document.getElementById('errorName')
             if (nombre.value.length < 5) {
                 errores.push('El campo nombre no puede estar vacio ni contener menos de 5 caracteres');
                 nombre.classList.add('is-invalid');
+                errorName.classList.add("text-danger")
+                errorName.innerHTML = "El campo nombre no puede estar vacio ni contener menos de 5 caracteres"
             } else {
                 nombre.classList.add('is-valid');
                 nombre.classList.remove('is-invalid');
             }
+            //VALIDO LA CATEGORIA ===========================================>
+            let errorCategorie = document.getElementById('errorCategories')
             if (categoria.value == '') {
                 errores.push('El campo categoria no puede estar vacio');
                 categoria.classList.add('is-invalid');
+               errorCategorie.classList.add("text-danger")
+               errorCategorie.innerHTML = 'El campo categoria no puede estar vacio'
             } else {
                 categoria.classList.add('is-valid');
                 categoria.classList.remove('is-invalid');
             }
+            //VALIDO LA DESCRIPCION ========================================================================>
+            let errorDescription = document.getElementById('errorDescription')
             if (descripcion.value.length < 20) {
                 errores.push('El campo descripcion no puede estar vacio ni contener menos de 20 caracteres');
                 descripcion.classList.add('is-invalid');
+               errorDescription.classList.add("text-danger")
+              errorDescription.innerHTML = 'El campo descripcion no puede estar vacio ni contener menos de 20 caracteres'
             } else {
                 descripcion.classList.add('is-valid');
                 descripcion.classList.remove('is-invalid');
             }
+            //VALIDO EL STOCK==========================================>
+            let errorStock = document.getElementById('errorStock')
             if (stock.value == '') {
                 errores.push('El campo stock no puede estar vacio');
                 stock.classList.add('is-invalid');
+                errorStock.classList.add("text-danger")
+                errorStock.innerHTML = 'El campo stock no puede estar vacio'
             } else {
                 stock.classList.add('is-valid');
                 stock.classList.remove('is-invalid');
             }
+            //VALIDO EL PRECIO =========================================>
+            let errorPrice = document.getElementById('errorPrice')
             if (precio.value == '') {
                 errores.push('El campo precio no puede estar vacio');
                 precio.classList.add('is-invalid');
+                errorPrice.classList.add("text-danger")
+                errorPrice.innerHTML = 'El campo precio no puede estar vacio'
             } else {
                 precio.classList.add('is-valid');
                 precio.classList.remove('is-invalid');
             }
+            //VALIDO EL DESCUENTO=======================================>
+            let errorDiscount = document.getElementById('errorDiscount')
             if (descuento.value == '') {
                 errores.push('El campo descuento no puede estar vacio');
                 descuento.classList.add('is-invalid');
+                errorDiscount.classList.add("text-danger")
+                errorDiscount.innerHTML = 'El campo descuento no puede estar vacio'
             } else {
                 descuento.classList.add('is-valid');
                 descuento.classList.remove('is-invalid');
+                
             }
+            //VALIDO LA RECOMENDACION======================================>
+            let erroRecommended = document.getElementById('erroRecommended')
             if (recomendado.value == '') {
                 errores.push('El campo recomendado no puede estar vacio');
                 recomendado.classList.add('is-invalid');
+                erroRecommended.classList.add("text-danger")
+                erroRecommended.innerHTML = 'El campo recomendado no puede estar vacio'
             } else {
                 recomendado.classList.add('is-valid');
                 recomendado.classList.remove('is-invalid');
             }
             //IMAGEN
-           let errorImagen = document.getElementById('errorimagen')
+           let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {
@@ -97,19 +126,15 @@ window.addEventListener('load', function () {
                 imagen.classList.add('is-valid');
                 imagen.classList.remove('is-invalid');
             }
-            let ulErrores = document.querySelector('.errores');
-            ulErrores.classList.add('alert-danger')
+            //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-                }
                 errores = [];
-            } else {
-                return true;
+            } else{
+                return true
             }
         }
+        
 
     })  
 })
@@ -142,7 +167,7 @@ window.onload=function(){
 //aca empieza OTRA VALIDACION
 window.addEventListener('load', function () {
     let formulario = document.querySelector('.form-product-edit');
-    formulario.addEventListener('submit', function (evento) {
+    formulario.addEventListener('submit',function(evento){
         if (!validaciones(evento)) {
             evento.preventDefault();
             Swal.fire({
@@ -159,62 +184,56 @@ window.addEventListener('load', function () {
                 text: 'Producto Creado',
             })
         }
-
-        function validaciones(evento) {
-            let {categoria, nombre, descripcion, precio, stock,descuento,recomendado} = formulario.elements;
-            let errores = [];
-            if (nombre.value.length < 5 ) {
-                errores.push('El campo nombre no puede estar vacio ni tener menos de 5 caracteres');
+        function validaciones(evento){
+            let {nombre,descripcion,precio,stock,imagen } = formulario.elements; 
+            let errores=[];
+            //VALIDO EL NOMBRE=========================================================================>
+            let errorName = document.getElementById('errorName')
+            if (nombre.value.length < 5) {
+                errores.push('El campo nombre no puede estar vacio ni contener menos de 5 caracteres');
                 nombre.classList.add('is-invalid');
+                errorName.classList.add("text-danger")
+                errorName.innerHTML = "El campo nombre no puede estar vacio ni contener menos de 5 caracteres"
             } else {
                 nombre.classList.add('is-valid');
                 nombre.classList.remove('is-invalid');
             }
-            if (categoria.value == '') {
-                errores.push('El campo categoria no puede estar vacio');
-                categoria.classList.add('is-invalid');
-            } else {
-                categoria.classList.add('is-valid');
-                categoria.classList.remove('is-invalid');
-            }
-            if (descripcion.value.length < 2) {
+            //VALIDO LA DESCRIPCION ========================================================================>
+            let errorDescription = document.getElementById('errorDescription')
+            if (descripcion.value.length < 20) {
                 errores.push('El campo descripcion no puede estar vacio ni contener menos de 20 caracteres');
                 descripcion.classList.add('is-invalid');
+               errorDescription.classList.add("text-danger")
+              errorDescription.innerHTML = 'El campo descripcion no puede estar vacio ni contener menos de 20 caracteres'
             } else {
                 descripcion.classList.add('is-valid');
                 descripcion.classList.remove('is-invalid');
             }
+            //VALIDO EL STOCK==========================================>
+            let errorStock = document.getElementById('errorStock')
             if (stock.value == '') {
                 errores.push('El campo stock no puede estar vacio');
                 stock.classList.add('is-invalid');
+                errorStock.classList.add("text-danger")
+                errorStock.innerHTML = 'El campo stock no puede estar vacio'
             } else {
                 stock.classList.add('is-valid');
                 stock.classList.remove('is-invalid');
             }
+            //VALIDO EL PRECIO =========================================>
+            let errorPrice = document.getElementById('errorPrice')
             if (precio.value == '') {
                 errores.push('El campo precio no puede estar vacio');
                 precio.classList.add('is-invalid');
+                errorPrice.classList.add("text-danger")
+                errorPrice.innerHTML = 'El campo precio no puede estar vacio'
             } else {
                 precio.classList.add('is-valid');
                 precio.classList.remove('is-invalid');
             }
-            if (descuento.value == '') {
-                errores.push('El campo descuento no puede estar vacio');
-                descuento.classList.add('is-invalid');
-            } else {
-                descuento.classList.add('is-valid');
-                descuento.classList.remove('is-invalid');
-            }
-            if (recomendado.value == '') {
-                errores.push('El campo recomendado no puede estar vacio');
-                recomendado.classList.add('is-invalid');
-            } else {
-                recomendado.classList.add('is-valid');
-                recomendado.classList.remove('is-invalid');
-            }
-
+            
             //IMAGEN
-            let errorImagen = document.getElementById('errorimagen')
+           let errorImagen = document.getElementById('errorImagen')
             let acceptFileTypes = /(\.|\/)(gif|jpe?g|png|jpg)$/i
             if (imagen.value != '') {
                 if (!acceptFileTypes.test(imagen.value)) {
@@ -234,20 +253,22 @@ window.addEventListener('load', function () {
                 errorImagen.innerHTML = ''
                 imagen.classList.remove('is-invalid')
             }
-            
-            let ulErrores = document.querySelector('.errores');
-            ulErrores.classList.add('alert-danger')
+            if (imagen.value == '') {
+                errores.push('El campo imagen no puede estar vacio');
+                imagen.classList.add('is-invalid');
+            } else {
+                imagen.classList.add('is-valid');
+                imagen.classList.remove('is-invalid');
+            }
+            //SE VALIDAN LOS ERRORES =============>         
             if (errores.length > 0) {
                 evento.preventDefault();
-                ulErrores.innerHTML = "";
-                for (let i = 0; i < errores.length; i++) {
-                    ulErrores.innerHTML += `<li> ${errores[i]} </li> `
-                }
                 errores = [];
-            } else {
-                return true;
+            } else{
+                return true
             }
         }
+        
 
-    })
+    })  
 })
